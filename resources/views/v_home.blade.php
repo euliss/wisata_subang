@@ -66,7 +66,7 @@ Dashboard Admin
             <div class="card info-card sales-card">
 
               <div class="card-body">
-                <h5 class="card-title">Number of Products</h5>
+                <h5 class="card-title">Number of Destinations</h5>
 
                 <div class="d-flex align-items-center">
                   <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
