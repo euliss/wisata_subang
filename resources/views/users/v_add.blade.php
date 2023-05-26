@@ -69,7 +69,7 @@ Add User
               
               <div class="col-md-6">
                 <label for="inputState" class="form-label">Role</label>
-                <select id="inputState" class="form-select" name="role" placeholder="Enter Role...">
+                <select id="inputState" class="form-select" name="level" placeholder="Enter Role...">
                   <option value="">Pilih Role</option>
                   <option value="1">Admin</option>
                   <option value="2">Non Admin</option>

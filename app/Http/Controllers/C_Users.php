@@ -37,15 +37,15 @@ class C_Users extends Controller
     {
         Request()->validate([
             'name'              => 'required',
-            'role'              => 'required',
+            'level'              => 'required',
             'status'              => 'required',
             'email'             => 'required|unique:users,email',
             'password'          => 'required',
-            'photo'             => 'required|mimes:jpg,jpeg,png,bmp|max:1024',
+            'photo'             => 'required|mimes:jpg,jpeg,png',
         ], [
             'name.required'     => 'Full Name is required !',
             'email.required'    => 'Email is required !',
-            'role.required'    => 'Role is required !',
+            'level.required'    => 'Role is required !',
             'status.required'    => 'Status is required !',
             'password.required' => 'Password is required !',
             'photo.required'    => 'Photo is required !',
@@ -60,10 +60,9 @@ class C_Users extends Controller
         $data = [
             'name' => Request()->name,
             'email' => Request()->email,
-            'role' => Request()->role,
+            'level' => Request()->level,
             'status' => Request()->status,
             'password' => Hash::make(Request()->password),
-            'level' => 1,
             'photo' => $fileName,
         ];
 
