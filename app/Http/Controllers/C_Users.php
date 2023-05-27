@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\M_Users;
 use Illuminate\Support\Facades\Auth;
+use DB;
 
 class C_Users extends Controller
 {
@@ -20,7 +21,7 @@ class C_Users extends Controller
 
         $data = [
             'sidebarTitle' => 'Users',
-            'users' => $this->M_Users->allData()
+            'users' => DB::table('users')->get()
         ];
         return view('admin/user/v_users', $data);
     }

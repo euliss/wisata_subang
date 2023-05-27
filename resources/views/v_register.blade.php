@@ -71,7 +71,7 @@
                     <h5 class="card-title text-center pb-0 fs-4">Register Your Account</h5>
                   </div>
 
-                  <form class="row g-3 needs-validation" method="POST" action="{{ route('register') }}" novalidate enctype="multipart/form-data">
+                  <form class="row g-3 needs-validation" method="POST" action="{{ url('store-registrasi') }}" novalidate enctype="multipart/form-data">
                     @csrf
                     <div class="col-12">
                       <label for="name" class="form-label">Name</label>

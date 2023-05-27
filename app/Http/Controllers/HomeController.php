@@ -6,28 +6,21 @@ use Illuminate\Http\Request;
 use App\Models\M_Categories;
 use App\Models\M_Users;
 use App\Models\M_News;
+use App\Models\User;
 use DB;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\VerificationMail;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
-        $this->middleware('auth');
         $this->M_Categories = new M_Categories();
         $this->M_Users = new M_Users();
         $this->M_News = new M_News();
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
         $data = [
@@ -50,5 +43,35 @@ class HomeController extends Controller
             'status' => $status
         ]);
         return redirect('users');
+    }
+
+    public function registrasi(){
+        return view('v_register');
+    }
+
+    public function verification(Request $request){
+        $email = explode('...',$request->token)[1];
+        User::where('email',$email)->update(['status'=>'active']);
+        return redirect('login')->with('pesan', 'Akun Berhasil Diverifikasi, Silahkan Login');
+    }
+
+    public function store_registrasi(Request $request){
+        $password = Hash::make($request->password);
+
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'status' => 'non-active',
+            'level' => '2',
+            'password' => $password,
+        ]);
+
+        try{
+            Mail::to($request->email)->send(new VerificationMail($password,$request->email));
+        }
+        catch(\Exception $e){
+            dd($e);
+        }
+        return redirect('login')->with('pesan', 'Berhasil Registrasi, Cek Email Anda Untuk Verifikasi Email');
     }
 }

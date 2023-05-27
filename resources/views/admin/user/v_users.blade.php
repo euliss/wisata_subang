@@ -12,7 +12,7 @@ Data Users
     <h1>@yield('title')</h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">@yield('title')</a></li>
+        <li class="breadcrumb-item"><a href="">@yield('title')</a></li>
         <li class="breadcrumb-item active">@yield('page')</li>
       </ol>
     </nav>
@@ -44,7 +44,6 @@ Data Users
                   <th>Email</th>
                   <th>Role</th>
                   <th>Status</th>
-                  <th>Photo</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -65,13 +64,13 @@ Data Users
                         <a style="margin:0 4px" href="{{url('change-status/active/').'/'.$item->id }}" class="btn btn-sm btn-success">Aktifkan</a>
                       @endif
                     </td>
-                    <td>
+                    <!-- <td>
                       @if($item->photo)
                       <img src="{{url('foto_user/'.$item->photo)}}" width="100px">
                       @else
                       <img src="{{url('foto_user/default.jpg')}}" width="100px">
                       @endif
-                    </td>
+                    </td> -->
                     <td>
                       @if (Auth::user()->id === $item->id)
                         <button style="margin:0 4px" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-info"><i class="bi bi-pencil"></i></button>
@@ -98,23 +97,6 @@ Data Users
 
 </main>
 
-<div class="modal fade" id="modal-info" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Information</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        You cannot delete or edit this data, because this data is your own data!!!
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
-      </div>
-    </div>
-  </div>
-</div><!-- End Basic Modal-->
-
 {{-- Modal Delete --}}
 @foreach ($users as $item)
 <div class="modal fade" id="delete{{$item->id}}" tabindex="-1">
@@ -136,18 +118,4 @@ Data Users
 </div><!-- End Basic Modal-->
 @endforeach
 
-@endsection
-
-@section('javascript')
-  <script>
-    $("table").DataTable({
-        "paging": true,
-        "lengthChange": true,
-        "searching": true,
-        "ordering": true,
-        "info": true,
-        "autoWidth": true,
-        "responsive": true,
-      });
-  </script>
 @endsection

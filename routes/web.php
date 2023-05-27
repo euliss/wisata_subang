@@ -13,6 +13,7 @@ use App\Http\Controllers\C_User;
 use App\Http\Controllers\C_Register;
 use App\Http\Controllers\C_Login;
 use App\Http\Controllers\C_Comment;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -33,6 +34,10 @@ Route::get('/', [C_Landing::class, 'index'])->name('landing');
 Route::get('/about', [C_Landing::class, 'about']);
 Route::get('/category/{id}', [C_Landing::class, 'category']);
 Route::get('/destination/{id}', [C_Landing::class, 'destination']);
+
+Route::get('/registrasi-user', [HomeController::class, 'registrasi']);
+Route::post('/store-registrasi', [HomeController::class, 'store_registrasi']);
+Route::get('/verification', [HomeController::class, 'verification']);
 
 Route::get('/product-by-categories/{id}', [C_Landing::class, 'productByCategories']);
 Route::get('/product-detail/{id}', [C_Landing::class, 'productDetail']);

@@ -55,7 +55,7 @@ Data Articles
                     <td>
                       <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#detail{{$item->id}}"><i class="bi bi-eye"></i></button>
                       <a href="/edit-articles/{{$item->id}}" class="btn btn-success"><i class="bi bi-pencil"></i></a>
-                      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$item->id}}"><i class="bi bi-trash"></i></butt>
+                      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$item->id}}"><i class="bi bi-trash"></i></button>
                     </td>
                   </tr>
                 @endforeach

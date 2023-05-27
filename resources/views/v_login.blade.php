@@ -72,6 +72,12 @@
                     <p class="text-center small">Enter your email & password to login</p>
                   </div>
 
+                      @if (session('pesan'))
+                      <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
+                        {{ session('pesan') }}
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+                      @endif
                   <form class="row g-3 needs-validation" method="POST" action="{{ route('login') }}" novalidate>
                     @csrf
                     <div class="col-12">
@@ -92,7 +98,7 @@
                     </div>
                     <div class="col-12">
                       <div class="mb-3">
-                        Klik <a href="{{ url('register') }}">disini</a> untuk registrasi!
+                        Klik <a href="{{ url('registrasi-user') }}">disini</a> untuk registrasi!
                       </div>
                       <button class="btn btn-primary w-100" type="submit">Login</button>
                     </div>
