@@ -22,7 +22,7 @@ class C_Users extends Controller
             'sidebarTitle' => 'Users',
             'users' => $this->M_Users->allData()
         ];
-        return view('users/v_users', $data);
+        return view('admin/user/v_users', $data);
     }
 
     public function add()
@@ -30,22 +30,22 @@ class C_Users extends Controller
         $data = [
             'sidebarTitle' => 'Users',
         ];
-        return view('users/v_add', $data);
+        return view('admin/user/v_add', $data);
     }
 
     public function insert()
     {
         Request()->validate([
             'name'              => 'required',
-            'level'              => 'required',
+            'role'              => 'required',
             'status'              => 'required',
             'email'             => 'required|unique:users,email',
             'password'          => 'required',
-            'photo'             => 'required|mimes:jpg,jpeg,png',
+            'photo'             => 'required|mimes:jpg,jpeg,png,bmp|max:1024',
         ], [
             'name.required'     => 'Full Name is required !',
             'email.required'    => 'Email is required !',
-            'level.required'    => 'Role is required !',
+            'role.required'    => 'Role is required !',
             'status.required'    => 'Status is required !',
             'password.required' => 'Password is required !',
             'photo.required'    => 'Photo is required !',
@@ -60,9 +60,10 @@ class C_Users extends Controller
         $data = [
             'name' => Request()->name,
             'email' => Request()->email,
-            'level' => Request()->level,
+            'role' => Request()->role,
             'status' => Request()->status,
             'password' => Hash::make(Request()->password),
+            'level' => 1,
             'photo' => $fileName,
         ];
 
@@ -81,7 +82,7 @@ class C_Users extends Controller
             'user' => $this->M_Users->detail($id_user)
         ];
 
-        return view('users/v_edit', $data);
+        return view('admin/user/v_edit', $data);
     }
 
     public function detail($id_user)
@@ -95,7 +96,7 @@ class C_Users extends Controller
             'user' => $this->M_Users->detail($id_user)
         ];
 
-        return view('users/v_detail', $data);
+        return view('admin/user/v_detail', $data);
     }
 
     public function update($id_user)

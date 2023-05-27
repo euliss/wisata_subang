@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\M_Categories;
 use App\Models\M_Partner;
-use App\Models\M_Products;
 use App\Models\M_News;
 use DB; 
 
@@ -15,7 +14,6 @@ class C_Landing extends Controller
     {
         $this->M_Categories = new M_Categories();
         $this->M_Partner = new M_Partner();
-        $this->M_Products = new M_Products();
         $this->M_News = new M_News();
     }
 
@@ -26,11 +24,23 @@ class C_Landing extends Controller
             'partner'       => $this->M_Partner->allData(),
             'destinations'   => DB::table('destinations')->where('status',1)->get() ,
             'categories'   => DB::table('categories')->get() ,
-            'product'       => $this->M_Products->getLimit(4),
             'news'       => $this->M_News->getLimit(3, 'Aktif'),
         ];
 
         return view('landing/v_landing', $data);
+    }
+
+    public function about()
+    {
+        $data = [
+            'heroTitle'     => 'Home',
+            'partner'       => $this->M_Partner->allData(),
+            'destinations'   => DB::table('destinations')->where('status',1)->get() ,
+            'categories'   => DB::table('categories')->get() ,
+            'articles'       => DB::table('articles')->get(),
+        ];
+
+        return view('landing/v_about', $data);
     }
 
     public function category($id)
@@ -42,7 +52,6 @@ class C_Landing extends Controller
             'partner'       => $this->M_Partner->allData(),
             'destinations'   => DB::table('destinations')->where('status',1)->get() ,
             'destination_category'   => DB::table('destinations')->where('status',1)->where('id_category', $id)->get() ,
-            'product'       => $this->M_Products->getLimit(4),
             'news'       => $this->M_News->getLimit(3, 'Aktif'),
         ];
 
@@ -58,7 +67,6 @@ class C_Landing extends Controller
             'destinations'   => DB::table('destinations')->where('status',1)->get() ,
             'destination'   => DB::table('destinations')->where('status',1)->where('id',$id)->first() ,
             'comments'        => DB::table('comments')->where('id_destination',$id)->get() ,
-            'product'       => $this->M_Products->getLimit(4),
             'news'       => $this->M_News->getLimit(3, 'Aktif'),
         ];
 
@@ -70,7 +78,6 @@ class C_Landing extends Controller
         $data = [
             'heroTitle'     => 'Product',
             'categories'    => $this->M_Categories->detail($id_categories),
-            'product'       => $this->M_Products->getProductByCategories($id_categories),
         ];
 
         return view('landing/v_product', $data);
@@ -80,7 +87,6 @@ class C_Landing extends Controller
     {
         $data = [
             'heroTitle'     => 'Product',
-            'product'       => $this->M_Products->detail($id_product),
         ];
 
         return view('landing/v_productDetail', $data);

@@ -5,7 +5,7 @@ use App\Http\Controllers\C_Home;
 use App\Http\Controllers\C_Users;
 use App\Http\Controllers\C_Categories;
 use App\Http\Controllers\C_Destinations;
-use App\Http\Controllers\C_Products;
+use App\Http\Controllers\C_Articles;
 use App\Http\Controllers\C_News;
 use App\Http\Controllers\C_Landing;
 use App\Http\Controllers\C_Partner;
@@ -30,6 +30,7 @@ Auth::routes();
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // landing page
 Route::get('/', [C_Landing::class, 'index'])->name('landing');
+Route::get('/about', [C_Landing::class, 'about']);
 Route::get('/category/{id}', [C_Landing::class, 'category']);
 Route::get('/destination/{id}', [C_Landing::class, 'destination']);
 
@@ -58,19 +59,35 @@ Route::middleware(['auth'])->group(function () {
 
     // destinations
     Route::get('/destinations', [C_Destinations::class, 'index'])->name('destinations');
+    Route::get('/detail-destinations/{id}', [C_Destinations::class, 'detail']);
     Route::get('/add-destinations', [C_Destinations::class, 'add']);
     Route::post('/insert-destinations', [C_Destinations::class, 'insert']);
     Route::get('/edit-destinations/{id}', [C_Destinations::class, 'edit']);
     Route::post('/update-destinations/{id}', [C_Destinations::class, 'update']);
     Route::get('/delete-destinations/{id}', [C_Destinations::class, 'delete']);
+    Route::get('/change-status-destinations/{id}/{status}', [C_Destinations::class, 'change_status']);
 
-    // products
-    Route::get('/products', [C_Products::class, 'index'])->name('products');
-    Route::get('/add-product', [C_Products::class, 'add']);
-    Route::post('/insert-product', [C_Products::class, 'insert']);
-    Route::get('/edit-product/{id}', [C_Products::class, 'edit']);
-    Route::post('/update-product/{id}', [C_Products::class, 'update']);
-    Route::get('/delete-product/{id}', [C_Products::class, 'delete']);
+    Route::get('/comments-destination/{id}', [C_Destinations::class, 'comments']);
+    Route::get('/add-comments/{id_destination}', [C_Destinations::class, 'comments_add']);
+    Route::post('/insert-comments/{id_destination}', [C_Destinations::class, 'comments_insert']);
+    Route::get('/edit-comments/{id}', [C_Destinations::class, 'comments_edit']);
+    Route::post('/update-comments/{id}', [C_Destinations::class, 'comments_update']);
+    Route::get('/delete-comments/{id}', [C_Destinations::class, 'comments_delete']);
+
+    Route::get('/reports-destination/{id}', [C_Destinations::class, 'reports']);
+    Route::get('/add-reports/{id_destination}', [C_Destinations::class, 'reports_add']);
+    Route::post('/insert-reports/{id_destination}', [C_Destinations::class, 'reports_insert']);
+    Route::get('/edit-reports/{id}', [C_Destinations::class, 'reports_edit']);
+    Route::post('/update-reports/{id}', [C_Destinations::class, 'reports_update']);
+    Route::get('/delete-reports/{id}', [C_Destinations::class, 'reports_delete']);
+
+    // articles
+    Route::get('/articles', [C_Articles::class, 'index'])->name('articles');
+    Route::get('/add-articles', [C_Articles::class, 'add']);
+    Route::post('/insert-articles', [C_Articles::class, 'insert']);
+    Route::get('/edit-articles/{id}', [C_Articles::class, 'edit']);
+    Route::post('/update-articles/{id}', [C_Articles::class, 'update']);
+    Route::get('/delete-articles/{id}', [C_Articles::class, 'delete']);
 
     // news
     Route::get('/news', [C_News::class, 'index'])->name('news');

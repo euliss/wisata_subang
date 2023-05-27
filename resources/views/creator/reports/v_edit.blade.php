@@ -1,0 +1,54 @@
+@section('title')
+Manage Report
+@endsection
+@extends('layout/v_template')
+@section('page')
+Edit Report
+@endsection
+@section('content')
+<main id="main" class="main">
+
+  <div class="pagetitle">
+    <h1>@yield('title')</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">@yield('title')</a></li>
+        <li class="breadcrumb-item active">@yield('page')</li>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+  <section class="section dashboard">
+    <div class="row">
+      <!-- Left side columns -->
+      <div class="col-lg-12">
+        <div class="card p-3">
+          <div class="card-header">
+            <h3 class="card-title">Report Edit Form</h3>
+          </div>
+          <div class="card-body">
+            <!-- Multi Columns Form -->
+            <form class="row g-3" action="/update-reports/{{$report->id}}" method="POST">
+              @csrf
+
+                <div class="form-group">
+                  <label for="name">Visitor Count</label>
+                  <input required type="text" class="form-control" value="{{ $report->count }}" name="count">
+                <div class="form-group">
+                  <label for="message">Content</label>
+                  <textarea required name="content" cols="10" rows="2" class="form-control">{{ $report->content }}</textarea>
+                </div>
+
+              <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+              </div>
+            </form><!-- End Multi Columns Form -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+@endsection
+

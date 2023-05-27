@@ -11,38 +11,43 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
-      <li class="nav-heading">Master Data</li>
+      <li class="nav-heading">Maste Data</li>
       <li class="nav-item">
         <a class="nav-link {{ $sidebarTitle === 'Users' ? '':'collapsed'  }}" href="{{ route('users') }}">
           <i class="bi bi-people"></i>
           <span>Manage Users</span>
         </a>
+      </li>
       <li class="nav-item">
-        <a class="nav-link {{ $sidebarTitle === 'Products' ? '':'collapsed'  }}" href="{{ route('products') }}">
+        <a class="nav-link {{ $sidebarTitle === 'Destinations' ? '':'collapsed'  }}" href="{{ url('destinations') }}">
           <i class="bi bi-layers"></i>
           <span>Manage Destinations</span>
         </a>
-      </li><!-- End Profile Page Nav -->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ $sidebarTitle === 'Articles' ? '':'collapsed'  }}" href="{{ url('articles') }}">
+          <i class="bi bi-layers"></i>
+          <span>Manage Articles</span>
+        </a>
+      </li>
       <li class="nav-item">
         <a class="nav-link {{ $sidebarTitle === 'Categories' ? '':'collapsed'  }}" href="{{ route('categories') }}">
           <i class="bi bi-intersect"></i>
           <span>Manage Categories</span>
         </a>
       </li><!-- End Profile Page Nav -->
-      <!-- <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link {{ $sidebarTitle === 'News' ? '':'collapsed'  }}" href="{{ route('news') }}">
           <i class="bi bi-boxes"></i>
           <span>Manage News</span>
         </a>
-      </li> -->
-      <!-- End Profile Page Nav -->
-      <!-- <li class="nav-item">
+      </li><!-- End Profile Page Nav -->
+      <li class="nav-item">
         <a class="nav-link {{ $sidebarTitle === 'Partner' ? '':'collapsed'  }}" href="{{ route('partner') }}">
           <i class="bi bi-building"></i>
           <span>Manage Partner</span>
         </a>
-      </li> -->
-      <!-- End Profile Page Nav -->
+      </li><!-- End Profile Page Nav -->
     @else
       <li class="nav-item">
         <a class="nav-link {{ $sidebarTitle === 'Partner' ? '':'collapsed'  }}" href="{{ url('dashboard') }}">
@@ -55,7 +60,7 @@
           <i class="bi bi-building"></i>
           <span>Destinasi</span>
         </a>
-      <!-- </li>
+      </li>
       <li class="nav-item">
         <a class="nav-link {{ $sidebarTitle === 'Komentar' ? '':'collapsed'  }}" href="{{ route('partner') }}">
           <i class="bi bi-building"></i>
@@ -67,7 +72,7 @@
           <i class="bi bi-building"></i>
           <span>Laporan Pengunjung</span>
         </a>
-      </li> -->
+      </li>
     @endif
 
   </ul>

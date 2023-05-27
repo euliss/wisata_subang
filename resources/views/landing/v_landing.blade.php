@@ -60,6 +60,7 @@
                 @endforeach
               </div>
             </li>
+            <li class="nav-item"><a href="/about" class="nav-link"><span>About</span></a></li>
             <li class="nav-item"><a href="/register" class="nav-link"><span>Register</span></a></li>
             <li class="nav-item"><a href="/login" class="nav-link"><span>Login</span></a></li>
           </ul>

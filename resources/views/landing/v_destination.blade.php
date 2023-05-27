@@ -73,12 +73,13 @@
       <div class="home-slider owl-carousel">
 
         @foreach(explode('|', $destination->image) as $image)
+        @if($image != "")
         <div class="slider-item">
           <div class="overlay"></div>
           <div class="container-fluid p-0">
             <div class="row d-md-flex no-gutters slider-text align-items-center justify-content-end" data-scrollax-parent="true">
               <div class="one-third order-md-last">
-                <div class="img" style="background-image:url(<?= asset('ecoland/images/'.$image) ?>);">
+                <div class="img" style="background-image:url(<?= asset('images/destinations/'.$image) ?>);">
                   <div class="overlay"></div>
                 </div>
               </div>
@@ -92,6 +93,7 @@
             </div>
           </div>
         </div>
+        @endif
         @endforeach
 
       </div>
@@ -107,7 +109,7 @@
               <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-manager"></span></div>
               <div class="media-body">
                 <h2>Kontak Destinasi</h2>
-                <h3 class="heading mb-3">{{ $destination->contact }}</h3>
+                <a target="_blank" href="https://wa.me/{{ $destination->contact }}" class="heading mb-3 text-dark" style="font-size:20px">{{ $destination->contact }}</a>
               </div>
             </div>      
           </div>
@@ -120,11 +122,11 @@
         <div class="row">
 
           <div class="col-md-12 tour-wrap">
-            <?= $destination->location ?>
+            <iframe src="<?= $destination->location ?>" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           </div>
           <div class="col-md-12 tour-wrap">
             <div class="pt-5 mt-5">
-              <h3 class="mb-5">6 Komentar</h3>
+              <h3 class="mb-5">{{ count($comments) }} Komentar</h3>
               <ul class="comment-list">
 
                 @foreach($comments as $val)

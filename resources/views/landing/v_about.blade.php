@@ -60,6 +60,7 @@
                 @endforeach
               </div>
             </li>
+            <li class="nav-item"><a href="/about" class="nav-link"><span>About</span></a></li>
             <li class="nav-item"><a href="/register" class="nav-link"><span>Register</span></a></li>
             <li class="nav-item"><a href="/login" class="nav-link"><span>Login</span></a></li>
           </ul>
@@ -67,41 +68,94 @@
       </div>
     </nav>
 
-    <section class="ftco-section">
+    <section class="ftco-section bg-light" id="blog-section">
       <div class="container">
-        <div class="row justify-content-center pb-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-            <h2 class="mb-4">{{ $category->categories_name }}</h2>
+        <div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <span class="subheading">Article</span>
+            <h2 class="mb-4">Our Article</h2> 
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
           </div>
         </div>
-        <div class="row">
-
-          @foreach($destination_category as $val)
-          <div class="col-md-6 col-lg-4 ftco-animate">
-            <div class="project">
-              <div class="img">
-                <a href="{{ url('destination/'.$val->id) }}"><img src="{{ asset('images/destinations/'.explode('|', $val->image)[1]) }}" class="" alt="Colorlib Template" width="100%" height="300"></a>
-              </div>
-              <div class="text">
-                <h3><a href="{{ url('destination/'.$val->id) }}">{{ $val->name }}</a></h3>
-                <div class="star d-flex clearfix">
-                  <div class="mr-auto float-left">
-                    <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
+        <div class="row d-flex">
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="blog-entry justify-content-end">
+              <a href="single.html" class="block-20" style="background-image: url('<?= asset('ecoland/images/image_1.jpg') ?>');">
+              </a>
+              <div class="text float-right d-block">
+                <div class="d-flex align-items-center pt-2 mb-4 topp">
+                  <div class="one mr-2">
+                    <span class="day">12</span>
                   </div>
-                  <div class="float-right">
-                    <span class="rate"><a href="#">(6)</a></span>
+                  <div class="two">
+                    <span class="yr">2019</span>
+                    <span class="mos">april</span>
                   </div>
+                </div>
+                <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <div class="d-flex align-items-center mt-4 meta">
+                  <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                  <p class="ml-auto mb-0">
+                    <a href="#" class="mr-2">Admin</a>
+                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          @endforeach
-
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="blog-entry justify-content-end">
+              <a href="single.html" class="block-20" style="background-image: url('<?= asset('ecoland/images/image_2.jpg') ?>');">
+              </a>
+              <div class="text float-right d-block">
+                <div class="d-flex align-items-center pt-2 mb-4 topp">
+                  <div class="one mr-2">
+                    <span class="day">12</span>
+                  </div>
+                  <div class="two">
+                    <span class="yr">2019</span>
+                    <span class="mos">april</span>
+                  </div>
+                </div>
+                <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <div class="d-flex align-items-center mt-4 meta">
+                  <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                  <p class="ml-auto mb-0">
+                    <a href="#" class="mr-2">Admin</a>
+                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="blog-entry">
+              <a href="single.html" class="block-20" style="background-image: url('<?= asset('ecoland/images/image_3.jpg') ?>');">
+              </a>
+              <div class="text float-right d-block">
+                <div class="d-flex align-items-center pt-2 mb-4 topp">
+                  <div class="one mr-2">
+                    <span class="day">12</span>
+                  </div>
+                  <div class="two">
+                    <span class="yr">2019</span>
+                    <span class="mos">april</span>
+                  </div>
+                </div>
+                <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <div class="d-flex align-items-center mt-4 meta">
+                  <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                  <p class="ml-auto mb-0">
+                    <a href="#" class="mr-2">Admin</a>
+                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -189,8 +243,59 @@
         </div>
       </div>
     </section>
+    
+    <section class="ftco-section ftco-no-pt ftco-no-pb">
+      <div id="map" class="bg-white"></div>
+    </section>
 
-
+    <section class="ftco-gallery">
+      <div class="container-fluid px-0">
+        <div class="row no-gutters">
+          <div class="col-md-4 col-lg-2 ftco-animate">
+            <a href="images/gallery-1.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/gallery-1.jpg);">
+              <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                <span class="icon-instagram"></span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-lg-2 ftco-animate">
+            <a href="images/gallery-2.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/gallery-2.jpg);">
+              <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                <span class="icon-instagram"></span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-lg-2 ftco-animate">
+            <a href="images/gallery-3.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/gallery-3.jpg);">
+              <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                <span class="icon-instagram"></span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-lg-2 ftco-animate">
+            <a href="images/gallery-4.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/gallery-4.jpg);">
+              <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                <span class="icon-instagram"></span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-lg-2 ftco-animate">
+            <a href="images/gallery-5.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/gallery-5.jpg);">
+              <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                <span class="icon-instagram"></span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-lg-2 ftco-animate">
+            <a href="images/gallery-6.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/gallery-6.jpg);">
+              <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                <span class="icon-instagram"></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
     <footer class="ftco-footer ftco-section">
       <div class="container">
         <div class="row mb-5">
