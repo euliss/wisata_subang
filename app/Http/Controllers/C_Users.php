@@ -61,10 +61,9 @@ class C_Users extends Controller
         $data = [
             'name' => Request()->name,
             'email' => Request()->email,
-            'role' => Request()->role,
             'status' => Request()->status,
             'password' => Hash::make(Request()->password),
-            'level' => 1,
+                'level' => Request()->role,
             'photo' => $fileName,
         ];
 
@@ -131,10 +130,9 @@ class C_Users extends Controller
             $data = [
                 'name' => Request()->name,
                 'email' => Request()->email,
-                'role' => Request()->role,
                 'status' => Request()->status,
                 'password' => Hash::make(Request()->password),
-                'level' => 1,
+                'level' => Request()->role,
                 'photo' => $fileName,
             ];
             $this->M_Users->edit($id_user, $data);
@@ -143,10 +141,9 @@ class C_Users extends Controller
             $data = [
                 'name' => Request()->name,
                 'email' => Request()->email,
-                'role' => Request()->role,
                 'status' => Request()->status,
                 'password' => Hash::make(Request()->password),
-                'level' => 1,
+                'level' => Request()->role,
             ];
             $this->M_Users->edit($id_user, $data);
         }
