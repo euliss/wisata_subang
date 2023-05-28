@@ -89,7 +89,7 @@ Data Destinations
 </main>
 
 {{-- Modal Delete --}}
-@foreach ($destinations as $item)
+@foreach ($data as $item)
 <div class="modal fade" id="delete{{$item->id}}" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
