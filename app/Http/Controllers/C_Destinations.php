@@ -16,7 +16,6 @@ class C_Destinations extends Controller
             'sidebarTitle' => 'Destinations',
             'destinations' => DB::table('destinations')
                 ->join('user_destinations', 'user_destinations.id_destination', '=', 'destinations.id')
-                ->where('status',1)
                 ->whereRaw('user_destinations.id_user = '.auth()->user()->id)
                 ->get(),
             'destination_all' => DB::table('destinations')->get()
@@ -50,7 +49,7 @@ class C_Destinations extends Controller
             $filename .= "|".$file->getClientOriginalName();
         }
 
-        DB::table('destinations')->insert([
+        $id_destination = DB::table('destinations')->insertGetId([
             'id_category' => $request->id_category,
             'name' => $request->name,
             'description' => $request->description,
@@ -59,7 +58,12 @@ class C_Destinations extends Controller
             'status' => '0',
             'image' => $filename,
         ]);
-        return redirect()->route('destinations')->with('pesan', 'Data Saved Successfully !');
+
+        DB::table('user_destinations')->insert([
+            'id_user' => auth()->user()->id,
+            'id_destination' => $id_destination,
+        ]);
+        return redirect()->route('destinations')->with('pesan', 'Data Berhasil Ditambahkan!');
     }
 
     public function edit($id){
@@ -179,6 +183,7 @@ class C_Destinations extends Controller
             'id_destination' => $id_destination,
             'count' => $request->count,
             'content' => $request->content,
+            'date' => $request->date,
         ]);
         return redirect('reports-destination/'.$id_destination)->with('pesan', 'Data Saved Successfully !');
     }
@@ -197,6 +202,7 @@ class C_Destinations extends Controller
         DB::table('reports')->where('id',$id)->update([
             'count' => $request->count,
             'content' => $request->content,
+            'date' => $request->date,
         ]);
         return redirect('reports-destination/'.$id_destination)->with('pesan', 'Data Updated Successfully !');
     }

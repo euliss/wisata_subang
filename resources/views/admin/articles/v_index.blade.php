@@ -42,7 +42,8 @@ Data Articles
                   <th>No</th>
                   <th>Title</th>
                   <th width="50%">Description</th>
-                  <th width="15%">Action</th>
+                  <th>Image</th>
+                  <th width="10%">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -53,7 +54,10 @@ Data Articles
                     <td>{{ $item->title }}</td>
                     <td>{{ $item->description }}</td>
                     <td>
-                      <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#detail{{$item->id}}"><i class="bi bi-eye"></i></button>
+                      <img src="{{asset('images/articles/'.$item->image)}}" width="200px">
+                    </td>
+                    <td>
+                      <!-- <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#detail{{$item->id}}"><i class="bi bi-eye"></i></button> -->
                       <a href="/edit-articles/{{$item->id}}" class="btn btn-success"><i class="bi bi-pencil"></i></a>
                       <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$item->id}}"><i class="bi bi-trash"></i></button>
                     </td>

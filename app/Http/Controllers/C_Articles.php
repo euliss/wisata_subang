@@ -32,9 +32,13 @@ class C_Articles extends Controller
 
     public function insert(Request $request)
     {
+        $files = $request->file('image');
+        $files->move('images/articles',$files->getClientOriginalName());
+        $filename = $file->getClientOriginalName();
         DB::table('articles')->insert([
             'title'   => $request->title,
             'description'   => $request->description,
+            'image'   => $filename,
         ]);
         return redirect()->route('articles')->with('pesan', 'Data Saved Successfully !');
     }
@@ -51,9 +55,13 @@ class C_Articles extends Controller
 
     public function update($id, Request $request)
     {
+        $files = $request->file('image');
+        $files->move('images/articles',$files->getClientOriginalName());
+        $filename = $files->getClientOriginalName();
         DB::table('articles')->where('id',$id)->update([
             'title'   => $request->title,
             'description'   => $request->description,
+            'image'   => $filename,
         ]);
         return redirect()->route('articles')->with('pesan', 'Data Updated Successfully !');
     }

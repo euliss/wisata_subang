@@ -35,19 +35,7 @@
           <i class="bi bi-intersect"></i>
           <span>Manage Categories</span>
         </a>
-      </li><!-- End Profile Page Nav -->
-      <li class="nav-item">
-        <a class="nav-link {{ $sidebarTitle === 'News' ? '':'collapsed'  }}" href="{{ route('news') }}">
-          <i class="bi bi-boxes"></i>
-          <span>Manage News</span>
-        </a>
-      </li><!-- End Profile Page Nav -->
-      <li class="nav-item">
-        <a class="nav-link {{ $sidebarTitle === 'Partner' ? '':'collapsed'  }}" href="{{ route('partner') }}">
-          <i class="bi bi-building"></i>
-          <span>Manage Partner</span>
-        </a>
-      </li><!-- End Profile Page Nav -->
+      </li>
     @else
       <li class="nav-item">
         <a class="nav-link {{ $sidebarTitle === 'Partner' ? '':'collapsed'  }}" href="{{ url('dashboard') }}">
@@ -59,18 +47,6 @@
         <a class="nav-link {{ $sidebarTitle === 'Destinasi' ? '':'collapsed'  }}" href="{{ url('destinations') }}">
           <i class="bi bi-building"></i>
           <span>Destinasi</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link {{ $sidebarTitle === 'Komentar' ? '':'collapsed'  }}" href="{{ route('partner') }}">
-          <i class="bi bi-building"></i>
-          <span>Komentar</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link {{ $sidebarTitle === 'Laporan Pengunjung' ? '':'collapsed'  }}" href="{{ route('partner') }}">
-          <i class="bi bi-building"></i>
-          <span>Laporan Pengunjung</span>
         </a>
       </li>
     @endif

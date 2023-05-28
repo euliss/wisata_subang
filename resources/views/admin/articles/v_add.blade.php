@@ -28,25 +28,19 @@ Add Product
           </div>
           <div class="card-body">
             <!-- Multi Columns Form -->
-            <form class="row g-3" action="/insert-articles" method="POST">
+            <form class="row g-3" action="/insert-articles" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="col-md-12">
                 <label for="inputName5" class="form-label">Title</label>
                 <input type="text" class="form-control" id="inputName5" name="title" value="{{ old('title')}}" placeholder="Enter Title...">
-                <div class="text-danger">
-                @error('title')
-                  {{ $message}}
-                @enderror
-                </div>
               </div>
               <div class="col-md-12">
                 <label for="inputState" class="form-label">Description</label>
-                <textarea name="description" class="form-control" cols="30" rows="5"></textarea>
-                <div class="text-danger">
-                  @error('description')
-                    {{ $message}}
-                  @enderror
-                </div>
+                <textarea name="description" class="form-control" cols="30" rows="5" id="summernote" ></textarea>
+              </div>
+              <div class="col-md-12">
+                <label for="inputName5" class="form-label">Image</label>
+                <input required type="file" class="form-control" id="inputName5" name="image" value="{{ old('title')}}" >
               </div>
               <div class="text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>

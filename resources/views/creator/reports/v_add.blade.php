@@ -32,12 +32,16 @@ Add Reports
               @csrf
 
                 <div class="form-group">
-                  <label for="email">Visitor Count </label>
-                  <input required type="text" class="form-control" name="count">
+                  <label for="email">Jumlah </label>
+                  <input required type="number" class="form-control" name="count">
                 </div>
                 <div class="form-group">
                   <label for="message">Content</label>
                   <textarea required name="content" cols="10" rows="2" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="email">Date </label>
+                  <input required type="date" class="form-control" name="date">
                 </div>
 
               <div class="text-center mt-5">

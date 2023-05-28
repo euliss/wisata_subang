@@ -45,7 +45,7 @@ Add Destinations
               </div>
               <div class="col-md-6">
                 <label>Description</label>
-                <textarea required class="form-control" name="description" ></textarea>
+                <textarea required class="form-control" name="description" id="summernote" ></textarea>
               </div>
               <div class="col-md-6">
                 <label>Location</label>

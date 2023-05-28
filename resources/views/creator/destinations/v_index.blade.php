@@ -26,9 +26,7 @@ Data Destinations
         <div class="card p-3">
           <div class="card-header">
             <h3 class="card-title">Data Destinations</h3>
-            @if(auth()->user()->level == 2)
             <a href="/add-destinations" class="btn btn-primary" style="float: right"><i class="bi bi-plus-circle-fill"></i> Add Data</a>
-            @endif
           </div>
           <!-- /.card-header -->
           <div class="card-body">

@@ -41,8 +41,9 @@ Data Report
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>Visitor Count</th>
+                  <th>Jumlah</th>
                   <th>Content</th>
+                  <th>Tanggal</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -53,6 +54,7 @@ Data Report
                     <td>{{ $no++ }}</td>
                     <td>{{ $item->count }}</td>
                     <td>{{ $item->content }}</td>
+                    <td>{{ $item->date }}</td>
                     <td>
                       <a href="/edit-reports/{{$item->id}}" class="btn btn-success"><i class="bi bi-pencil"></i></a>
                       <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$item->id}}"><i class="bi bi-trash"></i></button>

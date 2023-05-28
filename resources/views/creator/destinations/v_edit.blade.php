@@ -45,7 +45,7 @@ Edit Destination
               </div>
               <div class="col-md-6">
                 <label class="form-label">Description</label>
-                <textarea class="form-control" name="description">{{$destinations->description}}</textarea>
+                <textarea class="form-control" name="description" id="summernote">{{$destinations->description}}</textarea>
               </div>
               <div class="col-md-6">
                 <label class="form-label">Location</label>

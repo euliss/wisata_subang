@@ -75,12 +75,5 @@ class RegisterController extends Controller
             'level' => '2',
             'password' => $password,
         ]);
-        try{
-            Mail::to($data['email'])->send(new VerificationMail($password,$data['email']));
-        }
-        catch(\Exception $e){
-            dd($e)
-        }
-        // return redirect('register')->with('pesan', 'Cek Email Anda Untuk Verifikasi Email');
     }
 }

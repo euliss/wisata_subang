@@ -32,11 +32,16 @@ Edit Report
               @csrf
 
                 <div class="form-group">
-                  <label for="name">Visitor Count</label>
-                  <input required type="text" class="form-control" value="{{ $report->count }}" name="count">
+                  <label for="name">Jumlah</label>
+                  <input required type="number" class="form-control" value="{{ $report->count }}" name="count">
+                </div>
                 <div class="form-group">
                   <label for="message">Content</label>
                   <textarea required name="content" cols="10" rows="2" class="form-control">{{ $report->content }}</textarea>
+                </div>
+                <div class="form-group">
+                  <label for="name">Tanggal</label>
+                  <input required type="date" class="form-control" value="{{ $report->date }}" name="date">
                 </div>
 
               <div class="text-center mt-4">
