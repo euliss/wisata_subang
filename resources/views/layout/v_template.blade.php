@@ -19,24 +19,24 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="{{ asset('layout') }}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="{{ asset('layout') }}/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="{{ asset('layout') }}/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="{{ asset('layout') }}/assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="{{ asset('layout') }}/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="{{ asset('layout') }}/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="{{ asset('layout') }}/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="{{ asset('layout/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('layout/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('layout/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('layout/assets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
+  <link href="{{ asset('layout/assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
+  <link href="{{ asset('layout/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+  <link href="{{ asset('layout/assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
 
    <!-- DataTables -->
-   <link rel="stylesheet" href="{{asset('template')}}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-   <link rel="stylesheet" href="{{asset('template')}}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-   <link rel="stylesheet" href="{{asset('template')}}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+   <link rel="stylesheet" href="{{asset('template/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+   <link rel="stylesheet" href="{{asset('template/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+   <link rel="stylesheet" href="{{asset('template/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
 
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('template') }}/plugins/summernote/summernote-bs4.min.css">
 
   <!-- Template Main CSS File -->
-  <link href="{{ asset('layout') }}/assets/css/style.css" rel="stylesheet">
+  <link href="{{ asset('layout/assets/css/style.css') }}" rel="stylesheet">
 
   <style>
     .sidebar-img {
@@ -100,37 +100,37 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="{{ asset('layout') }}/assets/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="{{ asset('layout') }}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="{{ asset('layout') }}/assets/vendor/chart.js/chart.min.js"></script>
-  <script src="{{ asset('layout') }}/assets/vendor/echarts/echarts.min.js"></script>
-  <script src="{{ asset('layout') }}/assets/vendor/quill/quill.min.js"></script>
-  <script src="{{ asset('layout') }}/assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="{{ asset('layout') }}/assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="{{ asset('layout') }}/assets/vendor/php-email-form/validate.js"></script>
+  <script src="{{ asset('layout/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
+  <script src="{{ asset('layout/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('layout/assets/vendor/chart.js/chart.min.js') }}"></script>
+  <script src="{{ asset('layout/assets/vendor/echarts/echarts.min.js') }}"></script>
+  <script src="{{ asset('layout/assets/vendor/quill/quill.min.js') }}"></script>
+  <script src="{{ asset('layout/assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
+  <script src="{{ asset('layout/assets/vendor/tinymce/tinymce.min.js') }}"></script>
+  <script src="{{ asset('layout/assets/vendor/php-email-form/validate.js') }}"></script>
   <!-- Template Main JS File -->
-  <script src="{{ asset('layout') }}/assets/js/main.js"></script>
+  <script src="{{ asset('layout/assets/js/main.js') }}"></script>
 
   <!-- jQuery -->
-  <script src="{{asset('template')}}/plugins/jquery/jquery.min.js"></script>
+  <script src="{{asset('template/plugins/jquery/jquery.min.js')}}"></script>
   <!-- DataTables  & Plugins -->
-  <script src="{{asset('template')}}/plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="{{asset('template')}}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="{{asset('template')}}/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-  <script src="{{asset('template')}}/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-  <script src="{{asset('template')}}/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-  <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-  <script src="{{asset('template')}}/plugins/jszip/jszip.min.js"></script>
-  <script src="{{asset('template')}}/plugins/pdfmake/pdfmake.min.js"></script>
-  <script src="{{asset('template')}}/plugins/pdfmake/vfs_fonts.js"></script>
-  <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-  <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-  <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+  <script src="{{asset('template/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+  <script src="{{asset('template/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+  <script src="{{asset('template/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+  <script src="{{asset('template/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+  <script src="{{asset('template/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+  <script src="{{asset('template/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
+  <script src="{{asset('template/plugins/jszip/jszip.min.js')}}"></script>
+  <script src="{{asset('template/plugins/pdfmake/pdfmake.min.js')}}"></script>
+  <script src="{{asset('template/plugins/pdfmake/vfs_fonts.js')}}"></script>
+  <script src="{{asset('template/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
+  <script src="{{asset('template/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
+  <script src="{{asset('template/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
 
   <!-- Bootstrap 4 -->
-  <script src="{{ asset('template') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ asset('template/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <!-- Summernote -->
-  <script src="{{ asset('template') }}/plugins/summernote/summernote-bs4.min.js"></script>
+  <script src="{{ asset('template/plugins/summernote/summernote-bs4.min.js') }}"></script>
   
   <!-- Page specific script -->
   <script>
