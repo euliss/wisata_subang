@@ -86,7 +86,7 @@
               <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
                 <div class="text">
                   <h1 class="mb-4 mt-3">{{ $destination->name }}</h1>
-                  <p>{{ $destination->description }}</p>
+                  <p><?= $destination->description ?></p>
                   
                 </div>
               </div>
