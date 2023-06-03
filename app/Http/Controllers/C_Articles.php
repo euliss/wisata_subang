@@ -55,13 +55,13 @@ class C_Articles extends Controller
 
     public function update($id, Request $request)
     {
-        $files = $request->file('image');
+        $files = $request->file('images');
         $files->move('images/articles',$files->getClientOriginalName());
         $filename = $files->getClientOriginalName();
         DB::table('articles')->where('id',$id)->update([
             'title'   => $request->title,
             'description'   => $request->description,
-            'image'   => $filename,
+            'images'   => $filename,
         ]);
         return redirect()->route('articles')->with('pesan', 'Data Updated Successfully !');
     }
