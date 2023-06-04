@@ -33,6 +33,7 @@ Auth::routes();
 Route::get('/', [C_Landing::class, 'index'])->name('landing');
 Route::get('/about', [C_Landing::class, 'about']);
 Route::get('/category/{id}', [C_Landing::class, 'category']);
+Route::get('/destination_search', [C_Landing::class, 'destination_search']);
 Route::get('/destination/{id}', [C_Landing::class, 'destination']);
 
 Route::get('/registrasi-user', [HomeController::class, 'registrasi']);

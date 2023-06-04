@@ -23,8 +23,9 @@ class C_Landing extends Controller
             'heroTitle'     => 'Home',
             'partner'       => $this->M_Partner->allData(),
             'destinations'   => DB::table('destinations')->where('status',1)->get() ,
-            'categories'   => DB::table('categories')->get() ,
+            'categories'   => DB::table('categories')->limit(5)->get() ,
             'news'       => $this->M_News->getLimit(3, 'Aktif'),
+            'articles'       => DB::table('articles')->limit(3)->get(),
         ];
 
         return view('landing/v_landing', $data);
@@ -45,17 +46,41 @@ class C_Landing extends Controller
 
     public function category($id)
     {
+        $destination_category = DB::table('destinations')
+            ->select('destinations.*')
+            ->selectRaw("sum(reports.count) as count")
+            ->leftJoin('reports',"reports.id_destination","=","destinations.id")
+            ->where('status',1)
+            ->where('id_category', $id)
+            ->groupBy('count')
+            ->orderBy('count','desc')
+            ->get();
+
         $data = [
             'heroTitle'     => 'Kategori',
             'categories'   => DB::table('categories')->get() ,
             'category'   => DB::table('categories')->where('id_categories', $id)->first() ,
             'partner'       => $this->M_Partner->allData(),
             'destinations'   => DB::table('destinations')->where('status',1)->get() ,
-            'destination_category'   => DB::table('destinations')->where('status',1)->where('id_category', $id)->get() ,
+            'destination_category'   => $destination_category ,
             'news'       => $this->M_News->getLimit(3, 'Aktif'),
         ];
 
         return view('landing/v_category', $data);
+    }
+
+    public function destination_search(Request $request)
+    {
+        $data = [
+            'heroTitle'     => 'Landing Page',
+            'categories'   => DB::table('categories')->get() ,
+            'partner'       => $this->M_Partner->allData(),
+            'destination'   => DB::table('destinations')->where('status',1)->where('name','like','%'.$request->name.'%')->get() ,
+            'destinations'   => DB::table('destinations')->where('status',1)->get() ,
+            'news'       => $this->M_News->getLimit(3, 'Aktif'),
+        ];
+
+        return view('landing/v_destination_search', $data);
     }
 
     public function destination($id)
