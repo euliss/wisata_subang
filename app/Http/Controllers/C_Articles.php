@@ -34,7 +34,7 @@ class C_Articles extends Controller
     {
         $files = $request->file('image');
         $files->move('images/articles',$files->getClientOriginalName());
-        $filename = $file->getClientOriginalName();
+        $filename = $files->getClientOriginalName();
         DB::table('articles')->insert([
             'title'   => $request->title,
             'description'   => $request->description,

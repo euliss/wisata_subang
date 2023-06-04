@@ -52,7 +52,7 @@ Data Articles
                   <tr>
                     <td>{{ $no++ }}</td>
                     <td>{{ $item->title }}</td>
-                    <td>{{ $item->description }}</td>
+                    <td><?= $item->description ?></td>
                     <td>
                       <img src="{{asset('images/articles/'.$item->image)}}" width="200px">
                     </td>
