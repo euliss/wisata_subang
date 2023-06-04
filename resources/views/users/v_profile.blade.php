@@ -121,6 +121,11 @@ My Profile
                 </div>
 
                 <div class="row">
+                  <div class="col-lg-3 col-md-4 label">NIK</div>
+                  <div class="col-lg-9 col-md-8">{{ $user->nik }}</div>
+                </div>
+
+                <div class="row">
                   <div class="col-lg-3 col-md-4 label">Role</div>
                   <div class="col-lg-9 col-md-8">
                     <?php if (Auth::user()->level == 1) { ?>
@@ -159,6 +164,15 @@ My Profile
                     <input type="email" class="form-control" id="inputEmail5" name="email" value="{{$user->email}}" placeholder="Enter Email Adress...">
                     <div class="text-danger">
                       @error('email')
+                        {{ $message}}
+                      @enderror 
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="inputnik" class="form-label">NIK</label>
+                    <input type="number" class="form-control" id="inputnik" name="nik" value="{{$user->nik}}" placeholder="Enter NIK Adress...">
+                    <div class="text-danger">
+                      @error('nik')
                         {{ $message}}
                       @enderror 
                     </div>

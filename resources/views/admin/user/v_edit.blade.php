@@ -49,6 +49,15 @@ Edit User
                 </div>
               </div>
               <div class="col-md-6">
+                <label for="inputNIK" class="form-label">NIK</label>
+                <input type="number" class="form-control" id="inputNIK" name="nik" value="{{$user->nik}}" placeholder="Enter NIK Adress...">
+                <div class="text-danger">
+                  @error('nik')
+                    {{ $message}}
+                  @enderror 
+                </div>
+              </div>
+              <div class="col-md-6">
                 <label for="inputPassword5" class="form-label">Password</label>
                 <input type="password" class="form-control" id="inputPassword5" name="password" placeholder="Enter Password...">
                 <div class="text-danger">

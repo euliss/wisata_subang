@@ -49,6 +49,15 @@ Add User
                 </div>
               </div>
               <div class="col-md-6">
+                <label for="inputNik" class="form-label">NIK</label>
+                <input type="number" class="form-control" id="inputNik" name="nik" value="{{ old('nik')}}" placeholder="Enter NIK Adress...">
+                <div class="text-danger">
+                  @error('nik')
+                    {{ $message}}
+                  @enderror 
+                </div>
+              </div>
+              <div class="col-md-6">
                 <label for="inputPassword5" class="form-label">Password</label>
                 <input type="password" class="form-control" id="inputPassword5" name="password" value="{{ old('password')}}" placeholder="Enter Password...">
                 <div class="text-danger">

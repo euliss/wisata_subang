@@ -74,7 +74,6 @@
             @if(auth()->user())
             <li class="nav-item"><a href="/dashboard" class="nav-link"><span>Dashboard</span></a></li>
             @else
-            <li class="nav-item"><a href="/register" class="nav-link"><span>Register</span></a></li>
             <li class="nav-item"><a href="/login" class="nav-link"><span>Login</span></a></li>
             @endif
           </ul>

@@ -42,6 +42,7 @@ Data Users
                   <th>No</th>
                   <th>Full Name</th>
                   <th>Email</th>
+                  <th>NIK</th>
                   <th>Role</th>
                   <th>Status</th>
                   <th>Action</th>
@@ -54,6 +55,7 @@ Data Users
                     <td>{{ $no++ }}</td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->email }}</td>
+                    <td>{{ $item->nik }}</td>
                     <td>{{ $item->level == 1 ? 'Admin' : 'Creator' }}</td>
                     <td align="center">
                       {{ $item->status }}

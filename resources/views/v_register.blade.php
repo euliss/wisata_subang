@@ -91,6 +91,15 @@
                         @enderror
                       </div>
                     </div>
+                    <div class="col-12">
+                      <label for="nik" class="form-label">NIK</label>
+                      <div class="input-group has-validation">
+                        <input type="number" name="nik" class="form-control @error('nik') is-invalid @enderror" id="nik" value="{{ old('nik') }}" required autocomplete="nik" autofocus placeholder="Enter Your NIK">
+                        @error('nik')
+                         <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                      </div>
+                    </div>
                     <!-- <div class="col-12">
                       <label for="photo" class="form-label">Photo</label>
                       <div class="input-group has-validation">

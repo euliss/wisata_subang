@@ -41,16 +41,19 @@ class C_Users extends Controller
             'role'              => 'required',
             'status'              => 'required',
             'email'             => 'required|unique:users,email',
+            'nik'             => 'required|unique:users,nik',
             'password'          => 'required',
             'photo'             => 'required|mimes:jpg,jpeg,png,bmp|max:1024',
         ], [
             'name.required'     => 'Full Name is required !',
             'email.required'    => 'Email is required !',
+            'nik.required'    => 'nik is required !',
             'role.required'    => 'Role is required !',
             'status.required'    => 'Status is required !',
             'password.required' => 'Password is required !',
             'photo.required'    => 'Photo is required !',
             'email.unique'      => 'Email already exist !',
+            'nik.unique'      => 'nik already exist !',
             'photo.mimes'       => 'Photo is jpg, jpeg, png !',
         ]);
 
@@ -61,6 +64,7 @@ class C_Users extends Controller
         $data = [
             'name' => Request()->name,
             'email' => Request()->email,
+            'nik' => Request()->nik,
             'status' => Request()->status,
             'password' => Hash::make(Request()->password),
                 'level' => Request()->role,
@@ -103,7 +107,8 @@ class C_Users extends Controller
     {
         Request()->validate([
             'name'              => 'required',
-            'email'             => 'required',
+            'email'             => 'required|unique:users,email,'.$id_user,
+            'nik'             => 'required|unique:users,nik,'.$id_user,
             'role'             => 'required',
             'status'             => 'required',
             'password'          => 'required',
@@ -111,6 +116,7 @@ class C_Users extends Controller
         ], [
             'name.required'     => 'Full Name is required !',
             'email.required'    => 'Email is required !',
+            'nik.required'    => 'nik is required !',
             'role.required'    => 'Role is required !',
             'status.required'    => 'Status is required !',
             'password.required' => 'Password is required !',
@@ -130,6 +136,7 @@ class C_Users extends Controller
             $data = [
                 'name' => Request()->name,
                 'email' => Request()->email,
+                'nik' => Request()->nik,
                 'status' => Request()->status,
                 'password' => Hash::make(Request()->password),
                 'level' => Request()->role,
@@ -141,6 +148,7 @@ class C_Users extends Controller
             $data = [
                 'name' => Request()->name,
                 'email' => Request()->email,
+                'nik' => Request()->nik,
                 'status' => Request()->status,
                 'password' => Hash::make(Request()->password),
                 'level' => Request()->role,
@@ -182,11 +190,13 @@ class C_Users extends Controller
     {
         Request()->validate([
             'name'              => 'required',
-            'email'             => 'required',
+            'email'             => 'required|unique:users,email,'.$id_user,
+            'nik'             => 'required|unique:users,nik,'.$id_user,
             'photo'             => 'mimes:jpg,jpeg,png,bmp|max:1024',
         ], [
             'name.required'     => 'Full Name is required !',
             'email.required'    => 'Email is required !',
+            'nik.required'    => 'nik is required !',
             'photo.mimes'       => 'Photo is jpg, jpeg, png !',
         ]);
 
@@ -203,6 +213,7 @@ class C_Users extends Controller
             $data = [
                 'name' => Request()->name,
                 'email' => Request()->email,
+                'nik' => Request()->nik,
                 'photo' => $fileName,
             ];
             $this->M_Users->edit($id_user, $data);
@@ -211,6 +222,7 @@ class C_Users extends Controller
             $data = [
                 'name' => Request()->name,
                 'email' => Request()->email,
+                'nik' => Request()->nik,
             ];
             $this->M_Users->edit($id_user, $data);
         }

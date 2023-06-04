@@ -58,9 +58,31 @@ class HomeController extends Controller
     public function store_registrasi(Request $request){
         $password = Hash::make($request->password);
 
+        Request()->validate([
+            'name'              => 'required',
+            'role'              => 'required',
+            'status'              => 'required',
+            'email'             => 'required|unique:users,email',
+            'nik'               => 'required|unique:users,nik',
+            'password'          => 'required',
+            'photo'             => 'required|mimes:jpg,jpeg,png,bmp|max:1024',
+        ], [
+            'name.required'     => 'Full Name is required !',
+            'email.required'    => 'Email is required !',
+            'nik.required'      => 'NIK is required !',
+            'role.required'     => 'Role is required !',
+            'status.required'   => 'Status is required !',
+            'password.required' => 'Password is required !',
+            'photo.required'    => 'Photo is required !',
+            'email.unique'      => 'Email already exist !',
+            'nik.unique'        => 'NIK already exist !',
+            'photo.mimes'       => 'Photo is jpg, jpeg, png !',
+        ]);
+
         User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'nik' => $request->nik,
             'status' => 'non-active',
             'level' => '2',
             'password' => $password,
