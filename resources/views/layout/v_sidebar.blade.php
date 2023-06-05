@@ -20,7 +20,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link {{ $sidebarTitle === 'Destinations' ? '':'collapsed'  }}" href="{{ url('destinations') }}">
-          <i class="bi bi-layers"></i>
+          <i class="bi bi-buildin"></i>
           <span>Manage Destinations</span>
         </a>
       </li>
@@ -39,14 +39,14 @@
     @else
       <li class="nav-item">
         <a class="nav-link {{ $sidebarTitle === 'Partner' ? '':'collapsed'  }}" href="{{ url('dashboard') }}">
-          <i class="bi bi-building"></i>
+          <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link {{ $sidebarTitle === 'Destinasi' ? '':'collapsed'  }}" href="{{ url('destinations') }}">
           <i class="bi bi-building"></i>
-          <span>Destinasi</span>
+          <span>Manage Destinations</span>
         </a>
       </li>
     @endif

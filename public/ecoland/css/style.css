@@ -2652,6 +2652,19 @@ input[type="button"].btn-block {
   margin-top: 0;
   margin-right: 0.125rem; }
 
+.layout-destination{
+  margin-top: 150px;
+  margin-bottom: 30px;
+}
+.card-destination{
+  background: #FFFFFF;
+box-shadow: 1px 11px 20px rgba(0, 0, 0, 0.15);
+border-radius: 20px;
+}
+@media (max-width: 991.98px) {
+  .layout-destination {
+    margin-top: 20px} }
+
 .dropleft .dropdown-toggle::after {
   display: inline-block;
   margin-left: 0.255em;
@@ -8532,11 +8545,15 @@ h1, h2, h3, h4, h5,
           background: #fff; }
 
 .hero-wrap {
-  width: 100%;
-  height: 700px;
+  width: 110%;
+  height: 700px auto;
   position: inherit;
   background-size: cover;
   background-repeat: no-repeat; }
+  @media (max-width: 991.98px) {
+    .hero-wrap {
+      width: 100%;
+    } }
   .hero-wrap .slider-text {
     height: 700px; }
   .hero-wrap .overlay {
