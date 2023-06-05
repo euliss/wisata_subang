@@ -31,6 +31,23 @@ Data Report
           </div>
           <!-- /.card-header -->
           <div class="card-body">
+            <form action="" class="row mt-4 mb-5">
+              @csrf
+              <div class="col-sm-6">
+                <h6>Dari Tanggal</h6>
+                <input type="date" required name="dari_tanggal" class="form-control">
+              </div>
+              <div class="col-sm-6">
+                <h6>Sampai Tanggal</h6>
+                <input type="date" required name="sampai_tanggal" class="form-control">
+              </div>
+              <div class="col-sm-12 mt-3">
+                <button class="btn btn-primary" type="submit">Filter</button>
+                <a class="btn btn-secondary" href="/reports-destination/{{ Request::segment(2) }}">Reset</a>
+              </div>
+            </form>
+          </div>
+          <div class="card-body">
             <table id="example2" class="table table-bordered table-hover">
               @if (session('pesan'))
               <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
