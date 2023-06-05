@@ -20,7 +20,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link {{ $sidebarTitle === 'Destinations' ? '':'collapsed'  }}" href="{{ url('destinations') }}">
-          <i class="bi bi-buildin"></i>
+          <i class="bi bi-building"></i>
           <span>Manage Destinations</span>
         </a>
       </li>
