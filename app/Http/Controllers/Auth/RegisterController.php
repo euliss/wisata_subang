@@ -54,6 +54,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'nik'=>['required','string','nik','max:50','unique:users'],
             'password' => ['required', 'string', 'min:3', 'confirmed'],
             // 'photo' => ['required'],
         ]);
@@ -71,9 +72,12 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'nik'=> $data['nik'],
             'status' => 'non-active',
             'level' => '2',
             'password' => $password,
         ]);
+        $this->M_Users->add($data);
+        return redirect()->route('registrasi_users')->with('pesan', 'Registrasi Berhasil silahkan cek email!');
     }
 }

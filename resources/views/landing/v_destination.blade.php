@@ -4,8 +4,8 @@ Dashboard
 @extends('landing/v_header_landing')
 @section('content')
   <div class="container">
-    <div class="row mt-5">
-      <div class="col-sm-8">
+    <div class="row layout-destination">
+      <div class="col-sm-8 card-destination">
         <section class="hero-wrap" style="background-image: url('landing/images/destination-single.jpg');" data-stellar-background-ratio="0.5">
           <div class="home-slider owl-carousel">
 
@@ -69,7 +69,7 @@ Dashboard
                   
                   <div class="comment-form-wrap pt-5">
                     <h3 class="mb-5">Tinggalkan Komentar</h3>
-                    <form action="{{ url('store-comment/'.$destination->id) }}" method="post" class="p-5 bg-dark text-white">
+                    <form action="{{ url('store-comment/'.$destination->id) }}" method="post" class="p-5 bg-light text-grey">
                       @csrf
                       <div class="form-group">
                         <label for="name">Name *</label>
