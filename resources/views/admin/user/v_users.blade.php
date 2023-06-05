@@ -75,8 +75,10 @@ Data Users
                     </td> -->
                     <td>
                       @if (Auth::user()->id === $item->id)
-                        <button style="margin:0 4px" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-info"><i class="bi bi-pencil"></i></button>
                       @else
+                        @if ($item->level == 2)
+                          <a href="/destinations-user/{{$item->id}}" class="btn btn-warning mb-1">Destinasi</a>
+                        @endif
                         <a href="/edit-user/{{$item->id}}" class="btn btn-success"><i class="bi bi-pencil"></i></a>
                       @endif
                       @if (Auth::user()->id === $item->id)

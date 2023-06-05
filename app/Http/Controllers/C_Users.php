@@ -89,20 +89,6 @@ class C_Users extends Controller
         return view('admin/user/v_edit', $data);
     }
 
-    public function detail($id_user)
-    {
-        if (!$this->M_Users->detail($id_user)) {
-            abort(404);
-        }
-
-        $data = [
-            'sidebarTitle' => 'Users',
-            'user' => $this->M_Users->detail($id_user)
-        ];
-
-        return view('admin/user/v_detail', $data);
-    }
-
     public function update($id_user)
     {
         Request()->validate([
@@ -157,6 +143,20 @@ class C_Users extends Controller
         }
 
         return redirect()->route('users')->with('pesan', 'Data Updated Successfully !');
+    }
+
+    public function detail($id_user)
+    {
+        if (!$this->M_Users->detail($id_user)) {
+            abort(404);
+        }
+
+        $data = [
+            'sidebarTitle' => 'Users',
+            'user' => $this->M_Users->detail($id_user)
+        ];
+
+        return view('admin/user/v_detail', $data);
     }
 
     public function delete($id_user)
@@ -254,5 +254,37 @@ class C_Users extends Controller
         // } else {
         //     return redirect()->route('profile')->with('notPassword', 'Current Password Wrong !');
         // }
+    }
+
+    public function destination_edit($id_user)
+    {
+        if (!$this->M_Users->detail($id_user)) {
+            abort(404);
+        }
+
+        $data = [
+            'sidebarTitle' => 'Users',
+            'user' => $this->M_Users->detail($id_user),
+            'destinations' => DB::table('destinations')->where('status',1)->get(),
+            'user_destinations' => DB::table('user_destinations')->where('id_user',$id_user)->get()
+        ];
+
+        return view('admin/user/v_edit_destination', $data);
+    }
+
+    public function destination_update($id_user, Request $request)
+    {
+        DB::table('user_destinations')->where('id_user',$id_user)->delete();
+        $data = [];
+        foreach ($request->id_destinations as $value) {
+            $data[] = [
+                'id_user' => $id_user,
+                'id_destination' => $value
+            ];
+        }
+        // dd($data);
+        DB::table('user_destinations')->insert($data);
+
+        return redirect()->route('users')->with('pesan', 'Data Updated Successfully !');
     }
 }

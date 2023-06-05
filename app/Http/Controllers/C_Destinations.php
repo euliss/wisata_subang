@@ -162,9 +162,12 @@ class C_Destinations extends Controller
     }
 
     public function reports($id_destination){
+        $data_reports = DB::table('reports')->where('id_destination',$id_destination)->get();
+        if(isset($_GET['dari_tanggal'])) $data_reports = DB::table('reports')->where('id_destination',$id_destination)->whereBetween('date',[$_GET['dari_tanggal'],$_GET['sampai_tanggal']])->get();
+        
         $data = [
             'sidebarTitle' => 'Reports Destination',
-            'reports' => DB::table('reports')->where('id_destination',$id_destination)->get(),
+            'reports' => $data_reports,
             'destination' => DB::table('destinations')->where('id',$id_destination)->first(),
         ];
 

@@ -19,10 +19,20 @@ class C_Landing extends Controller
 
     public function index()
     {
+        $destination_filter = DB::table('destinations')
+            ->select('destinations.*')
+            ->selectRaw("sum(reports.count) as count")
+            ->leftJoin('reports',"reports.id_destination","=","destinations.id")
+            ->where('status',1)
+            ->groupBy('count')
+            ->orderBy('count','desc')
+            ->limit(3)
+            ->get();
+
         $data = [
             'heroTitle'     => 'Home',
             'partner'       => $this->M_Partner->allData(),
-            'destinations'   => DB::table('destinations')->where('status',1)->get() ,
+            'destinations'   => $destination_filter,
             'categories'   => DB::table('categories')->limit(5)->get() ,
             'news'       => $this->M_News->getLimit(3, 'Aktif'),
             'articles'       => DB::table('articles')->limit(3)->get(),
@@ -47,13 +57,8 @@ class C_Landing extends Controller
     public function category($id)
     {
         $destination_category = DB::table('destinations')
-            ->select('destinations.*')
-            ->selectRaw("sum(reports.count) as count")
-            ->leftJoin('reports',"reports.id_destination","=","destinations.id")
             ->where('status',1)
             ->where('id_category', $id)
-            ->groupBy('count')
-            ->orderBy('count','desc')
             ->get();
 
         $data = [

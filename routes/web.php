@@ -112,6 +112,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/detail-user/{id}', [C_Users::class, 'detail']);
     Route::post('/update-user/{id}', [C_Users::class, 'update']);
     Route::get('/delete-user/{id}', [C_Users::class, 'delete']);
+    Route::get('/destinations-user/{id}', [C_Users::class, 'destination_edit']);
+    Route::post('/destinations-update-user/{id}', [C_Users::class, 'destination_update']);
 
     // partner
     Route::get('/partner', [C_Partner::class, 'index'])->name('partner');
