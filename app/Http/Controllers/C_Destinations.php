@@ -15,6 +15,7 @@ class C_Destinations extends Controller
         $data = [
             'sidebarTitle' => 'Destinations',
             'destinations' => DB::table('destinations')
+                ->select('destinations.*')
                 ->join('user_destinations', 'user_destinations.id_destination', '=', 'destinations.id')
                 ->whereRaw('user_destinations.id_user = '.auth()->user()->id)
                 ->get(),
