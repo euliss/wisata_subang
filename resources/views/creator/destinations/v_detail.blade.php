@@ -3,7 +3,7 @@ Manage Destination
 @endsection
 @extends('layout/v_template')
 @section('page')
-Edit Destination
+Detail Destination
 @endsection
 @section('content')
 <main id="main" class="main">

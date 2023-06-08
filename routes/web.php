@@ -94,6 +94,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/edit-articles/{id}', [C_Articles::class, 'edit']);
     Route::post('/update-articles/{id}', [C_Articles::class, 'update']);
     Route::get('/delete-articles/{id}', [C_Articles::class, 'delete']);
+    Route::get('/detail-articles/{id}', [C_Articles::class, 'detail']);
 
     // news
     Route::get('/news', [C_News::class, 'index'])->name('news');

@@ -7,10 +7,12 @@ use App\Models\M_Categories;
 use App\Models\M_Users;
 use App\Models\M_News;
 use App\Models\User;
+use App\Models\M_Destinations;
 use DB;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\VerificationMail;
 use Illuminate\Support\Facades\Hash;
+
 
 class HomeController extends Controller
 {
@@ -18,7 +20,7 @@ class HomeController extends Controller
     {
         $this->M_Categories = new M_Categories();
         $this->M_Users = new M_Users();
-        $this->M_News = new M_News();
+        $this->M_Destinations= new M_Destinations();
     }
 
     public function index()
@@ -27,7 +29,7 @@ class HomeController extends Controller
             'sidebarTitle' => 'Dashboard',
             'users' => $this->M_Users->numberOfUsers(),
             'categories' => $this->M_Categories->numberOfCategories(),
-            'news' => $this->M_News->getLimit(3, 'Aktif'),
+            'destinations' => $this->M_Destinations->numberOfDestinations(),
         ];
 
         if (auth()->user()->status == "non-active") {

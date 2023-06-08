@@ -60,6 +60,6 @@ class M_Products extends Model
 
     public function numberOfProducts()
     {
-        return DB::table('products')->count();
+        return DB::table('destinations')->count();
     }
 }

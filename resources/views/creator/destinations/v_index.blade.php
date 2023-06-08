@@ -54,7 +54,7 @@ Data Destinations
                   <tr>
                     <td>{{ $i+1 }}</td>
                     <td>{{ $item->name }}</td>
-                    <td>{{ $item->contact }}</td>
+                    <td>{{ $item->contact}}</td>
                     <td>{{ $item->status == 0 ? 'unactive' : 'active' }}</td>
                     <td>
                       @if(auth()->user()->level == 1)

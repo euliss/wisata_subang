@@ -77,7 +77,7 @@ Data Users
                       @if (Auth::user()->id === $item->id)
                       @else
                         @if ($item->level == 2)
-                          <a href="/destinations-user/{{$item->id}}" class="btn btn-warning mb-1">Destinasi</a>
+                          <a href="/destinations-user/{{$item->id}}" class="btn btn-warning mb-1"><i class="bi bi-building"></i></a>
                         @endif
                         <a href="/edit-user/{{$item->id}}" class="btn btn-success"><i class="bi bi-pencil"></i></a>
                       @endif

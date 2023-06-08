@@ -53,6 +53,17 @@ class C_Articles extends Controller
         return view('admin/articles/v_edit', $data);
     }
 
+    public function detail($id)
+    {
+        $data = [
+            'sidebarTitle' => 'Articles',
+            'article' => DB::table('articles')->where('id',$id)->first()
+    
+        ];
+
+        return view('admin/articles/v_detail', $data);
+    }
+
     public function update($id, Request $request)
     {
         $files = $request->file('image');

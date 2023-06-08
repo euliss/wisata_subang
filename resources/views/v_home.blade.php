@@ -66,11 +66,17 @@ Dashboard Admin
             <div class="card info-card sales-card">
 
               <div class="card-body">
-                <h5 class="card-title">Number of Products</h5>
+                <h5 class="card-title">Number of Destinations</h5>
 
                 <div class="d-flex align-items-center">
                   <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                     <i class="bi bi-layers"></i>
+                  </div>
+                  <div class="ps-3">
+                    <h6>{{ $destinations }}</h6>
+                  </div>
+                </div>
+              </div>
                   </div>
                   <div class="ps-3">
                   </div>
@@ -86,24 +92,11 @@ Dashboard Admin
               <div class="card-body">
                 <div class="row">
                   <div class="col-xxl-8 col-md-6 d-flex align-items-center justify-content-center ">
-                    <img src="{{ asset('layout') }}/assets/img/logo.png" alt="Logo" width="100px">
+                    <img src="{{ asset('layout') }}/assets/img/wisata.png" alt="Logo" width="500px">
                   </div>
                   <div class="col-xxl-4 col-md-6">
                     <div class="info-card sales-card">
 
-                      <div class="card-body">
-                        <h5 class="card-title">Number of News</h5>
-        
-                        <div class="d-flex align-items-center">
-                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                            <i class="bi bi-boxes"></i>
-                          </div>
-                          <div class="ps-3">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
 
                   <div class="col-xxl-12 col-md-12">
                     <h3><strong>Welcome {{Auth::user()->name}}</strong></h3>
@@ -124,7 +117,7 @@ Dashboard Admin
         <!-- Recent Activity -->
         <div class="card">
 
-          <div class="card-body">
+          {{-- <div class="card-body">
             <h5 class="card-title">Latest News</h5>
 
             <div class="activity">
@@ -140,7 +133,7 @@ Dashboard Admin
 
             </div>
 
-          </div>
+          </div> --}}
         </div><!-- End Recent Activity -->
       </div><!-- End Right side columns -->
 
