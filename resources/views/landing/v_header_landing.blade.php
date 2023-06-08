@@ -36,7 +36,7 @@
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
-      <div class="container">
+      <div class="container-fluid">
       <a class="navbar-brand" href="/">
         <img src="{{ asset('images/wisata.png') }}" height="80" alt="Logo"/></a>
         <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,6 +65,7 @@
               navbarNav.appendChild(li);
             });
         </script>
+        <li class="nav-item"><a href="/" class="nav-link"><span>Beranda</span></a></li>
             @foreach ($categories as $category)
               <li class="nav-item">
                 <a class="nav-link" href="{{ url('category/'.$category->id_categories) }}">{{ $category->categories_name }}</a>
