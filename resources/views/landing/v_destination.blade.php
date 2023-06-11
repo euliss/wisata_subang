@@ -33,6 +33,40 @@ Dashboard
               <div class="col-md d-flex justify-content-center align-items-center align-self-stretch ftco-animate">
                 <div class="text">
                   <h1 class="mb-4 mt-3">{{ $destination->name }}</h1>
+                  <table class="table" style="min-width:auto !important">
+                    @if(in_array($destination->id_category,[1,2,4]))
+                    <tr>
+                      <td class="bg-white p-3 rounded">Jam Operasional</td>
+                      <td class="bg-white p-3 rounded"><?= $destination->jam_operasional ?></td>
+                    </tr>
+                    @endif
+                    @if(in_array($destination->id_category,[1,2,3,4]))
+                    <tr>
+                      <td class="bg-white p-3 rounded">Harga</td>
+                      <td class="bg-white p-3 rounded"><?= $destination->harga ?></td>
+                    </tr>
+                    @endif
+                    @if(in_array($destination->id_category,[1,3,4]))
+                    <tr>
+                      <td class="bg-white p-3 rounded">Fasilitas</td>
+                      <td class="bg-white p-3 rounded"><?= $destination->fasilitas ?></td>
+                    </tr>
+                    @endif
+                    @if(in_array($destination->id_category,[2]))
+                    <tr>
+                      <td class="bg-white p-3 rounded">Menu</td>
+                      <td class="bg-white p-3 rounded"><?= $destination->menu ?></td>
+                    </tr>
+                    @endif
+                    @if(in_array($destination->id_category,[3]))
+                    <tr>
+                      <td class="bg-white p-3 rounded">Tipe Kamar</td>
+                      <td class="bg-white p-3 rounded"><?= $destination->tipe_kamar ?></td>
+                    </tr>
+                    @endif
+                  </table>
+                  <br>
+                  <h5>Deskripsi</h5>
                   <p><?= $destination->description ?></p>
                 </div>   
               </div>
@@ -105,11 +139,24 @@ Dashboard
           </div>
         </section>
       </div>
-      <div class="col-sm-4" style="margin-top: 80px;">
+      <div class="col-sm-4" style="margin-top: 80px;padding-left: 80px;">
         <form action="/destination_search" class="mt-4">
           <input type="text" class="form-control mb-2" name="name" placeholder="Input Destination">
           <button type="submit" class="btn btn-dark px-4 py-3">Search Places</button>
         </form>
+        <div class="row">
+          <h5 class="ml-3 mt-4">Rekomendasi Destinasi : </h5>
+          @foreach($recomend as $val)
+          <div class="col-sm-12 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <h5>{{ $val->name }}</h5>
+                <p style="max-height: 70px;overflow:hidden;font-size: 13px">{{ $val->description }}</p>
+              </div>
+            </div>
+          </div>
+          @endforeach
+        </div>
       </div>
     </div>
   </div>
