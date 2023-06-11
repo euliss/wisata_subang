@@ -63,13 +63,15 @@ class HomeController extends Controller
         Request()->validate([
             'name'              => 'required',
             'email'             => 'required|unique:users,email',
-            'nik'               => 'required|unique:users,nik',
-            'password'          => 'required|confirmed',
+            'nik'               => 'required|unique:users,nik|max:16',
+            'password'          => 'required|confirmed|min:8',
         ], [
             'name.required'     => 'Full Name is required !',
             'email.required'    => 'Email is required !',
             'nik.required'      => 'NIK is required !',
+            'nik.max'      => 'Maksimal input Nik is 16 Character !',
             'password.required' => 'Password is required !',
+            'password.min' => 'Minimal input password is 8 character !',
             'email.unique'      => 'Email already exist !',
             'nik.unique'        => 'NIK already exist !',
         ]);

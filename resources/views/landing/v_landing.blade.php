@@ -145,9 +145,9 @@ Dashboard
                 ?>
                 <a class="text-center" href="/destination"><img src="{{ asset('images/destinations/'.$image) }}" width="100%" style="min-height:300px;max-height: 300px;"></a>
               </div>
-              <span class="kategori">
+              {{-- <span class="kategori">
                 {{ $category->categories_name }}
-              </span>
+              </span> --}}
               <div class="text">
                 {{-- <span>{{ $value->created_at }}</span> --}}
                 <h3 class="ml-3 mt-2 mb-2"><a href="/destination">{{ $value->name}}</a></h3>

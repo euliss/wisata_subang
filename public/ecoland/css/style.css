@@ -459,6 +459,10 @@ pre {
       max-width: 1140px; } }
 
 .container-fluid {
+  background-image: url("images/.bg-landing");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;

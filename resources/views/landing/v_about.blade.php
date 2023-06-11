@@ -21,7 +21,7 @@ Dashboard
               </a>
               <div class="text float-right d-block">
                 <h3 class="heading"><a href="#">{{ $val->title }}</a></h3>
-                <p>{{ $val->description }}</p>
+                <p >{{strip_tags($val->description)}}</p>
                 <!-- <div class="d-flex align-items-center mt-4 meta">
                   <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
                   <p class="ml-auto mb-0">
