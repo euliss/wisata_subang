@@ -26,7 +26,7 @@ Data Categories
         <div class="card p-3">
           <div class="card-header">
             <h3 class="card-title">Data Categories</h3>
-            <a href="/add-categories" class="btn btn-primary" style="float: right"><i class="bi bi-plus-circle-fill"></i> Add Data</a>
+            <!-- <a href="/add-categories" class="btn btn-primary" style="float: right"><i class="bi bi-plus-circle-fill"></i> Add Data</a> -->
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -42,7 +42,7 @@ Data Categories
                   <th>No</th>
                   <th>Categories Name</th>
                   <th>Status</th>
-                  <th>Action</th>
+                  <!-- <th>Action</th> -->
                 </tr>
               </thead>
               <tbody>
@@ -52,10 +52,10 @@ Data Categories
                     <td>{{ $no++ }}</td>
                     <td>{{ $item->categories_name }}</td>
                     <td>{{ $item->status }}</td>
-                    <td>
+                    <!-- <td>
                       <a href="/edit-categories/{{$item->id_categories}}" class="btn btn-success"><i class="bi bi-pencil"></i></a>
                       <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$item->id_categories}}"><i class="bi bi-trash"></i></butt>
-                    </td>
+                    </td> -->
                   </tr>
                 @endforeach
               </tbody>

@@ -96,6 +96,15 @@ class C_Landing extends Controller
             'partner'       => $this->M_Partner->allData(),
             'destinations'   => DB::table('destinations')->where('status',1)->get() ,
             'destination'   => DB::table('destinations')->where('status',1)->where('id',$id)->first() ,
+            'recomend'   => DB::table('destinations')
+                ->select('destinations.*')
+                ->selectRaw("sum(reports.count) as count")
+                ->leftJoin('reports',"reports.id_destination","=","destinations.id")
+                ->where('status',1)
+                ->groupBy('count')
+                ->orderBy('count','desc')
+                ->limit(3)
+                ->get(),
             'comments'        => DB::table('comments')->where('id_destination',$id)->get() ,
             'news'       => $this->M_News->getLimit(3, 'Aktif'),
         ];

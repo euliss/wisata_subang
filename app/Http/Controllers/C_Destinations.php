@@ -56,6 +56,11 @@ class C_Destinations extends Controller
             'description' => $request->description,
             'location' => $request->location,
             'contact' => $request->contact,
+            'jam_operasional' => $request->jam_operasional,
+            'harga' => $request->harga,
+            'fasilitas' => $request->fasilitas,
+            'menu' => $request->menu,
+            'tipe_kamar' => $request->tipe_kamar,
             'status' => '0',
             'image' => $filename,
         ]);
@@ -90,6 +95,11 @@ class C_Destinations extends Controller
             'description' => $request->description,
             'location' => $request->location,
             'contact' => $request->contact,
+            'jam_operasional' => $request->jam_operasional,
+            'harga' => $request->harga,
+            'fasilitas' => $request->fasilitas,
+            'menu' => $request->menu,
+            'tipe_kamar' => $request->tipe_kamar,
             'status' => '0',
             'image' => $filename,
         ]);

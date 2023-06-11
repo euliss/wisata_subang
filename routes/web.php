@@ -13,6 +13,7 @@ use App\Http\Controllers\C_User;
 use App\Http\Controllers\C_Register;
 use App\Http\Controllers\C_Login;
 use App\Http\Controllers\C_Comment;
+use App\Http\Controllers\C_Reports;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 
@@ -86,6 +87,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/edit-reports/{id}', [C_Destinations::class, 'reports_edit']);
     Route::post('/update-reports/{id}', [C_Destinations::class, 'reports_update']);
     Route::get('/delete-reports/{id}', [C_Destinations::class, 'reports_delete']);
+
+    Route::get('/report/', [C_Reports::class, 'index']);
+    Route::get('/add-report', [C_Reports::class, 'add']);
+    Route::post('/store-report', [C_Reports::class, 'store']);
+    Route::get('/edit-report/{id}', [C_Reports::class, 'edit']);
+    Route::post('/update-report/{id}', [C_Reports::class, 'update']);
+    Route::get('/delete-report/{id}', [C_Reports::class, 'delete']);
 
     // articles
     Route::get('/articles', [C_Articles::class, 'index'])->name('articles');

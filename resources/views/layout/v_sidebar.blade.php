@@ -31,6 +31,12 @@
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link {{ $sidebarTitle === 'Report' ? '':'collapsed'  }}" href="{{ url('report') }}">
+          <i class="bi bi-layers"></i>
+          <span>Manage Report</span>
+        </a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link {{ $sidebarTitle === 'Categories' ? '':'collapsed'  }}" href="{{ route('categories') }}">
           <i class="bi bi-intersect"></i>
           <span>Manage Categories</span>
