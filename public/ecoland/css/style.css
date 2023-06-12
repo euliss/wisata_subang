@@ -8129,7 +8129,7 @@ h1, h2, h3, h4, h5,
         color: #fff; } }
   @media (max-width: 991.98px) {
     .text-landing{
-      margin:40% 0 0 10%;
+      margin:20% 0 0 10%;
     }
     .text-landing h1{
       font-weight: 700;
@@ -8155,7 +8155,7 @@ h1, h2, h3, h4, h5,
       padding-bottom: 2px; }
       @media (max-width: 1199.98px) {
         .text-landing{
-          margin:40% 0 0 10%;
+          margin:40px 0 10% 10%;
         }
         .text-landing h1{
           font-weight: 700;
@@ -10057,3 +10057,10 @@ border-radius: 15px;
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+@media screen and (max-width: 550px) {
+  .ftco-animate{
+    width: 50% !important;
+    margin-bottom: 20px;
+  }
+}

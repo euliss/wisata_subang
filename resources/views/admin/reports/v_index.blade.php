@@ -55,12 +55,6 @@ Manage Report
                 <a class="btn btn-secondary" href="/report">Reset</a>
               </div>
             </form>
-            <div class="row">
-              <div class="col-sm-6">
-                <h5>Grafik Jumlah Pengunjung Per Bulan</h5>
-                <canvas style="border-radius: 6px;" id="chartReport"></canvas><br><br>
-              </div>
-            </div>
           </div>
           <div class="card-body">
             <a href="/add-report" class="btn btn-primary" style="float: right"><i class="bi bi-plus-circle-fill"></i> Add Report</a>

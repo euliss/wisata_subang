@@ -95,7 +95,7 @@ class C_Users extends Controller
         Request()->validate([
             'name'              => 'required',
             'email'             => 'required|unique:users,email,'.$id_user,
-            'nik'             => 'required|unique:users,nik|max:16'.$id_user,
+            'nik'             => 'required|max:16|unique:users,nik'.$id_user,
             'role'             => 'required',
             'status'             => 'required',
             'password'          => 'required',

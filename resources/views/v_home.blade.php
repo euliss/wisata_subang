@@ -78,14 +78,20 @@ Dashboard Admin
                 </div>
               </div>
                   </div>
-                  <div class="ps-3">
-                  </div>
                 </div>
               </div>
 
             </div>
           </div>
           <!-- Reports -->
+          <div class="col-6 ">
+            <div class="card">
+              <div class="card-body pt-4">
+                <h5>Grafik Jumlah Pengunjung Per Bulan</h5>
+                <canvas style="border-radius: 6px;" id="chartReport"></canvas><br><br>
+              </div>
+            </div>
+          </div>
           <div class="col-12">
             <div class="card">
 
@@ -143,3 +149,44 @@ Dashboard Admin
 </main>
 @endsection
 
+@section('javascript')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script> 
+
+<script>
+
+    function getChart(){
+        Chart.defaults.global.defaultFontSize = 16;
+
+        var myBarChart = new Chart(document.getElementById("chartReport").getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: [
+                    <?php foreach($graphic as $val): ?>
+                        "<?= date("F", strtotime(date("Y-".$val->month."-d"))) ?>",
+                    <?php endforeach ?>
+                ],
+                datasets: [
+                {
+                    label : "Chart",
+                    backgroundColor: ['#ff6','#f6f','#6ff','#66f','#f66',],
+                    data: [
+                      <?php foreach($graphic as $val): ?>
+                          <?= $val->report_count ?>,
+                      <?php endforeach ?>
+                    ],
+
+                },
+                ]
+            },
+            options: {
+              legend: {
+            display: false
+         }
+            }
+        });
+    }
+
+    getChart()
+
+</script>
+@endsection

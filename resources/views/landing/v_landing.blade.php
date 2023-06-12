@@ -4,50 +4,24 @@ Dashboard
 @extends('landing/v_header_landing')
 @section('content')
     <section id="home-section" class="hero">
-      {{-- <img src="{{ asset('ecoland/images/blob-shape-3.svg') }}" class="svg-blob" alt="Colorlib Free Template"> --}}
       <div class="home-slider owl-carousel">
 
         <div class="slider-item">
-          <div class="container-fluid p-0">
-            <div class="row">
-              <div class="col-5">
+          <div class="container-fluid p-0 mx-0">
+            <div class="row mx-0">
+              <div class="col-md-5">
                 <div class="text-landing"  data-scrollax=" properties: { translateY: '70%' }">
                     <h1 class="mb-4 mt-3">Ayo Bermain Ke Kabupaten Subang</h1>
                     <p class="mb-4">Mari nikmati pesona Kabupaten Subang dengan mengunjungi berbagai macam destinasi wisata, kuliner, penginapan dan ekonomI kreatif.</p>
-                    <a href="#" class="btn-utama px-3 py-2">jelajahi</a>
-                     </span>
+                    <a href="#" class="btn-utama px-3 py-2 mb-4">jelajahi</a>
                 </div>
               </div>
-              <div class="col-7">
+              <div class="col-md-7">
                 <img src="{{ asset('ecoland/images/bg-landing.jpg') }}" class="" alt="Background Landing" width="1000" height="736px">
               </div>
             </div>
           </div>
         </div>
-        {{-- <div class="slider-item">
-          <div class="overlay"></div>
-          <div class="container-fluid p-0">
-            <div class="row d-md-flex no-gutters slider-text align-items-center justify-content-end" data-scrollax-parent="true">
-              <div class="one-third order-md-last">
-                <div class="img" style="background-image:url(<?= asset('ecoland/images/bg_1.jpg')?>);">
-                  <div class="overlay"></div>
-                </div>
-                <div class="bg-primary">
-                  <div class="vr"><span class="pl-3 py-4" style="background-image: url(<?= asset('ecoland/images/bg_1-1.jpg')?>);">_|_|_|_</span></div>
-                </div>
-              </div>
-              <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-                <div class="text">
-                  <span class="subheading pl-5">Discover Greece</span>
-                  <h1 class="mb-4 mt-3">Explore Your Travel Destinations like never before</h1>
-                  <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>
-                  
-                  <p><a href="#" class="btn btn-primary px-5 py-3 mt-3">Discover <span class="ion-ios-arrow-forward"></span></a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> --}}
 
       </div>
     </section>
@@ -64,9 +38,11 @@ Dashboard
         <div class="row">
 
           @foreach ($categories as $category)
-          <div class=" ftco-animate" style="width: 20%;">
+          <div class="ftco-animate" style="width: 20%;">
             <a href="{{ url('category/'.$category->id_categories) }}" class="media block-6 services text-center d-block">
-              <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-map-of-roads"></span></div>
+              <div class="icon justify-content-center align-items-center d-flex">
+                <img src="{{ asset($category->images) }}" width="160">
+              </div>
               <div class="media-body">
                 <h3 class="heading mb-3">{{ $category->categories_name }}</h3>
                 <p></p>
@@ -87,7 +63,7 @@ Dashboard
             <p>Temukan destinasi kemana aja yang ingin kamu kunjungi</p>
             <form action="/destination_search">
               <input type="text" class="search-box text-center mb-2 py-4" name="name" placeholder="Input Nama Destinasi">
-              <button type="submit" class="btn-utama py-2 mt-4 px-4">Cari Destinasi</button>
+              <button type="submit" class="btn-utama py-2 mt-4 px-4 mb-2">Cari Destinasi</button>
             </form>
           </div>
         </div>

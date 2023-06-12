@@ -25,11 +25,22 @@ class HomeController extends Controller
 
     public function index()
     {
+
+        $data_graphic = DB::table('reports')
+            ->select(
+                'reports.*', 
+                DB::raw('sum(reports.count) as `report_count`'), 
+                DB::raw("DATE_FORMAT(reports.date, '%m-%Y') month_year"),  
+                DB::raw('YEAR(reports.date) year, MONTH(reports.date) month')
+            )
+            ->leftJoin('destinations', 'destinations.id', '=', 'reports.id_destination')->groupby('year','month')->get();
+            
         $data = [
             'sidebarTitle' => 'Dashboard',
             'users' => $this->M_Users->numberOfUsers(),
             'categories' => $this->M_Categories->numberOfCategories(),
             'destinations' => $this->M_Destinations->numberOfDestinations(),
+            'graphic' => $data_graphic,
         ];
 
         if (auth()->user()->status == "non-active") {
