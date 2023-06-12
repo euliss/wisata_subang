@@ -89,6 +89,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/delete-reports/{id}', [C_Destinations::class, 'reports_delete']);
 
     Route::get('/report/', [C_Reports::class, 'index']);
+    Route::get('/report/export_excel', [C_Reports::class, 'export_excel']);
     Route::get('/add-report', [C_Reports::class, 'add']);
     Route::post('/store-report', [C_Reports::class, 'store']);
     Route::get('/edit-report/{id}', [C_Reports::class, 'edit']);

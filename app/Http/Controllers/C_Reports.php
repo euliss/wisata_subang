@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ReportExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use DB;
 
@@ -87,5 +89,10 @@ class C_Reports extends Controller
         DB::table('reports')->where('id',$id)->delete();
         return redirect('report/')->with('pesan', 'Data Deleted Successfully !');
     }
+
+    public function export_excel()
+	{
+		return Excel::download(new ReportExport, 'report.xlsx');
+	}
 
 }
