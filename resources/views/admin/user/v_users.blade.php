@@ -42,7 +42,7 @@ Data Users
                   <th>No</th>
                   <th>Full Name</th>
                   <th>Email</th>
-                  <th>NIK</th>
+                  {{-- <th>NIK</th> --}}
                   <th>Role</th>
                   <th>Status</th>
                   <th>Action</th>
@@ -55,7 +55,7 @@ Data Users
                     <td>{{ $no++ }}</td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->email }}</td>
-                    <td>{{ $item->nik }}</td>
+                    {{-- <td>{{ $item->nik }}</td> --}}
                     <td>{{ $item->level == 1 ? 'Admin' : 'Creator' }}</td>
                     <td align="center">
                       {{ $item->status }}
@@ -81,10 +81,13 @@ Data Users
                         @endif
                         <a href="/edit-user/{{$item->id}}" class="btn btn-success"><i class="bi bi-pencil"></i></a>
                       @endif
+                      <a href="/detail-user/{{$item->id}}" class="btn btn-info text-white"><i class="bi bi-eye"></i></a>
                       @if (Auth::user()->id === $item->id)
                         <button style="margin:0 4px" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-info"><i class="bi bi-trash"></i></button>
                       @else
                         <button style="margin:0 4px" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$item->id}}"><i class="bi bi-trash"></i></button>
+                
+                     
                       @endif
                     </td>
                   </tr>

@@ -49,6 +49,15 @@ Detail User
                 </div>
               </div>
               <div class="col-md-6">
+                <label for="inputEmail5" class="form-label">NIK</label>
+                <input disabled type="email" class="form-control" id="inputEmail5" name="nik" value="{{$user->nik}}" placeholder="Enter NIK Number...">
+                <div class="text-danger">
+                  @error('nik')
+                    {{ $message}}
+                  @enderror 
+                </div>
+              </div>
+              <div class="col-md-6">
                 <label for="inputState" class="form-label">Role</label>
                 <select disabled id="inputState" class="form-select" name="level" value="{{$user->level}}" placeholder="Enter Role...">
                   <option value="">Pilih Role</option>

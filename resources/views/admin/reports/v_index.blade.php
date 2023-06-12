@@ -63,6 +63,7 @@ Manage Report
             </div>
           </div>
           <div class="card-body">
+            <a href="/report/export_excel" class="btn btn-primary" style="float: right"><i class="bi bi-plus-circle-fill"></i> Export</a>
             <a href="/add-report" class="btn btn-primary" style="float: right"><i class="bi bi-plus-circle-fill"></i> Add Report</a>
           </div>
           <div class="card-body">
