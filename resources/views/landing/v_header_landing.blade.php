@@ -65,17 +65,20 @@
               navbarNav.appendChild(li);
             });
         </script>
-        <li class="nav-item"><a href="/" class="nav-link"><span>Beranda</span></a></li>
-            @foreach ($categories as $category)
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url('category/'.$category->id_categories) }}">{{ $category->categories_name }}</a>
-              </li>
-            @endforeach
-            <li class="nav-item"><a href="/about" class="nav-link"><span>About</span></a></li>
+            <li class="nav-item">
+              <select class="form-control changeLang">
+                <option value="id">{{ GoogleTranslate::trans('Pilih Bahasa', app()->getLocale()) }}</option>
+                <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
+                <option value="id" {{ session()->get('locale') == 'id' ? 'selected' : '' }}>Indonesia</option>
+              </select>
+            </li>
+            <li class="nav-item"><a href="/" class="nav-link"><span>{{ GoogleTranslate::trans('Beranda', app()->getLocale()) }}</span></a></li>
+            <li class="nav-item"><a href="<?= Request::segment(1) == '' ? "#destinasi" : url('/').'#destinasi' ?>" class="nav-link"><span>{{ GoogleTranslate::trans('Destinasi', app()->getLocale()) }}</span></a></li>
+            <li class="nav-item"><a href="/about" class="nav-link"><span>{{ GoogleTranslate::trans('Berita', app()->getLocale()) }}</span></a></li>
             @if(auth()->user())
-            <li class="nav-item"><a href="/dashboard" class="nav-link"><span>Dashboard</span></a></li>
+            <li class="nav-item"><a href="/dashboard" class="nav-link"><span>{{ GoogleTranslate::trans('Dashboard', app()->getLocale()) }}</span></a></li>
             @else
-            <li class="nav-item"><a href="/login" class="nav-link"><span>Login</span></a></li>
+            <li class="nav-item"><a href="/login" class="nav-link"><span>{{ GoogleTranslate::trans('Login', app()->getLocale()) }}</span></a></li>
             @endif
           </ul>
         </div>
@@ -178,6 +181,11 @@
     $(document).on('change',".search-destination",function(){
       window.location.href = "<?= url('destination') ?>/"+$(this).val()
     })
+    var url = "<?= url('change-language') ?>";
+    
+    $(".changeLang").change(function(){
+        window.location.href = url + "?lang="+ $(this).val();
+    });
 
   </script>
   </body>

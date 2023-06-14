@@ -11,9 +11,9 @@ Dashboard
             <div class="row mx-0">
               <div class="col-md-5">
                 <div class="text-landing"  data-scrollax=" properties: { translateY: '70%' }">
-                    <h1 class="mb-4 mt-3">Ayo Bermain Ke Kabupaten Subang</h1>
-                    <p class="mb-4">Mari nikmati pesona Kabupaten Subang dengan mengunjungi berbagai macam destinasi wisata, kuliner, penginapan dan ekonomI kreatif.</p>
-                    <a href="#" class="btn-utama px-3 py-2 mb-4">jelajahi</a>
+                    <h1 class="mb-4 mt-3">{{ GoogleTranslate::trans('Ayo Bermain Ke Kabupaten Subang', app()->getLocale()) }}</h1>
+                    <p class="mb-4">{{ GoogleTranslate::trans('Mari nikmati pesona Kabupaten Subang dengan mengunjungi berbagai macam destinasi wisata, kuliner, penginapan dan ekonomI kreatif.', app()->getLocale()) }}</p>
+                    <a href="#" class="btn-utama px-3 py-2 mb-4">{{ GoogleTranslate::trans('Jelajahi', app()->getLocale()) }}</a>
                 </div>
               </div>
               <div class="col-md-7">
@@ -26,26 +26,26 @@ Dashboard
       </div>
     </section>
 
-    <section class="ftco-section ftco-services-2" id="services-section">
+    <section class="ftco-section ftco-services-2" id="destinasi">
       <div class="container">
         <div class="row justify-content-center pb-5">
           <div class="col-md-12 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Kategori Destinasi</h2>
-            <p>Selamat datang di dunia destinasi wisata yang mengagumkan! 
-              Kami hadir untuk menyediakan Anda beragam informasi terkait perjalanan impian Anda. Dengan keakuratan dan yang tak tertandingi, kami adalah sumber referensi terpercaya untuk memenuhi hasrat petualangan Anda.</p>
+            <h2 class="mb-4">{{ GoogleTranslate::trans('Kategori Destinasi', app()->getLocale()) }}</h2>
+            <p>{{ GoogleTranslate::trans('Selamat datang di dunia destinasi wisata yang mengagumkan! 
+              Kami hadir untuk menyediakan Anda beragam informasi terkait perjalanan impian Anda. Dengan keakuratan dan yang tak tertandingi, kami adalah sumber referensi terpercaya untuk memenuhi hasrat petualangan Anda.', app()->getLocale()) }}</p>
           </div>
         </div>
         <div class="row">
 
           @foreach ($categories as $category)
-          <div class="ftco-animate" style="width: 20%;">
+          <div class="ftco-animate" style="width: 16%;margin: 0 2%;">
             <a href="{{ url('category/'.$category->id_categories) }}" class="media block-6 services text-center d-block">
               <div class="icon justify-content-center align-items-center d-flex">
                 <img src="{{ asset($category->images) }}" width="160">
               </div>
               <div class="media-body">
-                <h3 class="heading mb-3">{{ $category->categories_name }}</h3>
-                <p></p>
+                <h3 class="heading mb-4 mt-5 font-weight-bold">{{ $category->categories_name }}</h3>
+                <p style="max-height:170px;overflow: hidden;color: #999">{{ $category->description }}</p>
               </div>
             </a>      
           </div>
@@ -55,18 +55,16 @@ Dashboard
       </div>
     </section>
 
-    <section class="" id="destination-section">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h2>Temukan Destinasi</h2>
-            <p>Temukan destinasi kemana aja yang ingin kamu kunjungi</p>
+    <section id="destination-section" style="background: url('<?= asset('images/Bg-landing.jpg') ?>');background-size: cover;padding: 200px 0;">
+      <div class="container d-flex justify-content-center">
+          <div class=" heading-section text-center px-5 text-white">
+            <h2 class="text-white">{{ GoogleTranslate::trans('Temukan Destinasi', app()->getLocale()) }}</h2>
+            <p class="text-white">{{ GoogleTranslate::trans('Temukan destinasi kemana aja yang ingin kamu kunjungi', app()->getLocale()) }}</p>
             <form action="/destination_search">
-              <input type="text" class="search-box text-center mb-2 py-4" name="name" placeholder="Input Nama Destinasi">
-              <button type="submit" class="btn-utama py-2 mt-4 px-4 mb-2">Cari Destinasi</button>
+              <input type="text" class="search-box text-center mb-2 py-4" name="name" placeholder="{{ GoogleTranslate::trans('Input Nama Destinasi', app()->getLocale()) }}">
+              <button type="submit" class="btn-utama py-2 mt-4 px-4 mb-2">{{ GoogleTranslate::trans('Cari Destinasi', app()->getLocale()) }}</button>
             </form>
           </div>
-        </div>
       </div>
     </section>
 
@@ -74,8 +72,8 @@ Dashboard
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Tentang Kabupaten Subang</h2>
-            <p>Sebelum berkunjung, yuk mengenal lebih dekat terkait Kabupaten Subang</p>
+            <h2 class="mb-4">{{ GoogleTranslate::trans('Tentang Kabupaten Subang', app()->getLocale()) }}</h2>
+            <p>{{ GoogleTranslate::trans('Sebelum berkunjung, yuk mengenal lebih dekat terkait Kabupaten Subang', app()->getLocale()) }}</p>
           </div>
         </div>
         <div class="row d-flex">
@@ -90,7 +88,7 @@ Dashboard
                 {{--  <p style="max-height:150px;overflow: hidden;">{{ $val->description }}</p> --}}
                 <div class="row justify-content-center mb-3">
                   <div class="d-flex align-items-center mt-4">
-                    <p class="mb-0"><a href="/about" class="btn-utama px-3 py-2">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                    <p class="mb-0"><a href="/about" class="btn-utama px-3 py-2">{{ GoogleTranslate::trans('Read More ', app()->getLocale()) }}<span class="ion-ios-arrow-round-forward"></span></a></p>
                   </div>
                 </div>
               </div>
@@ -106,8 +104,8 @@ Dashboard
       <div class="container">
         <div class="row justify-content-center pb-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Rekomendasi Destinasi Wisata yang Paling Banyak Dikunjungi Wisatawan</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            <h2 class="mb-4">{{ GoogleTranslate::trans('Rekomendasi Destinasi Wisata yang Paling Banyak Dikunjungi Wisatawan', app()->getLocale()) }}</h2>
+            <p>{{ GoogleTranslate::trans('Far far away, behind the word mountains, far from the countries Vokalia and Consonantia', app()->getLocale()) }}</p>
           </div>
         </div>
         <div class="row">

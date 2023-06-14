@@ -197,6 +197,7 @@ return [
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'GoogleTranslate' => Stichoza\GoogleTranslate\GoogleTranslate::class,
     ])->toArray(),
 
 

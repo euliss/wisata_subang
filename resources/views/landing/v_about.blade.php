@@ -7,9 +7,9 @@ Dashboard
       <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
-            <span class="subheading">Article</span>
-            <h2 class="mb-4">Our Article</h2> 
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            <span class="subheading">{{ GoogleTranslate::trans('Article', app()->getLocale()) }}</span>
+            <h2 class="mb-4">{{ GoogleTranslate::trans('Our Article', app()->getLocale()) }}</h2> 
+            <p>{{ GoogleTranslate::trans('Far far away, behind the word mountains, far from the countries Vokalia and Consonantia', app()->getLocale()) }}</p>
           </div>
         </div>
         <div class="row d-flex">

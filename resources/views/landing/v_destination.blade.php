@@ -36,37 +36,37 @@ Dashboard
                   <table class="table" style="min-width:auto !important">
                     @if(in_array($destination->id_category,[1,2,4]))
                     <tr>
-                      <td class="bg-white p-3 rounded">Jam Operasional</td>
+                      <td class="bg-white p-3 rounded">{{ GoogleTranslate::trans('Jam Operasional', app()->getLocale()) }}</td>
                       <td class="bg-white p-3 rounded"><?= $destination->jam_operasional ?></td>
                     </tr>
                     @endif
                     @if(in_array($destination->id_category,[1,2,3,4]))
                     <tr>
-                      <td class="bg-white p-3 rounded">Harga</td>
+                      <td class="bg-white p-3 rounded">{{ GoogleTranslate::trans('Harga', app()->getLocale()) }}</td>
                       <td class="bg-white p-3 rounded"><?= $destination->harga ?></td>
                     </tr>
                     @endif
                     @if(in_array($destination->id_category,[1,3,4]))
                     <tr>
-                      <td class="bg-white p-3 rounded">Fasilitas</td>
+                      <td class="bg-white p-3 rounded">{{ GoogleTranslate::trans('Fasilitas', app()->getLocale()) }}</td>
                       <td class="bg-white p-3 rounded"><?= $destination->fasilitas ?></td>
                     </tr>
                     @endif
                     @if(in_array($destination->id_category,[2]))
                     <tr>
-                      <td class="bg-white p-3 rounded">Menu</td>
+                      <td class="bg-white p-3 rounded">{{ GoogleTranslate::trans('Menu', app()->getLocale()) }}</td>
                       <td class="bg-white p-3 rounded"><?= $destination->menu ?></td>
                     </tr>
                     @endif
                     @if(in_array($destination->id_category,[3]))
                     <tr>
-                      <td class="bg-white p-3 rounded">Tipe Kamar</td>
+                      <td class="bg-white p-3 rounded">{{ GoogleTranslate::trans('Tipe Kamar', app()->getLocale()) }}</td>
                       <td class="bg-white p-3 rounded"><?= $destination->tipe_kamar ?></td>
                     </tr>
                     @endif
                   </table>
                   <br>
-                  <h5>Deskripsi</h5>
+                  <h5>{{ GoogleTranslate::trans('Deskripsi', app()->getLocale()) }}</h5>
                   <p><?= $destination->description ?></p>
                 </div>   
               </div>
@@ -83,7 +83,7 @@ Dashboard
               </div>
               <div class="col-md-12 tour-wrap">
                 <div class="pt-5 mt-5">
-                  <h3 class="mb-5">{{ count($comments) }} Komentar</h3>
+                  <h3 class="mb-5">{{ count($comments) }} {{ GoogleTranslate::trans('Komentar', app()->getLocale()) }}</h3>
                   <ul class="comment-list">
 
                     @foreach($comments as $val)
@@ -102,23 +102,23 @@ Dashboard
                   <!-- END comment-list -->
                   
                   <div class="comment-form-wrap pt-5">
-                    <h3 class="mb-5">Tinggalkan Komentar</h3>
+                    <h3 class="mb-5">{{ GoogleTranslate::trans('Tinggalkan Komentar', app()->getLocale()) }}</h3>
                     <form action="{{ url('store-comment/'.$destination->id) }}" method="post" class="p-5 bg-light text-grey">
                       @csrf
                       <div class="form-group">
-                        <label for="name">Name *</label>
+                        <label for="name">{{ GoogleTranslate::trans('Name', app()->getLocale()) }} *</label>
                         <input required type="text" class="form-control" name="name">
                       </div>
                       <div class="form-group">
-                        <label for="email">Email *</label>
+                        <label for="email">{{ GoogleTranslate::trans('Email', app()->getLocale()) }} *</label>
                         <input required type="email" class="form-control" name="email">
                       </div>
                       <div class="form-group">
-                        <label for="message">Message</label>
+                        <label for="message">{{ GoogleTranslate::trans('Message', app()->getLocale()) }}</label>
                         <textarea required name="content" cols="10" rows="2" class="form-control"></textarea>
                       </div>
                       <div class="form-group">
-                        <label for="message">Rating</label>
+                        <label for="message">{{ GoogleTranslate::trans('Rating', app()->getLocale()) }}</label>
                         <select required name="rating" class="form-control">
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -128,7 +128,7 @@ Dashboard
                         </select>
                       </div>
                       <div class="form-group">
-                        <input type="submit" value="Kirim Komentar" class="btn py-3 px-4 btn-primary">
+                        <input type="submit" value="{{ GoogleTranslate::trans('Kirim Komentar', app()->getLocale()) }}" class="btn py-3 px-4 btn-primary">
                       </div>
 
                     </form>
@@ -141,11 +141,11 @@ Dashboard
       </div>
       <div class="col-sm-4" style="margin-top: 80px;padding-left: 80px;">
         <form action="/destination_search" class="mt-4">
-          <input type="text" class="form-control mb-2" name="name" placeholder="Input Destination">
-          <button type="submit" class="btn btn-dark px-4 py-3">Search Places</button>
+          <input type="text" class="form-control mb-2" name="name" placeholder="{{ GoogleTranslate::trans('Input Destination', app()->getLocale()) }}">
+          <button type="submit" class="btn btn-dark px-4 py-3">{{ GoogleTranslate::trans('Search Places', app()->getLocale()) }}</button>
         </form>
         <div class="row">
-          <h5 class="ml-3 mt-4">Rekomendasi Destinasi : </h5>
+          <h5 class="ml-3 mt-4">{{ GoogleTranslate::trans('Rekomendasi Destinasi', app()->getLocale()) }} : </h5>
           @foreach($recomend as $val)
           <div class="col-sm-12 mb-3">
             <div class="card">

@@ -67,9 +67,8 @@
               <div class="card mb-3">
 
                 <div class="card-body">
-                  <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-                    <p class="text-center small">Enter your email & password to login</p>
+                  <div class="pt-4 pb-5 ">
+                    <h5 class="card-title pb-0 fs-4">Hallo, <br>Selamat Datang Kembali</h5>
                   </div>
 
                       @if (session('pesan'))
@@ -81,26 +80,28 @@
                   <form class="row g-3 needs-validation" method="POST" action="{{ route('login') }}" novalidate>
                     @csrf
                     <div class="col-12">
-                      <label for="email" class="form-label">Email</label>
+                      <!-- <label for="email" class="form-label">Email</label> -->
                       <div class="input-group has-validation">
-                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Enter Your Email">
+                        <input type="email" name="email" class="form-control mb-2 @error('email') is-invalid @enderror" id="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Masukkan Email">
                         @error('email')
                          <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                       </div>
                     </div>
                     <div class="col-12">
-                      <label for="password" class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password" required autocomplete="current-password" placeholder="Enter Your Password">
+                      <!-- <label for="password" class="form-label">Password</label> -->
+                      <input type="password" name="password" class="form-control mb-2 @error('password') is-invalid @enderror" id="password" required autocomplete="current-password" placeholder="Masukkan Kata Sandi">
                       @error('password')
                         <div class="invalid-feedback">{{ $message }}</div>
                       @enderror
                     </div>
                     <div class="col-12">
                       <div class="mb-3">
-                        Klik <a href="{{ url('registrasi-user') }}">disini</a> untuk registrasi!
+                        Belum Punya Akun? <a href="{{ url('registrasi-user') }}">Daftar</a> 
                       </div>
-                      <button class="btn btn-primary w-100" type="submit">Login</button>
+                    </div>
+                    <div class="col-12 text-center">
+                      <button class="btn btn-primary w-50" type="submit">Masuk</button>
                     </div>
                   </form>
 

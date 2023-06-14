@@ -4,16 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\M_Categories;
-use App\Models\M_Partner;
 use App\Models\M_News;
 use DB; 
+use App; 
 
 class C_Landing extends Controller
 {
     public function __construct()
     {
         $this->M_Categories = new M_Categories();
-        $this->M_Partner = new M_Partner();
         $this->M_News = new M_News();
     }
 
@@ -31,9 +30,8 @@ class C_Landing extends Controller
 
         $data = [
             'heroTitle'     => 'Home',
-            'partner'       => $this->M_Partner->allData(),
             'destinations'   => $destination_filter,
-            'categories'   => DB::table('categories')->limit(5)->get() ,
+            'categories'   => DB::table('categories')->where('status','Aktif')->limit(5)->get() ,
             'news'       => $this->M_News->getLimit(3, 'Aktif'),
             'articles'       => DB::table('articles')->limit(3)->get(),
         ];
@@ -45,9 +43,8 @@ class C_Landing extends Controller
     {
         $data = [
             'heroTitle'     => 'Home',
-            'partner'       => $this->M_Partner->allData(),
             'destinations'   => DB::table('destinations')->where('status',1)->get() ,
-            'categories'   => DB::table('categories')->get() ,
+            'categories'   => DB::table('categories')->where('status','Aktif')->get() ,
             'articles'       => DB::table('articles')->get(),
         ];
 
@@ -63,9 +60,8 @@ class C_Landing extends Controller
 
         $data = [
             'heroTitle'     => 'Kategori',
-            'categories'   => DB::table('categories')->get() ,
-            'category'   => DB::table('categories')->where('id_categories', $id)->first() ,
-            'partner'       => $this->M_Partner->allData(),
+            'categories'   => DB::table('categories')->where('status','Aktif')->get() ,
+            'category'   => DB::table('categories')->where('id_categories', $id)->where('status','Aktif')->first() ,
             'destinations'   => DB::table('destinations')->where('status',1)->get() ,
             'destination_category'   => $destination_category ,
             'news'       => $this->M_News->getLimit(3, 'Aktif'),
@@ -78,8 +74,7 @@ class C_Landing extends Controller
     {
         $data = [
             'heroTitle'     => 'Landing Page',
-            'categories'   => DB::table('categories')->get() ,
-            'partner'       => $this->M_Partner->allData(),
+            'categories'   => DB::table('categories')->where('status','Aktif')->get() ,
             'destination'   => DB::table('destinations')->where('status',1)->where('name','like','%'.$request->name.'%')->get() ,
             'destinations'   => DB::table('destinations')->where('status',1)->get() ,
             'news'       => $this->M_News->getLimit(3, 'Aktif'),
@@ -92,8 +87,7 @@ class C_Landing extends Controller
     {
         $data = [
             'heroTitle'     => 'Landing Page',
-            'categories'   => DB::table('categories')->get() ,
-            'partner'       => $this->M_Partner->allData(),
+            'categories'   => DB::table('categories')->where('status','Aktif')->get() ,
             'destinations'   => DB::table('destinations')->where('status',1)->get() ,
             'destination'   => DB::table('destinations')->where('status',1)->where('id',$id)->first() ,
             'recomend'   => DB::table('destinations')
@@ -152,5 +146,12 @@ class C_Landing extends Controller
         ];
 
         return view('landing/v_newsDetail', $data);
+    }
+
+    public function changeLanguage(Request $request){
+        App::setLocale($request->lang);
+        session()->put('locale', $request->lang);
+  
+        return redirect()->back();
     }
 }

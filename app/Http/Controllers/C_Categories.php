@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\M_Categories;
+use DB;
 
 class C_Categories extends Controller
 {
@@ -15,6 +16,11 @@ class C_Categories extends Controller
 
     public function index()
     {
+
+        if(isset($_GET['id'])){
+            DB::table('categories')->where('id_categories',$_GET['id'])->update(['status' => $_GET['status']]);
+            return redirect('categories');
+        }
 
         $data = [
             'sidebarTitle' => 'Categories',

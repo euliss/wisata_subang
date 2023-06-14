@@ -32,6 +32,7 @@ Auth::routes();
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // landing page
 Route::get('/', [C_Landing::class, 'index'])->name('landing');
+Route::get('/change-language', [C_Landing::class, 'changeLanguage']);
 Route::get('/about', [C_Landing::class, 'about']);
 Route::get('/category/{id}', [C_Landing::class, 'category']);
 Route::get('/destination_search', [C_Landing::class, 'destination_search']);

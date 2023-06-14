@@ -37,7 +37,7 @@ class C_Destinations extends Controller
     public function add(){
         $data = [
             'sidebarTitle' => 'Destinations',
-            'categories' => DB::table('categories')->get()
+            'categories' => DB::table('categories')->where('status','Aktif')->get()
         ];
         return view('creator/destinations/v_add', $data);
     }
@@ -76,7 +76,7 @@ class C_Destinations extends Controller
         $data = [
             'sidebarTitle' => 'Destinations',
             'destinations' => DB::table('destinations')->where('id',$id)->first(),
-            'categories' => DB::table('categories')->get()
+            'categories' => DB::table('categories')->where('status','Aktif')->get()
         ];
 
         return view('creator/destinations/v_edit', $data);

@@ -68,33 +68,34 @@
 
                 <div class="card-body">
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Register Your Account</h5>
+                    <h5 class="card-title pb-0 fs-4">Buat Akun Baru Sekarang</h5>
+                    <p style="color: #888;">Buatlah akun pribadimu lalu tambahkan informasi terkait pariwisata, kuliner, penginapan, atau ekraf yang anda kelola agar dapat dijangkau oleh lebih dari 10.000 wisatawan!</p>
                   </div>
 
                   <form class="row g-3 needs-validation" method="POST" action="{{ url('store-registrasi') }}" novalidate enctype="multipart/form-data">
                     @csrf
                     <div class="col-12">
-                      <label for="name" class="form-label">Name</label>
+                      <!-- <label for="name" class="form-label">Name</label> -->
                       <div class="input-group has-validation">
-                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Enter Your Name">
+                        <input type="text" name="name" class="form-control mb-2 @error('name') is-invalid @enderror" id="name" value="{{ old('name') }}" required  autofocus placeholder="Nama Lengkap">
                         @error('name')
                          <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                       </div>
                     </div>
                     <div class="col-12">
-                      <label for="email" class="form-label">Email</label>
+                      <!-- <label for="email" class="form-label">Email</label> -->
                       <div class="input-group has-validation">
-                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Enter Your Email">
+                        <input type="email" name="email" class="form-control mb-2 @error('email') is-invalid @enderror" id="email" value="{{ old('email') }}" required  autofocus placeholder="Alamat Email">
                         @error('email')
                          <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                       </div>
                     </div>
                     <div class="col-12">
-                      <label for="nik" class="form-label">NIK</label>
+                      <!-- <label for="nik" class="form-label">NIK</label> -->
                       <div class="input-group has-validation">
-                        <input type="numeric" name="nik" class="form-control @error('nik') is-invalid @enderror" id="nik" value="{{ old('nik') }}" required autocomplete="nik" autofocus placeholder="Enter Your NIK">
+                        <input type="numeric" name="nik" class="form-control mb-2 @error('nik') is-invalid @enderror" id="nik" value="{{ old('nik') }}" required  autofocus placeholder="NIK">
                         @error('nik')
                          <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -103,22 +104,22 @@
                     <!-- <div class="col-12">
                       <label for="photo" class="form-label">Photo</label>
                       <div class="input-group has-validation">
-                        <input type="file" name="photo" class="form-control @error('photo') is-invalid @enderror" id="photo" value="{{ old('photo') }}" required autocomplete="photo" autofocus placeholder="Enter Your Photo">
+                        <input type="file" name="photo" class="form-control mb-2 @error('photo') is-invalid @enderror" id="photo" value="{{ old('photo') }}" required  autofocus placeholder="Enter Your Photo">
                         @error('photo')
                          <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                       </div>
                     </div> -->
                     <div class="col-12">
-                      <label for="password" class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password" required autocomplete="current-password" placeholder="Enter Your Password">
+                      <!-- <label for="password" class="form-label">Password</label> -->
+                      <input type="password" name="password" class="form-control mb-2 @error('password') is-invalid @enderror" id="password" required placeholder="Kata Sandi">
                       @error('password')
                         <div class="invalid-feedback">{{ $message }}</div>
                       @enderror
                     </div>
                     <div class="col-12">
-                      <label for="password_confirmation" class="form-label">Password Confirmation</label>
-                      <input type="password" name="password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror" id="password_confirmation" required autocomplete="current-password_confirmation" placeholder="Enter Your Password Confirmation">
+                      <!-- <label for="password_confirmation" class="form-label">Password Confirmation</label> -->
+                      <input type="password" name="password_confirmation" class="form-control mb-2 @error('password_confirmation') is-invalid @enderror" id="password_confirmation" required placeholder="Konfirmasi Kata Sandi">
                       @error('password_confirmation')
                         <div class="invalid-feedback">{{ $message }}</div>
                       @enderror
