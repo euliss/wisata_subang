@@ -56,7 +56,7 @@ Detail <Article></Article>
               </div>
               <div class="col-md-6">
                 <label class="form-label">Description</label>
-                <textarea rows="10" disabled class="form-control" name="description">{{$article->description}}</textarea>
+                <textarea rows="10" disabled class="form-control" name="description">{{ strip_tags($article->description) }} </textarea> 
               </div>
               {{-- <div class="col-md-6">
                 <label class="form-label">Image</label>

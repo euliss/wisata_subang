@@ -16,9 +16,10 @@ return new class extends Migration
             $table->string('nik')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->rememberToken();
-            $table->enum('level', ['non-active', 'active'])->default('non-active');
+            $table->string('level')->default('2');
+            $table->enum('status', ['non-active', 'active'])->default('non-active');
             $table->timestamps();
         });
     }
