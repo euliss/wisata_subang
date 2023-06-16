@@ -93,7 +93,7 @@
     
     
     
-    
+
 
     @yield('content')
 
@@ -198,7 +198,7 @@
     var url = "<?= url('change-language') ?>";
     
     $(".changeLang").click(function(){
-        const lang = $(this).attr('class').split(" ")[2]
+        const lang = $(this).attr('class').split(" ")[3]
         window.location.href = url + "?lang="+ lang;
     });
 
