@@ -4,26 +4,22 @@ Dashboard
 @extends('landing/v_header_landing')
 @section('content')
     <section id="home-section" class="hero">
-      <div class="home-slider owl-carousel">
-
         <div class="slider-item">
-          <div class="container-fluid p-0 mx-0">
+          <div class="container d-flex justify-content-center p-0 mx-0">
             <div class="row mx-0">
               <div class="col-md-5">
                 <div class="text-landing"  data-scrollax=" properties: { translateY: '70%' }">
                     <h1 class="mb-4 mt-3">{{ GoogleTranslate::trans('Ayo Bermain Ke Kabupaten Subang', app()->getLocale()) }}</h1>
                     <p class="mb-4">{{ GoogleTranslate::trans('Mari nikmati pesona Kabupaten Subang dengan mengunjungi berbagai macam destinasi wisata, kuliner, penginapan dan ekonomI kreatif.', app()->getLocale()) }}</p>
-                    <a href="#" class="btn-utama px-3 py-2 mb-4">{{ GoogleTranslate::trans('Jelajahi', app()->getLocale()) }}</a>
+                    <a href="#destination-section" class="nav-link" class="btn-utama px-3 py-2 mb-4">{{ GoogleTranslate::trans('Jelajahi', app()->getLocale()) }}</a>
                 </div>
               </div>
               <div class="col-md-7">
-                <img src="{{ asset('ecoland/images/bg-landing.jpg') }}" class="" alt="Background Landing" width="1000" height="736px">
+                <img src="{{ asset('ecoland/images/bg-landing.jpg') }}" class="d-flex" alt="Background Landing" width="1000" height="736px">
               </div>
             </div>
           </div>
         </div>
-
-      </div>
     </section>
 
     <section class="ftco-section ftco-services-2" id="destinasi">
@@ -35,7 +31,7 @@ Dashboard
               Kami hadir untuk menyediakan Anda beragam informasi terkait perjalanan impian Anda. Dengan keakuratan dan yang tak tertandingi, kami adalah sumber referensi terpercaya untuk memenuhi hasrat petualangan Anda.', app()->getLocale()) }}</p>
           </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
 
           @foreach ($categories as $category)
           <div class="ftco-animate" style="width: 16%;margin: 0 2%;">

@@ -31,6 +31,7 @@ return array(
     'App\\Http\\Middleware\\Active' => $baseDir . '/app/Http/Middleware/Active.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
+    'App\\Http\\Middleware\\LanguageManager' => $baseDir . '/app/Http/Middleware/LanguageManager.php',
     'App\\Http\\Middleware\\Level' => $baseDir . '/app/Http/Middleware/Level.php',
     'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => $baseDir . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
     'App\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',

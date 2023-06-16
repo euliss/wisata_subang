@@ -851,7 +851,7 @@ h6 {
   background: #ffecdf;
 }
 
-/* Activity */
+/* Activity
 .dashboard .activity {
   font-size: 14px;
 }
@@ -896,9 +896,9 @@ h6 {
 
 .dashboard .activity .activity-item:last-child .activity-content {
   padding-bottom: 0;
-}
+} */
 
-/* News & Updates */
+/* News & Updates
 .dashboard .news .post-item+.post-item {
   margin-top: 15px;
 }
@@ -972,7 +972,7 @@ h6 {
 .dashboard .top-selling img {
   border-radius: 5px;
   max-width: 60px;
-}
+} */
 
 /*--------------------------------------------------------------
 # Icons list page

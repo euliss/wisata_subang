@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="{{ asset('ecoland/css/style.css') }}">
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> --}}
+
 
     <style>
       .select2{
@@ -65,13 +67,6 @@
               navbarNav.appendChild(li);
             });
         </script>
-            <li class="nav-item">
-              <select class="form-control changeLang">
-                <option value="id">{{ GoogleTranslate::trans('Pilih Bahasa', app()->getLocale()) }}</option>
-                <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
-                <option value="id" {{ session()->get('locale') == 'id' ? 'selected' : '' }}>Indonesia</option>
-              </select>
-            </li>
             <li class="nav-item"><a href="/" class="nav-link"><span>{{ GoogleTranslate::trans('Beranda', app()->getLocale()) }}</span></a></li>
             <li class="nav-item"><a href="<?= Request::segment(1) == '' ? "#destinasi" : url('/').'#destinasi' ?>" class="nav-link"><span>{{ GoogleTranslate::trans('Destinasi', app()->getLocale()) }}</span></a></li>
             <li class="nav-item"><a href="/about" class="nav-link"><span>{{ GoogleTranslate::trans('Berita', app()->getLocale()) }}</span></a></li>
@@ -80,10 +75,27 @@
             @else
             <li class="nav-item"><a href="/login" class="nav-link"><span>{{ GoogleTranslate::trans('Login', app()->getLocale()) }}</span></a></li>
             @endif
+            {{-- <li class="nav-item dropdown"><a href="/" class="nav-link"><span>{{ GoogleTranslate::trans('Pilih Bahasa', app()->getLocale()) }}</span></a></li>
+                <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                  <a class="dropdown-item" href="#" value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</a>
+                  <a class="dropdown-item" href="#" value="id" {{ session()->get('locale') == 'id' ? 'selected' : '' }}>Indonesia</a>
+                </div>
+            </li> --}}
+            <li class="nav-item">
+              <select class="form control changeLang">
+                <option value="id">{{ GoogleTranslate::trans('Bahasa', app()->getLocale()) }}</option>
+                <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
+                <option value="id" {{ session()->get('locale') == 'id' ? 'selected' : '' }}>Indonesia</option>
+              </select>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
+    
+    
+    
+    
 
     @yield('content')
 
@@ -174,6 +186,10 @@
   
   <script src="{{ asset('ecoland/js/main.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> --}}
+
+
 
   <script>
 

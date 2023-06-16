@@ -148,12 +148,12 @@ Dashboard
           <h5 class="ml-3 mt-4">{{ GoogleTranslate::trans('Rekomendasi Destinasi', app()->getLocale()) }} : </h5>
           @foreach($recomend as $val)
           <div class="col-sm-12 mb-3">
-            <div class="card">
+            <a href="{{ url('destination/'.$val->id) }}" class="card">
               <div class="card-body">
                 <h5>{{ $val->name }}</h5>
                 <p style="max-height: 70px;overflow:hidden;font-size: 13px">{{ $val->description }}</p>
               </div>
-            </div>
+            </a>
           </div>
           @endforeach
         </div>

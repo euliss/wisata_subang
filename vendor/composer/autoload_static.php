@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitce2c39cb6a6f66467a9dce987f5b29eb
+class ComposerStaticInitbe017b5437dc8be84286aa9d92c15b95
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -390,8 +390,8 @@ class ComposerStaticInitce2c39cb6a6f66467a9dce987f5b29eb
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -644,6 +644,7 @@ class ComposerStaticInitce2c39cb6a6f66467a9dce987f5b29eb
         'App\\Http\\Middleware\\Active' => __DIR__ . '/../..' . '/app/Http/Middleware/Active.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
+        'App\\Http\\Middleware\\LanguageManager' => __DIR__ . '/../..' . '/app/Http/Middleware/LanguageManager.php',
         'App\\Http\\Middleware\\Level' => __DIR__ . '/../..' . '/app/Http/Middleware/Level.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
@@ -7027,10 +7028,10 @@ class ComposerStaticInitce2c39cb6a6f66467a9dce987f5b29eb
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitce2c39cb6a6f66467a9dce987f5b29eb::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitce2c39cb6a6f66467a9dce987f5b29eb::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitce2c39cb6a6f66467a9dce987f5b29eb::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitce2c39cb6a6f66467a9dce987f5b29eb::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitbe017b5437dc8be84286aa9d92c15b95::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitbe017b5437dc8be84286aa9d92c15b95::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitbe017b5437dc8be84286aa9d92c15b95::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitbe017b5437dc8be84286aa9d92c15b95::$classMap;
 
         }, null, ClassLoader::class);
     }

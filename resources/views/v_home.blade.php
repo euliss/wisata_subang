@@ -22,11 +22,11 @@ Dashboard Admin
     <div class="row">
 
       <!-- Left side columns -->
-      <div class="col-lg-9">
+      <div class="col-lg-8">
         <div class="row">
 
           <!-- Sales Card -->
-          <div class="col-xxl-4 col-md-6">
+          <div class="col-md-6">
             <div class="card info-card sales-card">
 
               <div class="card-body">
@@ -44,7 +44,7 @@ Dashboard Admin
 
             </div>
           </div>
-          <div class="col-xxl-4 col-md-6">
+          <div class=" col-md-6">
             <div class="card info-card sales-card">
 
               <div class="card-body">
@@ -62,7 +62,7 @@ Dashboard Admin
 
             </div>
           </div>
-          <div class="col-xxl-4 col-md-6">
+          <div class=" col-md-6">
             <div class="card info-card sales-card">
 
               <div class="card-body">
@@ -84,7 +84,7 @@ Dashboard Admin
             </div>
           </div>
           <!-- Reports -->
-          <div class="col-6 ">
+          <div class="col-8 ">
             <div class="card">
               <div class="card-body pt-4">
                 <h5>Grafik Jumlah Pengunjung Per Bulan</h5>
