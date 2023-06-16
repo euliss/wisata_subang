@@ -65,12 +65,16 @@
               navbarNav.appendChild(li);
             });
         </script>
-            <li class="nav-item">
-              <select class="form-control changeLang">
-                <option value="id">{{ GoogleTranslate::trans('Pilih Bahasa', app()->getLocale()) }}</option>
-                <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
-                <option value="id" {{ session()->get('locale') == 'id' ? 'selected' : '' }}>Indonesia</option>
-              </select>
+            <li class="nav-item" style="padding-top:6px">
+              <div class="dropdown">
+                <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{ GoogleTranslate::trans('Pilih Bahasa', app()->getLocale()) }}
+                </button>
+                <div class="dropdown-menu" style="margin: 0;margin-top: 5px;" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item changeLang en" href="#">English</a>
+                  <a class="dropdown-item changeLang id" href="#">Indonesia</a>
+                </div>
+              </div>
             </li>
             <li class="nav-item"><a href="/" class="nav-link"><span>{{ GoogleTranslate::trans('Beranda', app()->getLocale()) }}</span></a></li>
             <li class="nav-item"><a href="<?= Request::segment(1) == '' ? "#destinasi" : url('/').'#destinasi' ?>" class="nav-link"><span>{{ GoogleTranslate::trans('Destinasi', app()->getLocale()) }}</span></a></li>
@@ -183,8 +187,9 @@
     })
     var url = "<?= url('change-language') ?>";
     
-    $(".changeLang").change(function(){
-        window.location.href = url + "?lang="+ $(this).val();
+    $(".changeLang").click(function(){
+        const lang = $(this).attr('class').split(" ")[2]
+        window.location.href = url + "?lang="+ lang;
     });
 
   </script>
