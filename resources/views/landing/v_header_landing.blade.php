@@ -72,9 +72,9 @@
                 <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   {{ GoogleTranslate::trans('Pilih Bahasa', app()->getLocale()) }}
                 </button>
-                <div class="dropdown-menu" style="margin: 0;margin-top: 5px;" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item changeLang en" href="#">English</a>
-                  <a class="dropdown-item changeLang id" href="#">Indonesia</a>
+                <div class="dropdown-menu w-100" style="margin: 0;" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item px-3 changeLang en" href="#">English</a>
+                  <a class="dropdown-item px-3 changeLang id" href="#">Indonesia</a>
                 </div>
               </div>
             </li>
@@ -86,19 +86,6 @@
             @else
             <li class="nav-item"><a href="/login" class="nav-link"><span>{{ GoogleTranslate::trans('Login', app()->getLocale()) }}</span></a></li>
             @endif
-            {{-- <li class="nav-item dropdown"><a href="/" class="nav-link"><span>{{ GoogleTranslate::trans('Pilih Bahasa', app()->getLocale()) }}</span></a></li>
-                <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                  <a class="dropdown-item" href="#" value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</a>
-                  <a class="dropdown-item" href="#" value="id" {{ session()->get('locale') == 'id' ? 'selected' : '' }}>Indonesia</a>
-                </div>
-            </li> --}}
-            {{-- <li class="nav-item">
-              <select class="form control changeLang">
-                <option value="id">{{ GoogleTranslate::trans('Bahasa', app()->getLocale()) }}</option>
-                <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
-                <option value="id" {{ session()->get('locale') == 'id' ? 'selected' : '' }}>Indonesia</option>
-              </select>
-            </li> --}}
           </ul>
         </div>
       </div>
