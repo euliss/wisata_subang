@@ -18,19 +18,21 @@ Data Articles
     </nav>
   </div><!-- End Page Title -->
 
-  <section class="section dashboard">
+  <section class="section">
     <div class="row">
-
-      <!-- Left side columns -->
       <div class="col-lg-12">
-        <div class="card p-3">
+
+        <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Data Articles</h3>
-            <a href="/add-articles" class="btn btn-primary" style="float: right"><i class="bi bi-plus-circle-fill"></i> Add Data</a>
+            <h3 >Data Articles</h3>
+            <a href="/add-articles" class="btn btn-primary" style="float: right">
+              <i class="bi bi-plus-circle-fill"></i>
+              Add Data</a>
           </div>
-          <!-- /.card-header -->
+
           <div class="card-body">
-            <table id="example2" class="table table-bordered table-hover">
+            <!-- Table with stripped rows -->
+            <table class="table datatable table-bordered table-hover" >
               @if (session('pesan'))
               <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
                 {{ session('pesan') }}
@@ -41,38 +43,38 @@ Data Articles
                 <tr>
                   <th>No</th>
                   <th>Title</th>
-                  <th width="50%">Description</th>
+                  <th >Description</th>
                   <th>Image</th>
-                  <th width="10%">Action</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 <?php $no=1;?>
                 @foreach ($articles as $item)
-                  <tr>
-                    <td>{{ $no++ }}</td>
-                    <td>{{ $item->title }}</td>
-                    <td><?= $item->description ?></td>
-                    <td>
-                      <img src="{{asset('images/articles/'.$item->image)}}" width="200px">
-                    </td>
-                    <td>
-                      <a href="/detail-articles/{{$item->id}}" class="btn btn-info text-white"><i class="bi bi-eye"></i></a>
-                      <a href="/edit-articles/{{$item->id}}" class="btn btn-success"><i class="bi bi-pencil"></i></a>
-                      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$item->id}}"><i class="bi bi-trash"></i></button>
-                    </td>
-                  </tr>
+                <tr>
+                  <td>{{ $no++ }}</td>
+                  <td>{{ $item->title }}</td>
+                  <td><?= $item->description ?></td>
+                  <td>
+                    <img src="{{asset('images/articles/'.$item->image)}}" width="200px">
+                  </td>
+                  <td>
+                    <a href="/detail-articles/{{$item->id}}" class="btn btn-info text-white"><i class="bi bi-eye"></i></a>
+                    <a href="/edit-articles/{{$item->id}}" class="btn btn-success"><i class="bi bi-pencil"></i></a>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$item->id}}"><i class="bi bi-trash"></i></button>
+                  </td>
+                </tr>
                 @endforeach
               </tbody>
             </table>
+            <!-- End Table with stripped rows -->
+
           </div>
         </div>
 
       </div>
-
     </div>
   </section>
-
 </main>
 
 @foreach ($articles as $item)
