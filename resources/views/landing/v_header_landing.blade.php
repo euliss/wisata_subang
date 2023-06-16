@@ -92,13 +92,13 @@
                   <a class="dropdown-item" href="#" value="id" {{ session()->get('locale') == 'id' ? 'selected' : '' }}>Indonesia</a>
                 </div>
             </li> --}}
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <select class="form control changeLang">
                 <option value="id">{{ GoogleTranslate::trans('Bahasa', app()->getLocale()) }}</option>
                 <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
                 <option value="id" {{ session()->get('locale') == 'id' ? 'selected' : '' }}>Indonesia</option>
               </select>
-            </li>
+            </li> --}}
           </ul>
         </div>
       </div>
@@ -204,10 +204,10 @@
 
   <script>
 
-    $("select").select2();
-    $(document).on('change',".search-destination",function(){
-      window.location.href = "<?= url('destination') ?>/"+$(this).val()
-    })
+    // $("select").select2();
+    // $(document).on('change',".search-destination",function(){
+    //   window.location.href = "<?= url('destination') ?>/"+$(this).val()
+    // })
     var url = "<?= url('change-language') ?>";
     
     $(".changeLang").click(function(){
