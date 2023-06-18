@@ -43,7 +43,6 @@ Data Articles
                 <tr>
                   <th>No</th>
                   <th>Title</th>
-                  <th >Description</th>
                   <th>Image</th>
                   <th>Action</th>
                 </tr>
@@ -54,7 +53,6 @@ Data Articles
                 <tr>
                   <td>{{ $no++ }}</td>
                   <td>{{ $item->title }}</td>
-                  <td><?= $item->description ?></td>
                   <td>
                     <img src="{{asset('images/articles/'.$item->image)}}" width="200px">
                   </td>

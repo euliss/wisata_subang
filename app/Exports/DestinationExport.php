@@ -7,25 +7,23 @@ use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use DB;
 
-class ReportExport implements FromCollection, WithHeadings
+class DestinationExport implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
     */
     public function collection()
     {
-        
-        return Reports::join('destinations', 'destinations.id', '=', 'reports.id_destination')
-        ->select('name', 'date', 'count')
+        return Reports::select('count', 'date', 'content')
         ->get();
     }
 
     public function headings(): array
     {
         return [
-            'Nama Destinasi',
+            'Jumlah Pengunjung',
             'Tanggal',
-            'Jumlah',
+            'Keterangan',
             // Tambahkan header lainnya sesuai kebutuhan
         ];
     }

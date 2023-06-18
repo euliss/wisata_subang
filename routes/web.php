@@ -34,6 +34,7 @@ Auth::routes();
 Route::get('/', [C_Landing::class, 'index'])->name('landing');
 Route::get('/change-language', [C_Landing::class, 'changeLanguage']);
 Route::get('/about', [C_Landing::class, 'about']);
+Route::get('/about/{id}', [C_Landing::class, 'detail_about']);
 Route::get('/category/{id}', [C_Landing::class, 'category']);
 Route::get('/destination_search', [C_Landing::class, 'destination_search']);
 Route::get('/destination/{id}', [C_Landing::class, 'destination']);
@@ -88,6 +89,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/edit-reports/{id}', [C_Destinations::class, 'reports_edit']);
     Route::post('/update-reports/{id}', [C_Destinations::class, 'reports_update']);
     Route::get('/delete-reports/{id}', [C_Destinations::class, 'reports_delete']);
+    Route::get('/report/export_excel_report', [C_Destinations::class, 'export_excel']);
 
     Route::get('/report/', [C_Reports::class, 'index']);
     Route::get('/report/export_excel', [C_Reports::class, 'export_excel']);

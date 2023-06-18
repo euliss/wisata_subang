@@ -17,19 +17,17 @@ Dashboard
           @foreach($articles as $val)
           <div class="col-md-6 col-lg-4 d-flex ftco-animate">
             <div class="blog-entry justify-content-end">
-              <a href="#" class="block-20" style="background-image: url('<?= asset('images/articles/'.$val->image) ?>');">
-              </a>
+              <a href="/about/{{$val->id}}" class="block-20" style="background-image: url('<?= asset('images/articles/'.$val->image) ?>');"></a>
               <div class="text float-right d-block">
-                <h3 class="heading"><a href="#">{{ $val->title }}</a></h3>
-                <p><?= $val->description ?></p>
-                <!-- <div class="d-flex align-items-center mt-4 meta">
-                  <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
-                  <p class="ml-auto mb-0">
-                    <a href="#" class="mr-2">Admin</a>
-                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-                  </p>
-                </div> -->
-              </div>
+                  <h3 class="heading"><a href="/about/{{$val->id}}">{{ $val->title }}</a></h3>
+                  <!-- <div class="d-flex align-items-center mt-4 meta">
+                    <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                    <p class="ml-auto mb-0">
+                      <a href="#" class="mr-2">Admin</a>
+                      <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+                    </p>
+                  </div> -->
+                </div>
             </div>
           </div>
           @endforeach

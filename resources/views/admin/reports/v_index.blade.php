@@ -66,8 +66,6 @@
                             <a href="/report/export_excel" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i>
                                 Export</a>
                                 &nbsp;
-                            <a href="/add-report" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i> Add
-                                Report</a>
                         </div>
                         <br>
                         <div class="card-body">
@@ -84,11 +82,9 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Jumlah</th>
-                                        <th>Content</th>
+                                        <th>Nama Destinasi</th>
                                         <th>Tanggal</th>
-                                        <th>Destination</th>
-                                        <th>Action</th>
+                                        <th>Jumlah</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -96,17 +92,9 @@
                                     @foreach ($reports as $item)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $item->count }}</td>
-                                            <td>{{ $item->content }}</td>
-                                            <td>{{ $item->date }}</td>
                                             <td>{{ $item->name }}</td>
-                                            <td>
-                                                <a href="/edit-report/{{ $item->id }}" class="btn btn-success"><i
-                                                        class="bi bi-pencil"></i></a>
-                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                                    data-bs-target="#delete{{ $item->id }}"><i
-                                                        class="bi bi-trash"></i></button>
-                                            </td>
+                                            <td>{{ $item->date }}</td>
+                                            <td>{{ $item->count }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

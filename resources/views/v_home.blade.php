@@ -22,11 +22,11 @@
             <div class="row">
 
       <!-- Left side columns -->
-      <div class="col-lg-9">
+      {{-- <div class="col-lg-12"> --}}
         <div class="row">
 
           <!-- Sales Card -->
-          <div class="col-xxl-4 col-md-6">
+          <div class="col-xxl-2 col-md-4">
             <div class="card info-card sales-card">
 
                             <div class="card-body">
@@ -44,7 +44,7 @@
 
             </div>
           </div>
-          <div class="col-xxl-4 col-md-6">
+          <div class="col-xxl-2 col-md-4">
             <div class="card info-card sales-card">
 
                             <div class="card-body">
@@ -62,7 +62,7 @@
 
             </div>
           </div>
-          <div class="col-xxl-4 col-md-6">
+          <div class="col-xxl-2 col-md-4">
             <div class="card info-card sales-card">
 
                             <div class="card-body">
@@ -94,7 +94,7 @@
           <div class="col-12">
             <div class="card">
 
-                    <div class="card-body">
+                    {{-- <div class="card-body">
                         <div class="row">
                             <div class="col-xxl-8 col-md-6 d-flex align-items-center justify-content-center ">
                                 <img src="{{ asset('layout') }}/assets/img/wisata.png" alt="Logo" width="500px">
@@ -113,7 +113,7 @@
                             </div>
 
                         </div>
-                    </div><!-- End Reports -->
+                    </div><!-- End Reports --> --}}
                 </div>
             </div><!-- End Left side columns -->
 

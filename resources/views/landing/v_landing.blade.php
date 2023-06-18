@@ -11,7 +11,7 @@ Dashboard
                 <div class="text-landing"  data-scrollax=" properties: { translateY: '70%' }">
                     <h1 class="mb-4 mt-3">{{ GoogleTranslate::trans('Ayo Bermain Ke Kabupaten Subang', app()->getLocale()) }}</h1>
                     <p class="mb-4">{{ GoogleTranslate::trans('Mari nikmati pesona Kabupaten Subang dengan mengunjungi berbagai macam destinasi wisata, kuliner, penginapan dan ekonomI kreatif.', app()->getLocale()) }}</p>
-                    <a href="#destination-section" class="nav-link" class="btn-utama px-3 py-2 mb-4">{{ GoogleTranslate::trans('Jelajahi', app()->getLocale()) }}</a>
+                    <a href="#destination-section" class="btn-utama px-3 py-2 mb-4">{{ GoogleTranslate::trans('Jelajahi', app()->getLocale()) }}</a>
                 </div>
               </div>
               <div class="col-md-7">

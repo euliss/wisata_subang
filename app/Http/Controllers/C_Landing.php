@@ -51,6 +51,18 @@ class C_Landing extends Controller
         return view('landing/v_about', $data);
     }
 
+    public function detail_about($id)
+    {
+        $data = [
+            'heroTitle'     => 'Home',
+            'destinations'   => DB::table('destinations')->where('status',1)->get() ,
+            'categories'   => DB::table('categories')->where('status','Aktif')->get() ,
+            'articles'       => DB::table('articles')->where('id',$id)->first(),
+        ];
+
+        return view('landing/v_detail_about', $data);
+    }
+
     public function category($id)
     {
         $destination_category = DB::table('destinations')

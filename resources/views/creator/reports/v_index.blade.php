@@ -48,6 +48,12 @@ Data Report
             </form>
           </div>
           <div class="card-body">
+            <div class="d-flex flex-row-reverse">
+              <a href="/report/export_excel_report" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i>
+                  Export</a>
+                  &nbsp;
+            </div>
+            <br>
             <table id="example2" class="table table-bordered table-hover">
               @if (session('pesan'))
               <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
@@ -58,9 +64,9 @@ Data Report
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>Jumlah</th>
-                  <th>Content</th>
+                  <th>Jumlah Pengunjung</th>
                   <th>Tanggal</th>
+                  <th>Keterangan</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -70,8 +76,8 @@ Data Report
                   <tr>
                     <td>{{ $no++ }}</td>
                     <td>{{ $item->count }}</td>
-                    <td>{{ $item->content }}</td>
                     <td>{{ $item->date }}</td>
+                    <td>{{ $item->content }}</td>
                     <td>
                       <a href="/edit-reports/{{$item->id}}" class="btn btn-success"><i class="bi bi-pencil"></i></a>
                       <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$item->id}}"><i class="bi bi-trash"></i></button>

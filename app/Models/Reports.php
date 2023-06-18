@@ -11,4 +11,9 @@ class Reports extends Model
     protected $table = "reports";
  
     protected $fillable = ['count','content','date'];
+
+    public function dataReport()
+    {
+        dd('masuk');
+    }
 }

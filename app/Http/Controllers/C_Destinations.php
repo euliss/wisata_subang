@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\DestinationExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use DB;
 
@@ -16,11 +18,15 @@ class C_Destinations extends Controller
             'sidebarTitle' => 'Destinations',
             'destinations' => DB::table('destinations')
                 ->select('destinations.*')
+                ->join('categories', 'categories.id_categories', '=', 'destinations.id_category')
                 ->join('user_destinations', 'user_destinations.id_destination', '=', 'destinations.id')
                 ->whereRaw('user_destinations.id_user = '.auth()->user()->id)
                 ->get(),
-            'destination_all' => DB::table('destinations')->get()
+            'destination_all' => DB::table('destinations')
+            ->join('categories', 'categories.id_categories', '=', 'destinations.id_category')
+            ->get()
         ];
+        
         return view('creator/destinations/v_index', $data);
     }
 
@@ -226,5 +232,10 @@ class C_Destinations extends Controller
         DB::table('reports')->where('id',$id)->delete();
         return redirect('reports-destination/'.$id_destination)->with('pesan', 'Data Deleted Successfully !');
     }
+
+    public function export_excel()
+	{
+		return Excel::download(new DestinationExport, 'report.xlsx');
+	}
 
 }

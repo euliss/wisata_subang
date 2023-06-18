@@ -147,7 +147,7 @@
                 <div class="card-body">
                   <div class="pt-4 pb-2">
                     <h5 class="card-title pb-0 fs-4">Buat Akun Baru Sekarang</h5>
-                    <p style="color: #888;">Buatlah akun pribadimu lalu tambahkan informasi terkait pariwisata, kuliner, penginapan, atau ekraf yang anda kelola agar dapat dijangkau oleh lebih dari 10.000 wisatawan!</p>
+                    {{-- <p style="color: #888;">Buatlah akun pribadimu lalu tambahkan informasi terkait pariwisata, kuliner, penginapan, atau ekraf yang anda kelola agar dapat dijangkau oleh lebih dari 10.000 wisatawan!</p> --}}
                   </div>
 
                   <form class="row g-3 needs-validation" method="POST" action="{{ url('store-registrasi') }}" novalidate enctype="multipart/form-data">

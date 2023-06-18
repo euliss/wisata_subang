@@ -67,9 +67,17 @@
               navbarNav.appendChild(li);
             });
         </script>
+            <li class="nav-item"><a href="/" class="nav-link"><span>{{ GoogleTranslate::trans('Beranda', app()->getLocale()) }}</span></a></li>
+            <li class="nav-item"><a href="<?= Request::segment(1) == '' ? "#destinasi" : url('/').'#destinasi' ?>" class="nav-link"><span>{{ GoogleTranslate::trans('Pariwisata', app()->getLocale()) }}</span></a></li>
+            <li class="nav-item"><a href="/about" class="nav-link"><span>{{ GoogleTranslate::trans('Berita', app()->getLocale()) }}</span></a></li>
+            @if(auth()->user())
+            <li class="nav-item"><a href="/dashboard" class="nav-link"><span>{{ GoogleTranslate::trans('Dashboard', app()->getLocale()) }}</span></a></li>
+            @else
+            <li class="nav-item"><a href="/login" class="nav-link"><span>{{ GoogleTranslate::trans('Login', app()->getLocale()) }}</span></a></li>
+            @endif
             <li class="nav-item" style="padding-top:6px">
               <div class="dropdown">
-                <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class=" btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   {{ GoogleTranslate::trans('Pilih Bahasa', app()->getLocale()) }}
                 </button>
                 <div class="dropdown-menu w-100" style="margin: 0;" aria-labelledby="dropdownMenuButton">
@@ -78,14 +86,6 @@
                 </div>
               </div>
             </li>
-            <li class="nav-item"><a href="/" class="nav-link"><span>{{ GoogleTranslate::trans('Beranda', app()->getLocale()) }}</span></a></li>
-            <li class="nav-item"><a href="<?= Request::segment(1) == '' ? "#destinasi" : url('/').'#destinasi' ?>" class="nav-link"><span>{{ GoogleTranslate::trans('Destinasi', app()->getLocale()) }}</span></a></li>
-            <li class="nav-item"><a href="/about" class="nav-link"><span>{{ GoogleTranslate::trans('Berita', app()->getLocale()) }}</span></a></li>
-            @if(auth()->user())
-            <li class="nav-item"><a href="/dashboard" class="nav-link"><span>{{ GoogleTranslate::trans('Dashboard', app()->getLocale()) }}</span></a></li>
-            @else
-            <li class="nav-item"><a href="/login" class="nav-link"><span>{{ GoogleTranslate::trans('Login', app()->getLocale()) }}</span></a></li>
-            @endif
           </ul>
         </div>
       </div>
