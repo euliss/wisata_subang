@@ -16,13 +16,13 @@ class C_Destinations extends Controller
     public function index(){
         $data = [
             'sidebarTitle' => 'Destinations',
-            'destinations' => DB::table('destinations')
+            'destinations' => DB::table('destinations')->selectRaw("destinations.*, categories.categories_name")
                 // ->select('destinations.*')
                 ->join('categories', 'categories.id_categories', '=', 'destinations.id_category')
                 ->join('user_destinations', 'user_destinations.id_destination', '=', 'destinations.id')
                 ->whereRaw('user_destinations.id_user = '.auth()->user()->id)
                 ->get(),
-            'destination_all' => DB::table('destinations')
+            'destination_all' => DB::table('destinations')->selectRaw("destinations.*, categories.categories_name")
             ->join('categories', 'categories.id_categories', '=', 'destinations.id_category')
             ->get()
         ];
