@@ -11,7 +11,7 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
-      <li class="nav-heading">Maste Data</li>
+      <li class="nav-heading">Master Data</li>
       <li class="nav-item">
         <a class="nav-link {{ $sidebarTitle === 'Users' ? '':'collapsed'  }}" href="{{ route('users') }}">
           <i class="bi bi-people"></i>
@@ -46,7 +46,6 @@
       </li>
       
     @else
-    <li class="nav-heading">Dashboard</li>
       <li class="nav-item">
         <a class="nav-link {{ $sidebarTitle === 'Partner' ? '':'collapsed'  }}" href="{{ url('dashboard') }}">
           <i class="bi bi-grid"></i>

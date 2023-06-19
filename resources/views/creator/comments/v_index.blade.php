@@ -31,7 +31,7 @@ Data Komentar
           </div>
           <!-- /.card-header -->
           <div class="card-body">
-            <table id="example2" class="table table-bordered table-hover">
+            <table class="table datatable table-bordered table-hover">
               @if (session('pesan'))
               <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
                 {{ session('pesan') }}

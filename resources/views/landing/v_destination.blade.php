@@ -82,6 +82,8 @@ Dashboard
                 <iframe src="<?= $destination->location ?>" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
               </div>
               <div class="col-md-12 tour-wrap">
+                <h3 class="mb-2">Informasi Lebih Lanjut</h3>
+                  <a href="https://wa.me/{{$destination->contact}}" class="btn btn-success"><i class="ion-logo-whatsapp"></i> Hubungi Kami</a>
                 <div class="pt-5 mt-5">
                   <h3 class="mb-5">{{ count($comments) }} {{ GoogleTranslate::trans('Komentar', app()->getLocale()) }}</h3>
                   <ul class="comment-list">
@@ -142,7 +144,7 @@ Dashboard
       <div class="col-sm-4" style="margin-top: 80px;padding-left: 80px;">
         <form action="/destination_search" class="mt-4">
           <input type="text" class="form-control mb-2" name="name" placeholder="{{ GoogleTranslate::trans('Input Destination', app()->getLocale()) }}">
-          <button type="submit" class="btn btn-dark px-4 py-3">{{ GoogleTranslate::trans('Search Places', app()->getLocale()) }}</button>
+          <button type="submit" class="btn btn-primary px-4 py-3">{{ GoogleTranslate::trans('Search Places', app()->getLocale()) }}</button>
         </form>
         <div class="row">
           <h5 class="ml-3 mt-4">{{ GoogleTranslate::trans('Rekomendasi Destinasi', app()->getLocale()) }} : </h5>
@@ -151,7 +153,7 @@ Dashboard
             <a href="{{ url('destination/'.$val->id) }}" class="card">
               <div class="card-body">
                 <h5>{{ $val->name }}</h5>
-                <p style="max-height: 70px;overflow:hidden;font-size: 13px">{{ $val->description }}</p>
+                <p style="max-height: 70px;overflow:hidden;font-size: 13px"> <?= str_replace('_', ' ', $val->description) ?> </p>
               </div>
             </a>
           </div>

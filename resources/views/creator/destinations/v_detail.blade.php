@@ -26,7 +26,7 @@ Detail Destinasi
           <div class="card-header d-flex justify-content-between">
             <h3 class="card-title">
             Form Detail Destinasi <br><br>
-                        <a href="{{ url('destinations') }}" class="btn btn-dark" >Kembali</a>
+                        <a href="{{ url('destinations') }}" class="btn btn-secondary" ><i class="bi bi-arrow-left-circle"></i> Kembali</a>
             </h3>
             <div class="text-center">
               <a href="{{ url('comments-destination/'.$destinations->id) }}" class="btn btn-primary"><i class="bi bi-chat-dots"></i> Komentar</a>

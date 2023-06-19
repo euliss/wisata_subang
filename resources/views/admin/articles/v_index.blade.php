@@ -24,7 +24,7 @@ Data Artikel
 
         <div class="card p-3">
           <div class="card-header">
-            <h3 class="card-title">Data User</h3>
+            <h3 class="card-title">Data Artikel</h3>
             <a href="/add-articles" class="btn btn-primary" style="float: right">
               <i class="bi bi-plus-circle-fill"></i>
               Tambah Data</a>
@@ -54,7 +54,7 @@ Data Artikel
                   <td>{{ $no++ }}</td>
                   <td>{{ $item->title }}</td>
                   <td>
-                    <img src="{{asset('images/articles/'.$item->image)}}" width="200px">
+                    <img src="{{asset('images/articles/'.$item->image)}}" width="150px">
                   </td>
                   <td>
                     <a href="/detail-articles/{{$item->id}}" class="btn btn-info text-white"><i class="bi bi-eye"></i></a>
@@ -75,35 +75,6 @@ Data Artikel
   </section>
 </main>
 
-{{-- @foreach ($articles as $item)
-<div class="modal fade" id="detail{{$item->id}}" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Detail</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-md-6">
-            <label for="inputName5" class="form-label">Product Name</label>
-            <input type="text" class="form-control" id="inputName5" name="title" value="{{ $item->title }}" disabled>
-          </div>
-          <div class="col-md-12"><br>
-            <label for="inputState" class="form-label">Description</label>
-            <textarea name="description" class="form-control" cols="30" rows="15" disabled>{{ $item->description }}</textarea>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
-      </div>
-    </div>
-  </div>
-</div>
-@endforeach --}}
-
-{{-- Modal Delete --}}
 @foreach ($articles as $item)
 <div class="modal fade" id="delete{{$item->id}}" tabindex="-1">
   <div class="modal-dialog">

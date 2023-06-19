@@ -24,7 +24,7 @@ Tambah Destinasi
       <div class="col-lg-12">
         <div class="card p-3">
           <div class="card-header">
-            <h3 class="card-title">Form Tambah Destinasi/h3>
+            <h3 class="card-title">Form Tambah Destinasi</h3>
           </div>
           <div class="card-body">
             <!-- Multi Columns Form -->

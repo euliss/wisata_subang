@@ -84,7 +84,7 @@ Dashboard
                 {{--  <p style="max-height:150px;overflow: hidden;">{{ $val->description }}</p> --}}
                 <div class="row justify-content-center mb-3">
                   <div class="d-flex align-items-center mt-4">
-                    <p class="mb-0"><a href="/about" class="btn-utama px-3 py-2">{{ GoogleTranslate::trans('Read More ', app()->getLocale()) }}<span class="ion-ios-arrow-round-forward"></span></a></p>
+                    <p class="mb-0"><a href="/about" class="btn-utama px-3 py-2">{{ GoogleTranslate::trans('Read More ', app()->getLocale()) }} &nbsp; <span class="ion-ios-arrow-round-forward"></span></a></p>
                   </div>
                 </div>
               </div>
