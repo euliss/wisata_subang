@@ -8124,7 +8124,7 @@ h1, h2, h3, h4, h5,
       from { width: 0; }
     }
     .ftco-navbar-light {
-      background: #000000 !important;
+      background: #0B3E64 !important;
       position: relative;
       top: 0;
       padding-top: 0;
@@ -8136,11 +8136,11 @@ h1, h2, h3, h4, h5,
     margin: 0 auto;
     padding: 0; }
   .ftco-navbar-light .navbar-brand {
-    color: #000000;
+    color: #0B3E64;
     padding-top: .7rem;
     padding-bottom: .7rem; }
     .ftco-navbar-light .navbar-brand:hover, .ftco-navbar-light .navbar-brand:focus {
-      color: #000000 !important; }
+      color: #0B3E64 !important; }
     @media (max-width: 991.98px) {
       .text-landing{
         margin:20% 0 0 10%;
@@ -8152,7 +8152,7 @@ h1, h2, h3, h4, h5,
         from { width: 0; }
       }
       .ftco-navbar-light .navbar-brand {
-        color: #fff; } }
+        color: #0B3E64; } }
   @media (max-width: 991.98px) {
     .text-landing{
       margin:20% 0 0 10%;
@@ -9332,9 +9332,9 @@ textarea.form-control {
     opacity: 1; }
 
 .ftco-footer {
-  font-size: 16px;
-  background: #1b1919;
-  padding: 7em 0;
+  font-size: 20px;
+  background: #0B3E64;
+  padding: 2em 0;
   z-index: 0;
   position: relative; }
   .ftco-footer .ftco-footer-logo {
@@ -9342,12 +9342,12 @@ textarea.form-control {
     letter-spacing: .1em; }
   .ftco-footer .ftco-footer-widget h2 {
     font-weight: normal;
-    color: #fff;
-    margin-bottom: 40px;
+    color: #0B3E64;
+    margin-bottom: 10px;
     font-size: 22px;
     font-weight: 600; }
     .ftco-footer .ftco-footer-widget h2 span a {
-      color: #1B9CF9; }
+      color: #0B3E64; }
   .ftco-footer .ftco-footer-widget ul li {
     margin-bottom: 10px; }
     .ftco-footer .ftco-footer-widget ul li a {
@@ -9355,17 +9355,17 @@ textarea.form-control {
       .ftco-footer .ftco-footer-widget ul li a span {
         color: rgba(255, 255, 255, 0.6); }
   .ftco-footer .ftco-footer-widget .btn-primary {
-    background: #fff !important;
+    background: #0B3E64 !important;
     border: 2px solid #fff !important; }
     .ftco-footer .ftco-footer-widget .btn-primary:hover {
-      background: #fff;
-      border: 2px solid #fff !important; }
+      background: #0B3E64;
+      border: 2px solid #0B3E64 !important; }
   .ftco-footer p {
     color: rgba(255, 255, 255, 0.7); }
   .ftco-footer a {
     color: rgba(255, 255, 255, 0.7); }
     .ftco-footer a:hover {
-      color: #fff; }
+      color: #0B3E64; }
   .ftco-footer .ftco-heading-2 {
     font-size: 17px;
     font-weight: 400;
