@@ -12,7 +12,7 @@ Dashboard
             <img src="{{asset('images/articles/'.$articles->image)}}" style="width: 90%; border-radius: 10px;" class="img" alt="">
           </div>
           <div class="text">
-            <h1 class="mb-4 mt-3">{{ $articles->title }}</h1>
+            <h3 class="mb-4 mt-3">{{ $articles->title }}</h3>
             <br>
             <h5>{{ GoogleTranslate::trans('Deskripsi', app()->getLocale()) }}</h5>
             <p><?= $articles->description ?></p>

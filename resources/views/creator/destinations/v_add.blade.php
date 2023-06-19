@@ -1,9 +1,9 @@
 @section('title')
-Manage Destinations
+Kelola Destinasi
 @endsection
 @extends('layout/v_template')
 @section('page')
-Add Destinations
+Tambah Destinasi
 @endsection
 @section('content')
 <main id="main" class="main">
@@ -24,7 +24,7 @@ Add Destinations
       <div class="col-lg-12">
         <div class="card p-3">
           <div class="card-header">
-            <h3 class="card-title">Destinations Add Form</h3>
+            <h3 class="card-title">Form Tambah Destinasi/h3>
           </div>
           <div class="card-body">
             <!-- Multi Columns Form -->
@@ -32,7 +32,7 @@ Add Destinations
               @csrf
 
               <div class="col-md-6">
-                <label>Category</label>
+                <label>Kategori</label>
                 <select required class="form-control" name="id_category" >
                   <option value="">Pilih Kategori</option>
                   @foreach($categories as $val)
@@ -41,19 +41,19 @@ Add Destinations
                 </select>
               </div>
               <div class="col-md-6">
-                <label>Name</label>
+                <label>Nama</label>
                 <input required type="text" class="form-control" name="name" >
               </div>
               <div class="col-md-6">
-                <label>Description</label>
+                <label>Deskripsi</label>
                 <textarea required class="form-control" name="description" id="summernote" ></textarea>
               </div>
               <div class="col-md-6">
-                <label>Location</label>
+                <label>Lokasi</label>
                 <textarea required class="form-control" name="location" ></textarea>
               </div>
               <div class="col-md-6">
-                <label>Contact</label>
+                <label>Kontak</label>
                 <input required type="number" class="form-control" name="contact" >
               </div>
               <div class="col-md-6">

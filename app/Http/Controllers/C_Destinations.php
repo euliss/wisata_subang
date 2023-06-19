@@ -17,7 +17,7 @@ class C_Destinations extends Controller
         $data = [
             'sidebarTitle' => 'Destinations',
             'destinations' => DB::table('destinations')
-                ->select('destinations.*')
+                // ->select('destinations.*')
                 ->join('categories', 'categories.id_categories', '=', 'destinations.id_category')
                 ->join('user_destinations', 'user_destinations.id_destination', '=', 'destinations.id')
                 ->whereRaw('user_destinations.id_user = '.auth()->user()->id)
@@ -26,6 +26,7 @@ class C_Destinations extends Controller
             ->join('categories', 'categories.id_categories', '=', 'destinations.id_category')
             ->get()
         ];
+
         
         return view('creator/destinations/v_index', $data);
     }

@@ -1,9 +1,9 @@
 @section('title')
-Manage Articles
+Kelola Artikel
 @endsection
 @extends('layout/v_template')
 @section('page')
-Add Product
+Tambah Artikel
 @endsection
 @section('content')
 <main id="main" class="main">
@@ -24,7 +24,7 @@ Add Product
       <div class="col-lg-12">
         <div class="card p-3">
           <div class="card-header">
-            <h3 class="card-title">Articles Add Form</h3>
+            <h3 class="card-title">Form Tambah Artikel</h3>
           </div>
           <div class="card-body">
             <!-- Multi Columns Form -->

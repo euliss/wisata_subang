@@ -1,9 +1,9 @@
 @section('title')
-Manage Report
+Kelola Laporan
 @endsection
 @extends('layout/v_template')
 @section('page')
-Data Report
+Data Laporan 
 @endsection
 @section('content')
 <main id="main" class="main">
@@ -25,9 +25,9 @@ Data Report
       <div class="col-lg-12">
         <div class="card p-3">
           <div class="card-header">
-            <h3 class="card-title">Data Report</h3>
-            <a href="/add-reports/{{ $destination->id }}" class="btn btn-primary" style="float: right"><i class="bi bi-plus-circle-fill"></i> Add Report</a>
-            <a href="{{ url('detail-destinations/'.$destination->id) }}" class="btn btn-dark" >Kembali</a>
+            <h3 class="card-title">Laporan Pengunjung Destinasi</h3>
+            <a href="/add-reports/{{ $destination->id }}" class="btn btn-primary" style="float: right"><i class="bi bi-plus-circle-fill"></i> Tambah Data</a>
+            <a href="{{ url('detail-destinations/'.$destination->id) }}" class="btn btn-secondary"><i class="bi bi-arrow-left-circle"></i> Kembali</a>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -49,7 +49,7 @@ Data Report
           </div>
           <div class="card-body">
             <div class="d-flex flex-row-reverse">
-              <a href="/report/export_excel_report" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i>
+              <a href="/report/export_excel_report" class="btn btn-success"><i class="bi bi-folder-symlink"></i>
                   Export</a>
                   &nbsp;
             </div>

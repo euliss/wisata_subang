@@ -1,9 +1,9 @@
 @section('title')
-Manage Comments
+Kelola Komentar
 @endsection
 @extends('layout/v_template')
 @section('page')
-Data Comments
+Data Komentar
 @endsection
 @section('content')
 <main id="main" class="main">
@@ -25,9 +25,9 @@ Data Comments
       <div class="col-lg-12">
         <div class="card p-3">
           <div class="card-header">
-            <h3 class="card-title">Data Comments</h3>
-            <a href="/add-comments/{{ $destination->id }}" class="btn btn-primary" style="float: right"><i class="bi bi-plus-circle-fill"></i> Add Comment</a>
-            <a href="{{ url('detail-destinations/'.$destination->id) }}" class="btn btn-dark" >Kembali</a>
+            <h3 class="card-title">Data Komentar</h3>
+            <a href="/add-comments/{{ $destination->id }}" class="btn btn-primary" style="float: right"><i class="bi bi-plus-circle-fill"></i> Tambah Data</a>
+            <a href="{{ url('detail-destinations/'.$destination->id) }}" class="btn btn-secondary"><i class="bi bi-arrow-left-circle"></i> Kembali</a>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -41,11 +41,11 @@ Data Comments
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>Name</th>
+                  <th>Nama</th>
                   <th>Email</th>
-                  <th>Content</th>
+                  <th>Komentar</th>
                   <th>Rating</th>
-                  <th>Action</th>
+                  <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>
@@ -81,15 +81,15 @@ Data Comments
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Delete</h5>
+        <h5 class="modal-title">Hapus</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Are you sure you want to delete this data?
+        Apakah Anda Yakin Ingin Menghapus Data?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-        <a href="/delete-comments/{{$item->id}}" class="btn btn-danger">Yes</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+        <a href="/delete-comments/{{$item->id}}" class="btn btn-danger">Ya</a>
       </div>
     </div>
   </div>

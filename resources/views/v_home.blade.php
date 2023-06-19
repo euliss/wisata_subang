@@ -30,7 +30,7 @@
             <div class="card info-card sales-card">
 
                             <div class="card-body">
-                                <h5 class="card-title">Number of Users</h5>
+                                <h5 class="card-title">Jumlah Pengguna</h5>
 
                 <div class="d-flex align-items-center">
                   <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -48,7 +48,7 @@
             <div class="card info-card sales-card">
 
                             <div class="card-body">
-                                <h5 class="card-title">Number of Categories</h5>
+                                <h5 class="card-title">Jumlah Kategori</h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -66,11 +66,11 @@
             <div class="card info-card sales-card">
 
                             <div class="card-body">
-                                <h5 class="card-title">Number of Destinations</h5>
+                                <h5 class="card-title">Jumlah Destinasi</h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-layers"></i>
+                                        <i class="bi bi-building"></i>
                                     </div>
                                     <div class="ps-3">
                                         <h6>{{ $destinations }}</h6>
@@ -83,10 +83,10 @@
             </div>
           </div>
           <!-- Reports -->
-          <div class="col-6 ">
+          <div class="col-7 ">
             <div class="card">
-              <div class="card-body pt-4">
-                <h5>Grafik Jumlah Pengunjung Per Bulan</h5>
+              <div class="card-body pt-4 text-center">
+                <h5>Grafik Jumlah Pengunjung </h5>
                 <canvas style="border-radius: 6px;" id="chartReport"></canvas><br><br>
               </div>
             </div>

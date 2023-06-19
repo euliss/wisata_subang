@@ -1,9 +1,9 @@
 @section('title')
-Manage Categories
+Kelola Kategori
 @endsection
 @extends('layout/v_template')
 @section('page')
-Data Categories
+Data Kategori
 @endsection
 @section('content')
 <style>
@@ -89,7 +89,7 @@ input:checked + .slider:before {
       <div class="col-lg-12">
         <div class="card p-3">
           <div class="card-header">
-            <h3 class="card-title">Data Categories</h3>
+            <h3 class="card-title">Data Kategori</h3>
             <!-- <a href="/add-categories" class="btn btn-primary" style="float: right"><i class="bi bi-plus-circle-fill"></i> Add Data</a> -->
           </div>
           <!-- /.card-header -->
@@ -104,9 +104,9 @@ input:checked + .slider:before {
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>Categories Name</th>
+                  <th>Nama Kategori</th>
                   <th>Status</th>
-                  <th>Action</th>
+                  <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>

@@ -1,5 +1,5 @@
 @section('title')
-Manage <Article></Article>
+Kelola Artikel <Article></Article>
 @endsection
 @extends('layout/v_template')
 @section('page')
@@ -24,7 +24,7 @@ Detail <Article></Article>
       <div class="col-lg-12">
         <div class="card p-3">
           <div class="card-header">
-            <h3 class="card-title">Article Detail</h3>
+            <h3 class="card-title">Form Detail Artikel</h3>
           </div>
           <div class="card-body">
             <!-- Multi Columns Form -->
@@ -55,7 +55,7 @@ Detail <Article></Article>
                 <input disabled type="text" class="form-control" name="name" value="{{$article->title}}">
               </div>
               <div class="col-md-6">
-                <label class="form-label">Description</label>
+                <label class="form-label">Deskripsi</label>
                 <textarea rows="10" disabled class="form-control" name="description">{{ strip_tags($article->description) }} </textarea> 
               </div>
               {{-- <div class="col-md-6">

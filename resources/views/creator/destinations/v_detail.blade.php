@@ -1,9 +1,9 @@
 @section('title')
-Manage Destination
+Kelola Destinasi
 @endsection
 @extends('layout/v_template')
 @section('page')
-Detail Destination
+Detail Destinasi
 @endsection
 @section('content')
 <main id="main" class="main">
@@ -25,12 +25,12 @@ Detail Destination
         <div class="card p-3">
           <div class="card-header d-flex justify-content-between">
             <h3 class="card-title">
-            Destination Detail <br><br>
+            Form Detail Destinasi <br><br>
                         <a href="{{ url('destinations') }}" class="btn btn-dark" >Kembali</a>
             </h3>
             <div class="text-center">
-              <a href="{{ url('comments-destination/'.$destinations->id) }}" class="btn btn-info text-white">Comments</a>
-              <a href="{{ url('reports-destination/'.$destinations->id) }}" class="btn btn-info text-white">Report</a>
+              <a href="{{ url('comments-destination/'.$destinations->id) }}" class="btn btn-primary"><i class="bi bi-chat-dots"></i> Komentar</a>
+              <a href="{{ url('reports-destination/'.$destinations->id) }}" class="btn btn-primary"><i class="bi bi-newspaper"></i> Laporan</a>
             </div>
           </div>
           <div class="card-body">

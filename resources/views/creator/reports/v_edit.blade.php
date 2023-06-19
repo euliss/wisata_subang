@@ -1,9 +1,9 @@
 @section('title')
-Manage Report
+Kelola Laporan
 @endsection
 @extends('layout/v_template')
 @section('page')
-Edit Report
+Edit Laporan Pengunjung
 @endsection
 @section('content')
 <main id="main" class="main">
@@ -24,7 +24,7 @@ Edit Report
       <div class="col-lg-12">
         <div class="card p-3">
           <div class="card-header">
-            <h3 class="card-title">Report Edit Form</h3>
+            <h3 class="card-title">Form Edit Laporan Pengunjung</h3>
           </div>
           <div class="card-body">
             <!-- Multi Columns Form -->
@@ -36,7 +36,7 @@ Edit Report
                   <input required type="number" class="form-control" value="{{ $report->count }}" name="count">
                 </div>
                 <div class="form-group">
-                  <label for="message">Content</label>
+                  <label for="message">Keterangan</label>
                   <textarea required name="content" cols="10" rows="2" class="form-control">{{ $report->content }}</textarea>
                 </div>
                 <div class="form-group">

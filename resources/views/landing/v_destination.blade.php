@@ -14,7 +14,7 @@ Dashboard
             <div class="slider-item">
                 <div class="row d-md-flex no-gutters slider-text align-items-center justify-content-end" data-scrollax-parent="true">
                   <div class="one-third w-100">
-                    <div class="img" style="background-image:url(<?= asset('images/destinations/'.$image) ?>);">
+                    <div class="img" style="background-image:url(<?= asset('images/destinations/'.$image) ?>); width: 90%; border-radius: 10px"> 
                     </div>
                   </div>
                 </div>

@@ -63,9 +63,9 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="/dashboard" class="logo d-flex align-items-center">
-        <img src="{{ asset('layout') }}/assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">Destinasi Wisata</span>
+      <a href="/dashboard" class=" logo d-flex align-items-center">
+        <img src="{{ asset('layout') }}/assets/img/wisata.png" alt="">
+        {{-- <span class="d-none d-lg-block">Destinasi Wisata</span> --}}
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -93,7 +93,7 @@
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="/">Destinasi Wisata</a>
+      Designed by <a href="/">Eulis Jubaedah</a>
     </div>
   </footer><!-- End Footer -->
 

@@ -1,9 +1,9 @@
 @section('title')
-Manage Comments
+Kelola Komentar
 @endsection
 @extends('layout/v_template')
 @section('page')
-Add Comments
+Tambah Komentar
 @endsection
 @section('content')
 <main id="main" class="main">
@@ -24,7 +24,7 @@ Add Comments
       <div class="col-lg-12">
         <div class="card p-3">
           <div class="card-header">
-            <h3 class="card-title">Comments Add Form</h3>
+            <h3 class="card-title">Form Tambah Komentar</h3>
           </div>
           <div class="card-body">
             <!-- Multi Columns Form -->
@@ -32,7 +32,7 @@ Add Comments
               @csrf
 
                 <div class="form-group">
-                  <label for="name">Name *</label>
+                  <label for="name">Nama *</label>
                   <input required type="text" class="form-control" name="name">
                 </div>
                 <div class="form-group">
@@ -40,7 +40,7 @@ Add Comments
                   <input required type="email" class="form-control" name="email">
                 </div>
                 <div class="form-group">
-                  <label for="message">Message</label>
+                  <label for="message">Komentar</label>
                   <textarea required name="content" cols="10" rows="2" class="form-control"></textarea>
                 </div>
                 <div class="form-group">

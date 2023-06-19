@@ -1,9 +1,9 @@
 @section('title')
-Manage Comment
+Kelola Komentar
 @endsection
 @extends('layout/v_template')
 @section('page')
-Edit Comment
+Edit Komentar
 @endsection
 @section('content')
 <main id="main" class="main">
@@ -24,7 +24,7 @@ Edit Comment
       <div class="col-lg-12">
         <div class="card p-3">
           <div class="card-header">
-            <h3 class="card-title">Comment Edit Form</h3>
+            <h3 class="card-title">Form Edit Komentar</h3>
           </div>
           <div class="card-body">
             <!-- Multi Columns Form -->
@@ -32,7 +32,7 @@ Edit Comment
               @csrf
 
                 <div class="form-group">
-                  <label for="name">Name *</label>
+                  <label for="name">Nama *</label>
                   <input required type="text" class="form-control" value="{{ $comment->name }}" name="name">
                 </div>
                 <div class="form-group">
@@ -40,7 +40,7 @@ Edit Comment
                   <input required type="email" class="form-control" value="{{ $comment->email }}" name="email">
                 </div>
                 <div class="form-group">
-                  <label for="message">Message</label>
+                  <label for="message">Komentar</label>
                   <textarea required name="content" cols="10" rows="2" class="form-control">{{ $comment->content }}</textarea>
                 </div>
                 <div class="form-group">

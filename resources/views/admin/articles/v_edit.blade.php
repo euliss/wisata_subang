@@ -1,9 +1,9 @@
 @section('title')
-Manage Articles
+Kelola Artikel
 @endsection
 @extends('layout/v_template')
 @section('page')
-Edit Product
+Edit Artikel
 @endsection
 @section('content')
 <main id="main" class="main">
@@ -24,7 +24,7 @@ Edit Product
       <div class="col-lg-12">
         <div class="card p-3">
           <div class="card-header">
-            <h3 class="card-title">Article Edit Form</h3>
+            <h3 class="card-title">Form Edit Artikel</h3>
           </div>
           <div class="card-body">
             <!-- Multi Columns Form -->
@@ -35,7 +35,7 @@ Edit Product
                 <input type="text" class="form-control" id="inputName5" name="title" value="{{ $article->title }}" placeholder="Enter Title...">
               </div>
               <div class="col-md-12">
-                <label for="inputState" class="form-label">Description</label>
+                <label for="inputState" class="form-label">Deskripsi</label>
                 <textarea name="description" class="form-control" cols="30" rows="5" id="summernote" >{{$article->description}}</textarea>
               </div>
               <div class="col-md-12">

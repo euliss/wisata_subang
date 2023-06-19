@@ -1,9 +1,9 @@
 @section('title')
-Manage Reports
+Kelola Laporan
 @endsection
 @extends('layout/v_template')
 @section('page')
-Add Reports
+Tambah Laporan Pengunjung
 @endsection
 @section('content')
 <main id="main" class="main">
@@ -24,7 +24,7 @@ Add Reports
       <div class="col-lg-12">
         <div class="card p-3">
           <div class="card-header">
-            <h3 class="card-title">Reports Add Form</h3>
+            <h3 class="card-title">Form Tambah Laporan Pengunjung</h3>
           </div>
           <div class="card-body">
             <!-- Multi Columns Form -->
@@ -36,11 +36,11 @@ Add Reports
                   <input required type="number" class="form-control" name="count">
                 </div>
                 <div class="form-group">
-                  <label for="message">Content</label>
+                  <label for="message">Keterangan</label>
                   <textarea required name="content" cols="10" rows="2" class="form-control"></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="email">Date </label>
+                  <label for="email">Tanggal</label>
                   <input required type="date" class="form-control" name="date">
                 </div>
 

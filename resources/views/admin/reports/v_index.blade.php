@@ -1,9 +1,9 @@
 @section('title')
-    Report
+Laporan Pengunjung
 @endsection
 @extends('layout/v_template')
 @section('page')
-    Manage Report
+Laporan
 @endsection
 @section('content')
     <main id="main" class="main">
@@ -25,7 +25,7 @@
                 <div class="col-lg-12">
                     <div class="card p-3">
                         <div class="card-header">
-                            <h3 class="card-title">Manage Report</h3>
+                            <h3 class="card-title">Data Laporan Pengunjung</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -63,7 +63,7 @@
                             </form>
                         </div>
                         <div class="d-flex flex-row-reverse">
-                            <a href="/report/export_excel" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i>
+                            <a href="/report/export_excel" class="btn btn-success"><i class="bi bi-folder-symlink"></i>
                                 Export</a>
                                 &nbsp;
                         </div>
