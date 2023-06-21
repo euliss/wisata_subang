@@ -168,6 +168,7 @@ class C_Users extends Controller
         if ($user->photo <> "") {
             unlink(public_path('foto_user') . '/' . $user->photo);
         }
+        DB::table('user_destinations')->where('id_user',$id_user)->delete();
         $this->M_Users->deleteData($id_user);
         return redirect()->route('users')->with('pesan', 'Data Deleted Successfully !');
     }

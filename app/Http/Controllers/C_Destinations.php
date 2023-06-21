@@ -121,6 +121,9 @@ class C_Destinations extends Controller
     }
 
     public function delete($id){
+        DB::table('reports')->where('id_destination',$id)->delete();
+        DB::table('comments')->where('id_destination',$id)->delete();
+        DB::table('user_destinations')->where('id_destination',$id)->delete();
         DB::table('destinations')->where('id',$id)->delete();
         return redirect()->route('destinations')->with('pesan', 'Data Deleted Successfully !');
     }
