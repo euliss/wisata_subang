@@ -26,6 +26,7 @@
         <div class="row">
 
           <!-- Sales Card -->
+          @if(auth()->user()->level == 1)
           <div class="col-xxl-2 col-md-4">
             <div class="card info-card sales-card">
 
@@ -44,6 +45,8 @@
 
             </div>
           </div>
+          @endif
+          @if(auth()->user()->level == 1)
           <div class="col-xxl-2 col-md-4">
             <div class="card info-card sales-card">
 
@@ -62,6 +65,7 @@
 
             </div>
           </div>
+          @endif
           <div class="col-xxl-2 col-md-4">
             <div class="card info-card sales-card">
 
@@ -83,6 +87,7 @@
             </div>
           </div>
           <!-- Reports -->
+          @if(auth()->user()->level == 1)
           <div class="col-7 ">
             <div class="card">
               <div class="card-body pt-4 text-center">
@@ -91,6 +96,7 @@
               </div>
             </div>
           </div>
+          @endif
           <div class="col-12">
             <div class="card">
 

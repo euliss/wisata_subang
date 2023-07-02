@@ -12,6 +12,10 @@ class M_Destinations extends Model
 
     public function numberOfDestinations()
     {
-        return DB::table('destinations')->count();
+        if(auth()->user()->level == 1){
+            return DB::table('destinations')->count();
+        }else{
+            return DB::table('user_destinations')->where('id_user',auth()->user()->id)->count();
+        }
     }
 }
