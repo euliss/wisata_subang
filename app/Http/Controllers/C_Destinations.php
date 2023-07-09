@@ -90,13 +90,18 @@ class C_Destinations extends Controller
     }
 
     public function update($id, Request $request){
+        $data = [];
         $files = $request->file('image');
         $filename = "";
-        foreach ($files as $file) {
-            $file->move('images/destinations',$file->getClientOriginalName());
-            $filename .= "|".$file->getClientOriginalName();
+        
+        if($files != null){
+            foreach ($files as $file) {
+                $file->move('images/destinations',$file->getClientOriginalName());
+                $filename .= "|".$file->getClientOriginalName();
+            }
+            $data['image'] = $filename;
         }
-        DB::table('destinations')->where('id',$id)->update([
+        $data = [
             'id_category' => $request->id_category,
             'name' => $request->name,
             'description' => $request->description,
@@ -108,8 +113,9 @@ class C_Destinations extends Controller
             'menu' => $request->menu,
             'tipe_kamar' => $request->tipe_kamar,
             'status' => '0',
-            'image' => $filename,
-        ]);
+        ];
+
+        DB::table('destinations')->where('id',$id)->update($data);
         return redirect()->route('destinations')->with('pesan', 'Data Updated Successfully !');
     }
 

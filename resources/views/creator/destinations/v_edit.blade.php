@@ -57,7 +57,7 @@ Edit Destination
               </div>
               <div class="col-md-6">
                 <label>Image</label>
-                <input required type="file" class="form-control mt-1" name="image[]" >
+                <input type="file" class="form-control mt-1" name="image[]" >
                 <input type="file" class="form-control mt-1" name="image[]" >
                 <input type="file" class="form-control mt-1" name="image[]" >
                 <input type="file" class="form-control mt-1" name="image[]" >
