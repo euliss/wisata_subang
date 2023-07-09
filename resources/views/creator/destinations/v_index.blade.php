@@ -30,14 +30,16 @@ DataDestinasi
           </div>
           <!-- /.card-header -->
           <div class="card-body">
-            <table class="table datatable table-bordered table-hover">
-            @if (session('pesan'))
-              <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
-                {{ session('pesan') }}
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-              @endif
-              <thead>
+            <div class="table-responsive">
+
+              <table class="table datatable table-bordered table-hover">
+                @if (session('pesan'))
+                <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
+                  {{ session('pesan') }}
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+                <thead>
                 <tr>
                   <th>No</th>
                   <th>Nama</th>
@@ -60,15 +62,15 @@ DataDestinasi
                     <td>{{ $item->status == 0 ? 'unactive' : 'active' }}</td>
                     <td>
                       @if(auth()->user()->level == 1)
-                        @if($item->status == 0)
-                        <a href="/change-status-destinations/{{ $item->id }}/1" class="btn btn-primary text-white">
-                          Activate
-                        </a>
-                        @else
-                        <a href="/change-status-destinations/{{ $item->id }}/0" class="btn btn-danger text-white">
-                          Deactivate
-                        </a>
-                        @endif
+                      @if($item->status == 0)
+                      <a href="/change-status-destinations/{{ $item->id }}/1" class="btn btn-primary text-white">
+                        Activate
+                      </a>
+                      @else
+                      <a href="/change-status-destinations/{{ $item->id }}/0" class="btn btn-danger text-white">
+                        Deactivate
+                      </a>
+                      @endif
                       @endif
                       <a href="/detail-destinations/{{$item->id}}" class="btn btn-info text-white"><i class="bi bi-eye"></i></a>
                       <a href="/edit-destinations/{{$item->id}}" class="btn btn-success"><i class="bi bi-pencil"></i></a>
@@ -78,6 +80,7 @@ DataDestinasi
                 @endforeach
               </tbody>
             </table>
+          </div>
           </div>
         </div>
 
@@ -98,7 +101,7 @@ DataDestinasi
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Apakah anda yakin ingin menghapus data?
+        Apakah anda yakin ingin menghapus data? Menghapus data destinasi akan mempengaruhi data komentar dan laporan, pilih alternatif nonaktifkan destinasi
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>

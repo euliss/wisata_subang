@@ -31,15 +31,17 @@
 
                         <div class="card-body">
                             <!-- Table with stripped rows -->
-                            <table class="table datatable table-bordered table-hover">
+                            <div class="table-responsive">
+
+                              <table class="table datatable table-bordered table-hover">
                                 @if (session('pesan'))
-                                    <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show"
-                                        role="alert">
-                                        {{ session('pesan') }}
-                                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"
-                                            aria-label="Close"></button>
-                                    </div>
-                                @endif
+                                <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show"
+                                role="alert">
+                                {{ session('pesan') }}
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"
+                                aria-label="Close"></button>
+                              </div>
+                              @endif
                                 <thead>
                                     <tr>
                                       <th>No</th>
@@ -52,52 +54,53 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php $no = 1; ?>
-                @foreach ($users as $item)
-                  <tr>
-                    <td>{{ $no++ }}</td>
-                    <td>{{ $item->name }}</td>
-                    <td>{{ $item->email }}</td>
-                    {{-- <td>{{ $item->nik }}</td> --}}
-                    <td>{{ $item->level == 1 ? 'Admin' : 'Creator' }}</td>
-                    <td align="center">
-                      {{ $item->status }}
-                      <hr style="margin: 0;margin-bottom: 5px;">
-                      @if ($item->status == 'active')
-                        <a style="margin:0 4px" href="{{url('change-status/non-active/').'/'.$item->id }}" class="btn btn-sm btn-danger">Deactivate</a>
-                      @else
-                        <a style="margin:0 4px" href="{{url('change-status/active/').'/'.$item->id }}" class="btn btn-sm btn-primary">Activate</a>
-                      @endif
-                    </td>
-                    <!-- <td>
-                      @if ($item->photo)
-                      <img src="{{url('foto_user/'.$item->photo)}}" width="100px">
-                      @else
-                      <img src="{{url('foto_user/default.jpg')}}" width="100px">
-                      @endif
-                    </td> -->
-                    <td>
-                      @if (Auth::user()->id === $item->id)
-                      @else
-                        @if ($item->level == 2)
-                          <a href="/destinations-user/{{$item->id}}" class="btn btn-warning mb-1 text-white"><i class="bi bi-building"></i></a>
-                        @endif
-                        <a href="/edit-user/{{$item->id}}" class="btn btn-success"><i class="bi bi-pencil"></i></a>
-                      @endif
-                      <a href="/detail-user/{{$item->id}}" class="btn btn-info text-white"><i class="bi bi-eye"></i></a>
-                      @if (Auth::user()->id === $item->id)
-                        <button style="margin:0 4px" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-info"><i class="bi bi-trash"></i></button>
-                      @else
-                        <button style="margin:0 4px" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$item->id}}"><i class="bi bi-trash"></i></button>
-                
-                     
-                      @endif
-                    </td>
-                  </tr>
-                @endforeach
+                                  <?php $no = 1; ?>
+                                  @foreach ($users as $item)
+                                  <tr>
+                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $item->name }}</td>
+                                    <td>{{ $item->email }}</td>
+                                    {{-- <td>{{ $item->nik }}</td> --}}
+                                    <td>{{ $item->level == 1 ? 'Admin' : 'Creator' }}</td>
+                                    <td align="center">
+                                      {{ $item->status }}
+                                      <hr style="margin: 0;margin-bottom: 5px;">
+                                      @if ($item->status == 'active')
+                                      <a style="margin:0 4px" href="{{url('change-status/non-active/').'/'.$item->id }}" class="btn btn-sm btn-danger">Deactivate</a>
+                                      @else
+                                      <a style="margin:0 4px" href="{{url('change-status/active/').'/'.$item->id }}" class="btn btn-sm btn-primary">Activate</a>
+                                      @endif
+                                    </td>
+                                    <!-- <td>
+                                      @if ($item->photo)
+                                      <img src="{{url('foto_user/'.$item->photo)}}" width="100px">
+                                      @else
+                                      <img src="{{url('foto_user/default.jpg')}}" width="100px">
+                                      @endif
+                                    </td> -->
+                                    <td>
+                                      @if (Auth::user()->id === $item->id)
+                                      @else
+                                      @if ($item->level == 2)
+                                      <a href="/destinations-user/{{$item->id}}" class="btn btn-warning mb-1 text-white"><i class="bi bi-building"></i></a>
+                                      @endif
+                                      <a href="/edit-user/{{$item->id}}" class="btn btn-success"><i class="bi bi-pencil"></i></a>
+                                      @endif
+                                      <a href="/detail-user/{{$item->id}}" class="btn btn-info text-white"><i class="bi bi-eye"></i></a>
+                                      @if (Auth::user()->id === $item->id)
+                                      <button style="margin:0 4px" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-info"><i class="bi bi-trash"></i></button>
+                                      @else
+                                      <button style="margin:0 4px" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$item->id}}"><i class="bi bi-trash"></i></button>
+                                      
+                                      
+                                      @endif
+                                    </td>
+                                  </tr>
+                                  @endforeach
                                 </tbody>
-                            </table>
-                            <!-- End Table with stripped rows -->
+                              </table>
+                            </div>
+                              <!-- End Table with stripped rows -->
 
                         </div>
                     </div>

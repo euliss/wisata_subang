@@ -71,15 +71,17 @@ Laporan
                         <div class="card-body">
 
                             {{-- <table id="example2" class="table table-bordered table-hover"> --}}
-                            <table class="table datatable table-bordered table-hover">
+                                <div class="table-responsive">
 
-                                @if (session('pesan'))
-                                    <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show"
+                                    <table class="table datatable table-bordered table-hover">
+                                        
+                                        @if (session('pesan'))
+                                        <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show"
                                         role="alert">
                                         {{ session('pesan') }}
                                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"
                                             aria-label="Close"></button>
-                                    </div>
+                                        </div>
                                 @endif
                                 <thead>
                                     <tr>
@@ -92,15 +94,16 @@ Laporan
                                 <tbody>
                                     <?php $no = 1; ?>
                                     @foreach ($reports as $item)
-                                        <tr>
-                                            <td>{{ $no++ }}</td>
-                                            <td>{{ $item->name }}</td>
-                                            <td>{{ $item->date }}</td>
-                                            <td>{{ $item->count }}</td>
-                                        </tr>
+                                    <tr>
+                                        <td>{{ $no++ }}</td>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->date }}</td>
+                                        <td>{{ $item->count }}</td>
+                                    </tr>
                                     @endforeach
                                 </tbody>
                             </table>
+                        </div>
                         </div>
                     </div>
 

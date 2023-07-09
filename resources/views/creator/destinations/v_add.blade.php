@@ -70,7 +70,7 @@ Tambah Destinasi
               </div>
               <div class="col-md-6 d-none input_harga">
                 <label>Harga</label>
-                <input type="number" class="form-control" name="harga" >
+                <input type="text" class="form-control" name="harga" >
               </div>
               <div class="col-md-6 d-none input_fasilitas">
                 <label>Fasilitas</label>

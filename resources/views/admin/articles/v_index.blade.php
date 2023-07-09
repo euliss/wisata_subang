@@ -32,23 +32,25 @@ Data Artikel
 
           <div class="card-body">
             <!-- Table with stripped rows -->
-            <table class="table datatable table-bordered table-hover" >
-              @if (session('pesan'))
-              <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
-                {{ session('pesan') }}
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-              @endif
-              <thead>
-                <tr>
-                  <th>No</th>
-                  <th>Title</th>
-                  <th>Image</th>
-                  <th>Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php $no=1;?>
+            <div class="table-responsive">
+
+              <table class="table datatable table-bordered table-hover" >
+                @if (session('pesan'))
+                <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
+                  {{ session('pesan') }}
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Title</th>
+                    <th>Image</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php $no=1;?>
                 @foreach ($articles as $item)
                 <tr>
                   <td>{{ $no++ }}</td>
@@ -65,6 +67,7 @@ Data Artikel
                 @endforeach
               </tbody>
             </table>
+          </div>
             <!-- End Table with stripped rows -->
 
           </div>

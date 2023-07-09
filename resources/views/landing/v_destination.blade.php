@@ -6,19 +6,20 @@ Dashboard
   <div class="container">
     <div class="row layout-destination">
       <div class="col-sm-8 card-destination">
-        <section class="hero-wrap" style="background-image: url('landing/images/destination-single.jpg');" data-stellar-background-ratio="0.5">
+        <section class="hero-wrap" style="background-image: " data-stellar-background-ratio="0.5">
           <div class="home-slider owl-carousel">
 
-            @foreach(explode('|', $destination->image) as $image)
+            @foreach(explode('|', @$destination->image) as $image)
             @if($image != "")
-            <div class="slider-item">
+            {{-- <div class="slider-item">
                 <div class="row d-md-flex no-gutters slider-text align-items-center justify-content-end" data-scrollax-parent="true">
                   <div class="one-third w-100">
                     <div class="img" style="background-image:url(<?= asset('images/destinations/'.$image) ?>); width: 90%; border-radius: 10px"> 
                     </div>
                   </div>
                 </div>
-            </div>
+            </div> --}}
+            <img src="{{asset('images/destinations/'. $image)}}" alt="" style="width: 90%; border-radius:5%">
             @endif
             @endforeach
 
@@ -153,7 +154,7 @@ Dashboard
             <a href="{{ url('destination/'.$val->id) }}" class="card">
               <div class="card-body">
                 <h5>{{ $val->name }}</h5>
-                <p style="max-height: 70px;overflow:hidden;font-size: 13px"> <?= str_replace('_', ' ', $val->description) ?> </p>
+                <p style="max-height: 40px;overflow:hidden;font-size: 13px"> <?= str_replace('_', ' ', $val->description) ?> </p>
               </div>
             </a>
           </div>

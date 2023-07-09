@@ -440,7 +440,7 @@ pre {
   overflow-y: scroll; }
 
 .container-images {
-  background-image: url('ecoland/images/bg-landing.jpg');
+  /* background-image: url('ecoland/images/bg-landing.jpg'); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

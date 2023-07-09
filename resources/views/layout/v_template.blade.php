@@ -62,8 +62,8 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="/dashboard" class=" logo d-flex align-items-center">
-        <img src="{{ asset('layout') }}/assets/img/wisata.png" alt="">
-        {{-- <span class="d-none d-lg-block">Destinasi Wisata</span> --}}
+        <img src="{{ asset('layout') }}/assets/img/logo.jpg" alt="">
+        <h3>Wisata Subang</h3>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -77,7 +77,7 @@
   @include('layout/v_sidebar')
   <!-- End Sidebar-->
 
-  <!-- Default box -->
+   <!-- Default box -->
   @yield('content')
   <!-- /.card -->
 

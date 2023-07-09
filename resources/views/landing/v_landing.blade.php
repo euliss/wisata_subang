@@ -113,7 +113,7 @@ Dashboard
                 <?php  
                   $image = explode("|", $value->image)[1];
                 ?>
-                <a class="text-center" href="/destination"><img src="{{ asset('images/destinations/'.$image) }}" width="100%" style="min-height:300px;max-height: 300px;"></a>
+                <a class="text-center" href="/destination"><img src="{{ asset('images/destinations/'.$image) }}" width="100%" style="min-height:300px;max-height: 300px; border-radius:15px;"></a>
               </div>
               {{-- <span class="kategori">
                 {{ $category->categories_name }}
@@ -123,7 +123,6 @@ Dashboard
                 <h3 class="ml-3 mt-2 mb-2"><a href="/destination">{{ $value->name}}</a></h3>
               </div>
               <a href="images/destination-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-                <span class="icon-expand"></span>
               </a>
             </div>
           </div>

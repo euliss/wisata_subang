@@ -94,19 +94,21 @@ input:checked + .slider:before {
           </div>
           <!-- /.card-header -->
           <div class="card-body">
-            <table class="table datatable table-bordered table-hover">
-              @if (session('pesan'))
-              <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
-                {{ session('pesan') }}
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-              @endif
-              <thead>
-                <tr>
-                  <th>No</th>
-                  <th>Nama Kategori</th>
-                  <th>Status</th>
-                  <th>Aksi</th>
+            <div class="table-responsive">
+
+              <table class="table datatable table-bordered table-hover">
+                @if (session('pesan'))
+                <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
+                  {{ session('pesan') }}
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Nama Kategori</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>
@@ -126,11 +128,12 @@ input:checked + .slider:before {
                     <!-- <td>
                       <a href="/edit-categories/{{$item->id_categories}}" class="btn btn-success"><i class="bi bi-pencil"></i></a>
                       <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$item->id_categories}}"><i class="bi bi-trash"></i></butt>
-                    </td> -->
-                  </tr>
-                @endforeach
-              </tbody>
-            </table>
+                      </td> -->
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
           </div>
         </div>
 
