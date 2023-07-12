@@ -27,7 +27,8 @@
                 <div class="card" style="border-radius: 10px">
                     <div class="col-xxl-2 col-md-4 mt-4">
                         <h1>Hi, {{ Auth::user()->name }}</h1>
-                            <img src="{{ asset('gambar/hello.jpg') }}" alt="selamatdatang" style="align-content: flex-end" height="350px" width="350px">
+                        <img src="{{ asset('gambar/hello.jpg') }}" alt="selamatdatang" style="align-content: flex-end"
+                            height="350px" width="350px">
                     </div>
                 </div>
                 <!-- Sales Card -->
