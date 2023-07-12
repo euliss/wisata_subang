@@ -19,36 +19,41 @@
         </div><!-- End Page Title -->
 
         <section class="section dashboard">
+            {{-- <div class="row"> --}}
+
+            <!-- Left side columns -->
+            {{-- <div class="col-lg-12"> --}}
             <div class="row">
-
-      <!-- Left side columns -->
-      {{-- <div class="col-lg-12"> --}}
-        <div class="row">
-
-          <!-- Sales Card -->
-          @if(auth()->user()->level == 1)
-          <div class="col-xxl-2 col-md-4">
-            <div class="card info-card sales-card">
+                <div class="card" style="border-radius: 10px">
+                    <div class="col-xxl-2 col-md-4 mt-4">
+                        <h1>Hi, {{ Auth::user()->name }}</h1>
+                            <img src="{{ asset('gambar/hello.jpg') }}" alt="selamatdatang" style="align-content: flex-end" height="350px" width="350px">
+                    </div>
+                </div>
+                <!-- Sales Card -->
+                @if (auth()->user()->level == 1)
+                    <div class="col-xxl-2 col-md-4">
+                        <div class="card info-card sales-card">
 
                             <div class="card-body">
                                 <h5 class="card-title">Jumlah Pengguna</h5>
 
-                <div class="d-flex align-items-center">
-                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <i class="bi bi-people"></i>
-                  </div>
-                  <div class="ps-3">
-                    <h6>{{ $users }}</h6>
-                  </div>
-                </div>
-              </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <h6>{{ $users }}</h6>
+                                    </div>
+                                </div>
+                            </div>
 
-            </div>
-          </div>
-          @endif
-          @if(auth()->user()->level == 1)
-          <div class="col-xxl-2 col-md-4">
-            <div class="card info-card sales-card">
+                        </div>
+                    </div>
+                @endif
+                @if (auth()->user()->level == 1)
+                    <div class="col-xxl-2 col-md-4">
+                        <div class="card info-card sales-card">
 
                             <div class="card-body">
                                 <h5 class="card-title">Jumlah Kategori</h5>
@@ -63,42 +68,42 @@
                                 </div>
                             </div>
 
-            </div>
-          </div>
-          @endif
-          <div class="col-xxl-2 col-md-4">
-            <div class="card info-card sales-card">
+                        </div>
+                    </div>
+                @endif
+                <div class="col-xxl-2 col-md-4">
+                    <div class="card info-card sales-card">
 
-                            <div class="card-body">
-                                <h5 class="card-title">Jumlah Destinasi</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">Jumlah Destinasi</h5>
 
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-building"></i>
-                                    </div>
-                                    <div class="ps-3">
-                                        <h6>{{ $destinations }}</h6>
-                                    </div>
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-building"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>{{ $destinations }}</h6>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-          </div>
-          <!-- Reports -->
-          @if(auth()->user()->level == 1)
-          <div class="col-7 ">
-            <div class="card">
-              <div class="card-body pt-4 text-center">
-                <h5>Grafik Jumlah Pengunjung </h5>
-                <canvas style="border-radius: 6px;" id="chartReport"></canvas><br><br>
-              </div>
             </div>
-          </div>
-          @endif
-          <div class="col-12">
-            <div class="card">
+            {{-- </div> --}}
+            <!-- Reports -->
+            @if (auth()->user()->level == 1)
+                <div class="col-7 ">
+                    <div class="card">
+                        <div class="card-body pt-4 text-center">
+                            <h5>Grafik Jumlah Pengunjung </h5>
+                            <canvas style="border-radius: 6px;" id="chartReport"></canvas><br><br>
+                        </div>
+                    </div>
+                </div>
+            @endif
+            <div class="col-12">
+                <div class="card">
 
                     {{-- <div class="card-body">
                         <div class="row">
@@ -171,7 +176,7 @@
                     ],
                     datasets: [{
                         label: "Chart",
-                        backgroundColor: ['#ff6', '#f6f', '#6ff', '#66f', '#f66', ],
+                        backgroundColor: ['#4942E4', '#8696FE', '#C4B0FF'],
                         data: [
                             <?php foreach($graphic as $val): ?>
                             <?= $val->report_count ?>,
