@@ -77,14 +77,14 @@ Dashboard
           @foreach($articles as $val)
           <div class="col-md-6 col-lg-4 d-flex ftco-animate">
             <div class="blog-entry">
-              <a href="/about" class="block-20" style="background-image: url('<?= asset('images/articles/'.$val->image) ?>'); border-radius:15px;">
+              <a href="{{  url('about/'.$val->id) }}" class="block-20" style="background-image: url('<?= asset('images/articles/'.$val->image) ?>'); border-radius:15px;">
               </a>
               <div class="text float-right d-block">
-                <p class="text heading"><a href="#">{{ $val->title }}</a></p>
+                <p class="text heading"><a href="{{  url('destination/'.$val->id) }}">{{ $val->title }}</a></p>
                 {{--  <p style="max-height:150px;overflow: hidden;">{{ $val->description }}</p> --}}
                 <div class="row justify-content-center mb-3">
                   <div class="d-flex align-items-center mt-4">
-                    <p class="mb-0"><a href="/about" class="btn-utama px-3 py-2">{{ GoogleTranslate::trans('Read More ', app()->getLocale()) }} &nbsp; <span class="ion-ios-arrow-round-forward"></span></a></p>
+                    <p class="mb-0"><a href="{{  url('about/'.$val->id) }}" class="btn-utama px-3 py-2">{{ GoogleTranslate::trans('Read More ', app()->getLocale()) }} &nbsp; <span class="ion-ios-arrow-round-forward"></span></a></p>
                   </div>
                 </div>
               </div>
@@ -113,14 +113,14 @@ Dashboard
                 <?php  
                   $image = explode("|", $value->image)[1];
                 ?>
-                <a class="text-center" href="/destination"><img src="{{ asset('images/destinations/'.$image) }}" width="100%" style="min-height:300px;max-height: 300px; border-radius:15px;"></a>
+                <a class="text-center" href="{{  url('destination/'.$value->id) }}"><img src="{{ asset('images/destinations/'.$image) }}" width="100%" style="min-height:300px;max-height: 300px; border-radius:15px;"></a>
               </div>
               {{-- <span class="kategori">
                 {{ $category->categories_name }}
               </span> --}}
               <div class="text">
                 {{-- <span>{{ $value->created_at }}</span> --}}
-                <h3 class="ml-3 mt-2 mb-2"><a href="/destination">{{ $value->name}}</a></h3>
+                <h3 class="ml-3 mt-2 mb-2"><a href="{{  url('destination/'.$value->id) }}">{{ $value->name}}</a></h3>
               </div>
               <a href="images/destination-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
               </a>

@@ -69,7 +69,7 @@ Edit Destination
               </div>
               <div class="col-md-6 d-none input_harga">
                 <label>Harga</label>
-                <input value="{{$destinations->harga}}" type="number" class="form-control" name="harga" >
+                <input value="{{$destinations->harga}}" type="text" class="form-control" name="harga" >
               </div>
               <div class="col-md-6 d-none input_fasilitas">
                 <label>Fasilitas</label>

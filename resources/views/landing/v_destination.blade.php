@@ -149,7 +149,7 @@ Dashboard
         </form>
         <div class="row">
           <h5 class="ml-3 mt-4">{{ GoogleTranslate::trans('Rekomendasi Destinasi', app()->getLocale()) }} : </h5>
-          @foreach($recomend as $val)
+          {{-- @foreach($recomend as $val)
           <div class="col-sm-12 mb-3">
             <a href="{{ url('destination/'.$val->id) }}" class="card">
               <div class="card-body">
@@ -158,7 +158,29 @@ Dashboard
               </div>
             </a>
           </div>
+          @endforeach --}}
+          @foreach($recomend as $val)
+          <div class="col-sm-12 mb-3">
+            <div class="card-destination project">
+              <div class="img">
+                <?php  
+                  $image = explode("|", $val->image)[1];
+                ?>
+                <a class="text-center" href="{{  url('destination/'.$val->id) }}"><img src="{{ asset('images/destinations/'.$image) }}" width="100%" style="min-height:300px;max-height: 300px; border-radius:15px;"></a>
+              </div>
+              {{-- <span class="kategori">
+                {{ $category->categories_name }}
+              </span> --}}
+              <div class="text">
+                {{-- <span>{{ $value->created_at }}</span> --}}
+                <h3 class="ml-3 mt-2 mb-2"><a href="{{  url('destination/'.$val->id) }}">{{ $val->name}}</a></h3>
+              </div>
+              <a href="images/destination-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+              </a>
+            </div>
+          </div>
           @endforeach
+
         </div>
       </div>
     </div>
