@@ -24,12 +24,13 @@
             <!-- Left side columns -->
             {{-- <div class="col-lg-12"> --}}
             <div class="row">
-                <div class="card" style="border-radius: 10px">
-                    <div class="col-xxl-2 col-md-4 mt-4">
-                        <h1>Hi, {{ Auth::user()->name }}</h1>
-                        <img src="{{ asset('gambar/hello.jpg') }}" alt="selamatdatang" style="align-content: flex-end"
-                            height="350px" width="350px">
+                <div class="card " style="border-radius: 10px">
+                    <div class="col-12 mt-4 d-flex justify-content-beetween">
+                        <h1 class="col-md-9">Hi, {{ Auth::user()->name }}</h1>
+                        <img class="float-end" src="{{ asset('gambar/hello.jpg') }}" alt="selamatdatang" height="150px" >
                     </div>
+                    {{-- <div class="d-flex align-items-center justify-content-center"> --}}
+                    {{-- </div> --}}
                 </div>
                 <!-- Sales Card -->
                 @if (auth()->user()->level == 1)
