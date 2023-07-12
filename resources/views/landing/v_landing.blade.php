@@ -80,7 +80,7 @@ Dashboard
               <a href="{{  url('about/'.$val->id) }}" class="block-20" style="background-image: url('<?= asset('images/articles/'.$val->image) ?>'); border-radius:15px;">
               </a>
               <div class="text float-right d-block">
-                <p class="text heading"><a href="{{  url('destination/'.$val->id) }}">{{ $val->title }}</a></p>
+                <p class="text heading"><a href="{{  url('about/'.$val->id) }}">{{ $val->title }}</a></p>
                 {{--  <p style="max-height:150px;overflow: hidden;">{{ $val->description }}</p> --}}
                 <div class="row justify-content-center mb-3">
                   <div class="d-flex align-items-center mt-4">
@@ -107,8 +107,8 @@ Dashboard
         <div class="row">
 
           @foreach($destinations as $value)
-          <div class="col-md-6 col-lg-4 ftco-animate">
-            <div class="card-destination project">
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="blog-entry">
               <div class="img">
                 <?php  
                   $image = explode("|", $value->image)[1];
@@ -118,10 +118,11 @@ Dashboard
               {{-- <span class="kategori">
                 {{ $category->categories_name }}
               </span> --}}
-              <div class="text">
+              <div class="text float-right d-block">
+                <p class="text heading"><a href="{{  url('destination/'.$value->id) }}">{{ $value->name }}</a></p>
                 {{-- <span>{{ $value->created_at }}</span> --}}
-                <h3 class="ml-3 mt-2 mb-2"><a href="{{  url('destination/'.$value->id) }}">{{ $value->name}}</a></h3>
-              </div>
+                {{-- <h3 class="ml-3 mt-2 mb-2"><a href="{{  url('destination/'.$value->id) }}">{{ $value->name}}</a></h3> --}}
+              </div> 
               <a href="images/destination-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
               </a>
             </div>
