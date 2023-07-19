@@ -207,11 +207,11 @@
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target"
+    <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-dark ftco-navbar-light site-navbar-target"
         id="ftco-navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('images/wisata.png') }}" height="80" alt="Logo" /></a>
+                <img src="{{ asset('images/wisata.png') }}" height="50" alt="Logo" /></a>
             <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
                 data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
@@ -331,13 +331,14 @@
     <script src="{{ asset('ecoland/js/aos.js') }}"></script>
     <script src="{{ asset('ecoland/js/jquery.animateNumber.min.js') }}"></script>
     <script src="{{ asset('ecoland/js/scrollax.min.js') }}"></script>
-    {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> --}}
-    {{-- <script src="{{ asset('ecoland/js/google-map.js') }}"></script> --}}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="{{ asset('ecoland/js/google-map.js') }}"></script>
 
     <script src="{{ asset('ecoland/js/main.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
 
 
 

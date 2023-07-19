@@ -15,7 +15,7 @@ Dashboard
                 </div>
               </div>
               <div class="col-md-7">
-                <img src="{{ asset('ecoland/images/bg-landing.jpg') }}" class="d-flex" alt="Background Landing" width="1000" height="736px">
+                <img src="{{ asset('ecoland/images/bg-landing.jpg') }}" class="d-flex" alt="Background Landing" width="1000" height="736px" style="position: relative;">
               </div>
             </div>
           </div>

@@ -24,14 +24,19 @@
             <!-- Left side columns -->
             {{-- <div class="col-lg-12"> --}}
             <div class="row">
+                @if (auth()->user()->level == 2)
                 <div class="card " style="border-radius: 10px">
-                    <div class="col-12 mt-4 d-flex justify-content-beetween">
-                        <h1 class="col-md-9">Hi, {{ Auth::user()->name }}</h1>
-                        <img class="float-end" src="{{ asset('gambar/hello.jpg') }}" alt="selamatdatang" height="150px" >
+                    <div class="col-12 mt-4 justify-content-beetween">
+                        <h3><strong> Selamat Datang {{ Auth::user()->name }}</strong></h3>
+                        <br>
+                        <h6>Mari tambahkan informasi terkait destinasi wisata yang kamu kelola agar dapat dijangkau oleh banyak wisatawan!</h6> 
+                        <h6>Jangan lupa tambahkan laporan pengunjung pada setiap bulannya, agar destinasi wisata yang anda kelola menjadi rekomendasi!</h6>
+                        <img class="float-end" src="{{ asset('gambar/hello.jpg') }}" alt="selamatdatang" height="180px" >
                     </div>
-                    {{-- <div class="d-flex align-items-center justify-content-center"> --}}
-                    {{-- </div> --}}
+                    <div class="d-flex align-items-center justify-content-center">
+                    </div>
                 </div>
+                @endif
                 <!-- Sales Card -->
                 @if (auth()->user()->level == 1)
                     <div class="col-xxl-2 col-md-4">
@@ -73,6 +78,7 @@
                         </div>
                     </div>
                 @endif
+                @if (auth()->user()->level == 1)
                 <div class="col-xxl-2 col-md-4">
                     <div class="card info-card sales-card">
 
@@ -90,12 +96,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            </div>
-            {{-- </div> --}}
-            <!-- Reports -->
-            @if (auth()->user()->level == 1)
-                <div class="col-7 ">
+                @endif
+                @if (auth()->user()->level == 1)
+                <div class="col-xxl-2 col-md-7 ">
                     <div class="card">
                         <div class="card-body pt-4 text-center">
                             <h5>Grafik Jumlah Pengunjung </h5>
@@ -103,7 +106,12 @@
                         </div>
                     </div>
                 </div>
-            @endif
+                @endif
+            </div>
+            </div>
+            {{-- </div> --}}
+            <!-- Reports -->
+           
             <div class="col-12">
                 <div class="card">
 
@@ -178,7 +186,7 @@
                     ],
                     datasets: [{
                         label: "Chart",
-                        backgroundColor: ['#4942E4', '#8696FE', '#C4B0FF'],
+                        backgroundColor: ['#4942E4', '#8696FE', '#C4B0FF','#4942E4', '#8696FE', '#C4B0FF','#4942E4', '#8696FE', '#C4B0FF','#4942E4', '#8696FE', '#C4B0FF'],
                         data: [
                             <?php foreach($graphic as $val): ?>
                             <?= $val->report_count ?>,

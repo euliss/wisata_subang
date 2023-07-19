@@ -17,7 +17,7 @@ Dashboard
           @foreach($articles as $val)
           <div class="col-md-6 col-lg-4 d-flex ftco-animate">
             <div class="blog-entry justify-content-end">
-              <a href="/about/{{$val->id}}" class="block-20" style="background-image: url('<?= asset('images/articles/'.$val->image) ?>');"></a>
+              <a href="/about/{{$val->id}}" class="block-20" style="background-image: url('<?= asset('images/articles/'.$val->image) ?>'); 300px; border-radius:15px;"></a>
               <div class="text float-right d-block">
                   <h3 class="heading"><a href="/about/{{$val->id}}">{{ $val->title }}</a></h3>
                   <!-- <div class="d-flex align-items-center mt-4 meta">

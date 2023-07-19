@@ -15,13 +15,13 @@ Dashboard
         <div class="row">
 
           @foreach($destination_category as $val)
-          <div class="col-md-6 col-lg-4 ftco-animate">
-            <div class="card-destination project">
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="blog-entry">
               <div class="img">
                 <a href="{{ url('destination/'.$val->id) }}"><img src="{{ asset('images/destinations/'.explode('|', $val->image)[1]) }}" class="" alt="Colorlib Template"  width="100%" style="min-height:300px;max-height: 300px; border-radius:15px;"></a>
               </div>
-              <div class="text">
-                <h3 class="ml-3 mt-2 mb-2"><a href="{{ url('destination/'.$val->id) }}">{{ $val->name }}</a></h3>
+              <div class="text float-right d-block">
+                <p class="text heading"><a href="{{ url('destination/'.$val->id) }}">{{ $val->name }}</a></p>
                 <!-- <div class="star d-flex clearfix">
                   <div class="mr-auto float-left">
                     <span class="ion-ios-star"></span>

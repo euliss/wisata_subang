@@ -184,8 +184,8 @@
           </div>
           @endforeach --}}
                     @foreach ($recomend as $val)
-                        <div class="col-sm-12 mb-3">
-                            <div class="card-destination project">
+                        <div class="col-sm-12 mb-3  d-flex ftco-animate">
+                            <div class="blog-entry">
                                 <div class="img">
                                     <?php
                                     $image = explode('|', $val->image)[1];
@@ -197,10 +197,10 @@
                                 {{-- <span class="kategori">
                 {{ $category->categories_name }}
               </span> --}}
-                                <div class="text">
+                                <div class="text float-right d-block">
                                     {{-- <span>{{ $value->created_at }}</span> --}}
-                                    <h3 class="ml-3 mt-2 mb-2"><a
-                                            href="{{ url('destination/' . $val->id) }}">{{ $val->name }}</a></h3>
+                                    <p class="text heading"><a
+                                            href="{{ url('destination/' . $val->id) }}">{{ $val->name }}</a></p>
                                 </div>
                                 <a href="images/destination-1.jpg"
                                     class="icon image-popup d-flex justify-content-center align-items-center">
