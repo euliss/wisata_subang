@@ -32,20 +32,21 @@ Tambah Komentar
               @csrf
 
                 <div class="form-group">
-                  <label for="name">Nama *</label>
-                  <input required type="text" class="form-control" name="name">
+                  <label for="name">Nama<span style="color:crimson">*</span></label>
+                  <input required type="text" class="form-control" name="name" placeholder="Masukkan Nama">
                 </div>
                 <div class="form-group">
-                  <label for="email">Email *</label>
-                  <input required type="email" class="form-control" name="email">
+                  <label for="email">Email<span style="color:crimson">*</span></label>
+                  <input required type="email" class="form-control" name="email" placeholder="Masukkan Email">
                 </div>
                 <div class="form-group">
-                  <label for="message">Komentar</label>
-                  <textarea required name="content" cols="10" rows="2" class="form-control"></textarea>
+                  <label for="message">Komentar<span style="color:crimson">*</span></label>
+                  <textarea required name="content" cols="10" rows="2" class="form-control" placeholder="Masukkan Komentar"></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="message">Rating</label>
+                  <label for="message">Rating<span style="color:crimson">*</span></label>
                   <select required name="rating" class="form-control">
+                    <option value="">--Pilih Nilai--</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>

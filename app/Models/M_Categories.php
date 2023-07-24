@@ -45,4 +45,12 @@ class M_Categories extends Model
     {
         return DB::table('categories')->count();
     }
+
+    public function jumlahByCategory($id_categories)
+    {
+        return DB::table('reports')
+            ->leftJoin('destinations', 'destinations.id', '=', 'reports.id_destination')
+            ->leftJoin('categories', 'categories.id_categories', '=', 'destinations.id_category')
+            ->orderBy('categories.id_categories', 'ASC')->where('categories.id_categories', $id_categories)->sum('reports.count');
+    }
 }

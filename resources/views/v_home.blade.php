@@ -23,6 +23,13 @@
 
             <!-- Left side columns -->
             {{-- <div class="col-lg-12"> --}}
+            @if (auth()->user()->level == 1)
+            <div class="row mb-3">
+                <div class="col-lg-12">
+                    <a href="/kirim-notifikasi" class="btn btn-primary">Kirim Whatsapp</a>
+                </div>
+            </div>
+            @endif
             <div class="row">
                 @if (auth()->user()->level == 2)
                 <div class="card " style="border-radius: 10px">
@@ -98,12 +105,38 @@
                 </div>
                 @endif
                 @if (auth()->user()->level == 1)
-                <div class="col-xxl-2 col-md-7 ">
+                <div class="col-xxl-2 col-md-6 ">
                     <div class="card">
                         <div class="card-body pt-4 text-center">
                             <h5>Grafik Jumlah Pengunjung </h5>
                             <canvas style="border-radius: 6px;" id="chartReport"></canvas><br><br>
                         </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-xxl-2 col-md-6">
+                    <div class="card" style="height: 91%">
+                      <div class="card-body">
+                        <h5 class="card-title">Jumlah Pengunjung Per Kategori</h5>
+          
+                        <!-- Doughnut Chart -->
+                        <canvas id="doughnutChart" style="border-radius: 6px;"></canvas>
+                        
+          
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title"> Destinasi Terbanyak Dikunjungi</h5>
+          
+                        <!-- Line Chart -->
+                        <div id="barChart"></div>
+                        
+                        <!-- End Line CHart -->
+          
+                      </div>
                     </div>
                 </div>
                 @endif
@@ -205,4 +238,105 @@
 
         getChart()
     </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        new Chart(document.querySelector('#doughnutChart'), {
+        type: 'doughnut',
+        data: {
+            labels: [
+                <?php foreach($category as $val): ?> 
+                    "<?= $val->categories_name ?>",
+                <?php endforeach ?>
+            ],
+            datasets: [{
+            label: 'My First Dataset',
+            data: [
+                <?php foreach($jumlahPengunjung as $item): ?>
+                    "<?= $item ?>",
+                <?php endforeach ?>
+            ],
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)',
+                '#4942E4',
+                '#C4B0FF',
+            ],
+            hoverOffset: 8
+            }]
+        },
+        options: {
+            legend: {   
+                    display: true
+                }
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    new Chart(document.querySelector('#lineChart'), {
+        type: 'line',
+        data: {
+        labels: [
+            <?php foreach($destinasi as $val): ?> "<?= $val->name ?>",
+            <?php endforeach ?>
+        ],
+        datasets: [{
+            label: 'Destinasi Paling Banyak Peminat',
+            data: [
+                <?php foreach($destinasi as $item): ?>
+                    "<?= $item->jumlah_pengunjung ?>",
+                <?php endforeach ?>
+            ],
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1
+        }]
+        },
+        options: {
+        scales: {
+            y: {
+            beginAtZero: true
+            }
+        }
+        }
+    });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    new ApexCharts(document.querySelector("#barChart"), {
+        series: [{
+        data: [
+            <?php foreach($destinasi as $item): ?>
+                "<?= $item->jumlah_pengunjung ?>",
+            <?php endforeach ?>
+        ]
+        }],
+        chart: {
+        type: 'bar',
+        height: 247
+        },
+        plotOptions: {
+        bar: {
+            borderRadius: 4,
+            horizontal: true,
+        }
+        },
+        dataLabels: {
+        enabled: false
+        },
+        xaxis: {
+        categories: [
+            <?php foreach($destinasi as $val): ?> "<?= $val->name ?>",
+            <?php endforeach ?>
+        ],
+        }
+    }).render();
+    });
+</script>
 @endsection

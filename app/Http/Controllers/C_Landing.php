@@ -111,7 +111,7 @@ class C_Landing extends Controller
                 ->orderBy('count','desc')
                 ->limit(3)
                 ->get(),
-            'comments'        => DB::table('comments')->where('id_destination',$id)->get() ,
+            'comments' => DB::table('comments')->where('id_destination', $id)->orderByDesc('id')->get(),
             'news'       => $this->M_News->getLimit(3, 'Aktif'),
         ];
 

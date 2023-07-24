@@ -25,9 +25,9 @@ Data Komentar
       <div class="col-lg-12">
         <div class="card p-3">
           <div class="card-header">
-            <h3 class="card-title">Data Komentar</h3>
+            <h3 class="card-title">Data Komentar {{$destination->name}}</h3>
             <a href="/add-comments/{{ $destination->id }}" class="btn btn-primary" style="float: right"><i class="bi bi-plus-circle-fill"></i> Tambah Data</a>
-            <a href="{{ url('detail-destinations/'.$destination->id) }}" class="btn btn-secondary"><i class="bi bi-arrow-left-circle"></i> Kembali</a>
+            <a href="{{ url('detail-destinations/'.$destination->id) }}" class="btn btn-primary"><i class="bi bi-arrow-left-circle"></i> Detail Destiansi</a>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -47,6 +47,7 @@ Data Komentar
                   <th>Email</th>
                   <th>Komentar</th>
                   <th>Rating</th>
+                  <th>Tanggal</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -59,6 +60,7 @@ Data Komentar
                     <td>{{ $item->email }}</td>
                     <td>{{ $item->content }}</td>
                     <td>{{ $item->rating }}</td>
+                    <td>{{ date('Y-m-d', strtotime($item->created_at)) }}</td>
                     <td>
                       <a href="/edit-comments/{{$item->id}}" class="btn btn-success"><i class="bi bi-pencil"></i></a>
                       <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$item->id}}"><i class="bi bi-trash"></i></button>

@@ -41,19 +41,23 @@ Edit Destination
               </div>
               <div class="col-md-6">
                 <label class="form-label">Name</label>
-                <input type="text" class="form-control" name="name" value="{{$destinations->name}}">
+                <input type="text" class="form-control" name="name" value="{{$destinations->name}}" placeholder="Masukkan Name">
               </div>
               <div class="col-md-6">
                 <label class="form-label">Description</label>
-                <textarea class="form-control" name="description" id="summernote">{{$destinations->description}}</textarea>
+                <textarea class="form-control" name="description" id="summernote" placeholder="Masukkan Description">{{$destinations->description}}</textarea>
               </div>
               <div class="col-md-6">
                 <label class="form-label">Location</label>
-                <textarea class="form-control" name="location">{{$destinations->location}}</textarea>
+                <textarea class="form-control" name="location" placeholder="Masukkan Location">{{$destinations->location}}</textarea>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Address</label>
+                <textarea class="form-control" name="alamat" placeholder="Masukkan Address">{{$destinations->alamat}}</textarea>
               </div>
               <div class="col-md-6">
                 <label class="form-label">Contact</label>
-                <input type="number" class="form-control" name="contact" value="{{$destinations->contact}}">
+                <input type="number" class="form-control" name="contact" value="{{$destinations->contact}}" placeholder="Masukkan Contact">
               </div>
               <div class="col-md-6">
                 <label>Image</label>
@@ -65,23 +69,23 @@ Edit Destination
               </div>
               <div class="col-md-6 d-none input_jam_operasional">
                 <label>Jam Operasional</label>
-                <input value="{{$destinations->jam_operasional}}" type="text" class="form-control" name="jam_operasional" >
+                <input value="{{$destinations->jam_operasional}}" type="text" class="form-control" name="jam_operasional" placeholder="Masukkan Jam Operasional" >
               </div>
               <div class="col-md-6 d-none input_harga">
                 <label>Harga</label>
-                <input value="{{$destinations->harga}}" type="text" class="form-control" name="harga" >
+                <input value="{{$destinations->harga}}" type="text" class="form-control" name="harga" placeholder="Masukkan Harga" >
               </div>
               <div class="col-md-6 d-none input_fasilitas">
                 <label>Fasilitas</label>
-                <textarea class="form-control" name="fasilitas" ><?= $destinations->fasilitas ?></textarea>
+                <textarea class="form-control" name="fasilitas" placeholder="Masukkan Fasilitas" ><?= $destinations->fasilitas ?></textarea>
               </div>
               <div class="col-md-6 d-none input_menu">
                 <label>Menu</label>
-                <textarea class="form-control" name="menu" ><?= $destinations->menu ?></textarea>
+                <textarea class="form-control" name="menu" placeholder="Masukkan Menu" ><?= $destinations->menu ?></textarea>
               </div>
               <div class="col-md-6 d-none input_tipe_kamar">
                 <label>Tipe Kamar</label>
-                <input value="{{$destinations->tipe_kamar}}" type="text" class="form-control" name="tipe_kamar" >
+                <input value="{{$destinations->tipe_kamar}}" type="text" class="form-control" name="tipe_kamar" placeholder="Masukkan Tipe Kamar" >
               </div>
 
               <div class="text-center">

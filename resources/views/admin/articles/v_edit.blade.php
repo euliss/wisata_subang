@@ -36,7 +36,7 @@ Edit Artikel
               </div>
               <div class="col-md-12">
                 <label for="inputState" class="form-label">Deskripsi</label>
-                <textarea name="description" class="form-control" cols="30" rows="5" id="summernote" >{{$article->description}}</textarea>
+                <textarea name="description" class="form-control" cols="30" rows="5" id="summernote" placeholder="Enter Description" >{{$article->description}}</textarea>
               </div>
               <div class="col-md-12">
                 <label for="inputName5" class="form-label">Image</label>

@@ -99,15 +99,33 @@
                                 <div class="pt-5 mt-5">
                                     <h3 class="mb-5">{{ count($comments) }}
                                         {{ GoogleTranslate::trans('Komentar', app()->getLocale()) }}</h3>
-                                    <ul class="comment-list">
+
+                                        <label for="filterSelect">Filter By Rating</label>
+                                        <select id="filterSelect" class="form-control" style="width: 100px;">
+                                            <option value="all">All</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+
+                                    <ul class="comment-list" id="ratingList">
 
                                         @foreach ($comments as $val)
-                                            <li class="comment">
+                                            <li class="comment" data-jurusan="{{$val->rating}}">
                                                 <hr>
                                                 <div class="comment-body" style="float:left;">
                                                     <h2>{{ $val->name }}</h2>
                                                     <div>{{ date('d M Y H:i:s', strtotime($val->created_at)) }}</div>
-                                                    <div>Rating : {{ $val->rating }}🌟</div>
+                                                    <div>Rating : 
+                                                        <?php for ($i=0; $i < $val->rating; $i++) { ?>
+                                                            <i class="bi bi-star-fill text-warning"></i>
+                                                        <?php } ?>
+                                                        <?php for ($i=0; $i < 5-$val->rating; $i++) { ?>
+                                                            <i class="bi bi-star text-warning"></i>
+                                                        <?php } ?>
+                                                    </div>
                                                     <p>{{ $val->content }}</p>
                                                 </div>
                                             </li>
@@ -171,8 +189,8 @@
                     <button type="submit"
                         class="btn btn-primary px-4 py-3">{{ GoogleTranslate::trans('Search Places', app()->getLocale()) }}</button>
                 </form>
-                <div class="row">
-                    <h5 class="ml-3 mt-4">{{ GoogleTranslate::trans('Rekomendasi Destinasi', app()->getLocale()) }} : </h5>
+                {{-- <div class="row">
+                    <h5 class="ml-3 mt-4">{{ GoogleTranslate::trans('Rekomendasi Destinasi', app()->getLocale()) }} : </h5> --}}
                     {{-- @foreach ($recomend as $val)
           <div class="col-sm-12 mb-3">
             <a href="{{ url('destination/'.$val->id) }}" class="card">
@@ -183,7 +201,7 @@
             </a>
           </div>
           @endforeach --}}
-                    @foreach ($recomend as $val)
+                    {{-- @foreach ($recomend as $val)
                         <div class="col-sm-12 mb-3  d-flex ftco-animate">
                             <div class="blog-entry">
                                 <div class="img">
@@ -193,13 +211,13 @@
                                     <a class="text-center" href="{{ url('destination/' . $val->id) }}"><img
                                             src="{{ asset('images/destinations/' . $image) }}" width="100%"
                                             style="min-height:300px;max-height: 300px; border-radius:15px;"></a>
-                                </div>
+                                </div> --}}
                                 {{-- <span class="kategori">
                 {{ $category->categories_name }}
               </span> --}}
-                                <div class="text float-right d-block">
+                                {{-- <div class="text float-right d-block"> --}}
                                     {{-- <span>{{ $value->created_at }}</span> --}}
-                                    <p class="text heading"><a
+                                    {{-- <p class="text heading"><a
                                             href="{{ url('destination/' . $val->id) }}">{{ $val->name }}</a></p>
                                 </div>
                                 <a href="images/destination-1.jpg"
@@ -207,10 +225,27 @@
                                 </a>
                             </div>
                         </div>
-                    @endforeach
+                    @endforeach --}}
 
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        document.getElementById("filterSelect").addEventListener("change", function() {
+            var selectedJurusan = this.value;
+            var mahasiswaItems = document.querySelectorAll("#ratingList li");
+
+            for (var i = 0; i < mahasiswaItems.length; i++) {
+                var dataJurusan = mahasiswaItems[i].getAttribute("data-jurusan");
+                if (selectedJurusan === "all" || dataJurusan === selectedJurusan) {
+                    mahasiswaItems[i].style.display = "block";
+                } else {
+                    mahasiswaItems[i].style.display = "none";
+                }
+            }
+        });
+    </script>
 @endsection

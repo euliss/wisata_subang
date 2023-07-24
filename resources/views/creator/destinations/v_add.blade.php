@@ -32,7 +32,7 @@ Tambah Destinasi
               @csrf
 
               <div class="col-md-6">
-                <label>Kategori</label>
+                <label>Kategori <span style="color:crimson">*</span></label>
                 <select required class="form-control" name="id_category" >
                   <option value="">Pilih Kategori</option>
                   @foreach($categories as $val)
@@ -41,48 +41,48 @@ Tambah Destinasi
                 </select>
               </div>
               <div class="col-md-6">
-                <label>Nama</label>
-                <input required type="text" class="form-control" name="name" >
+                <label>Nama<span style="color:crimson">*</span></label>
+                <input required type="text" class="form-control" name="name" placeholder="Masukkan Nama Destinasi" >
               </div>
               <div class="col-md-6">
-                <label>Deskripsi</label>
-                <textarea required class="form-control" name="description" id="summernote" ></textarea>
+                <label>Deskripsi<span style="color:crimson">*</span></label>
+                <textarea required class="form-control" name="description" placeholder="Masukkan Gambaran Umum" ></textarea>
               </div>
               <div class="col-md-6">
-                <label>Lokasi</label>
-                <textarea required class="form-control" name="location" ></textarea>
+                <label>Lokasi<span style="color:crimson">*</span></label>
+                <textarea required class="form-control" name="location" placeholder="Masukkan URL Google Maps" ></textarea>
               </div>
               <div class="col-md-6">
-                <label>Kontak</label>
-                <input required type="number" class="form-control" name="contact" >
+                <label>Alamat<span style="color:crimson">*</span></label>
+                <textarea required class="form-control" name="alamat" placeholder="Masukkan Alamat Lengkap" ></textarea>
               </div>
               <div class="col-md-6">
-                <label>Image</label>
-                <input required type="file" class="form-control mt-1" name="image[]" >
-                <input type="file" class="form-control mt-1" name="image[]" >
-                <input type="file" class="form-control mt-1" name="image[]" >
-                <input type="file" class="form-control mt-1" name="image[]" >
-                <input type="file" class="form-control mt-1" name="image[]" >
+                <label>Kontak<span style="color:crimson">*</span></label>
+                <input required type="number" class="form-control" name="contact" placeholder="Masukkan Nomor WhatsApp Contoh:628**********" >
+              </div>
+              <div class="col-md-6">
+                <label>Image<span style="color:crimson">*</span></label>
+                <input type="file" class="form-control mt-1" name="image[]" multiple required accept=".png, .jpg, .jpeg" placeholder="Masukan Gambar format png or jpg">
               </div>
               <div class="col-md-6 d-none input_jam_operasional">
-                <label>Jam Operasional</label>
-                <input type="text" class="form-control" name="jam_operasional" >
+                <label>Jam Operasional<span style="color:crimson">*</span></label>
+                <input type="text" class="form-control" name="jam_operasional" placeholder="Masukkan Jam Operasional" >
               </div>
               <div class="col-md-6 d-none input_harga">
-                <label>Harga</label>
-                <input type="text" class="form-control" name="harga" >
+                <label>Harga<span style="color:crimson">*</span></label>
+                <input type="text" class="form-control" name="harga" placeholder="Masukkan Harga" >
               </div>
               <div class="col-md-6 d-none input_fasilitas">
-                <label>Fasilitas</label>
-                <textarea class="form-control" name="fasilitas" ></textarea>
+                <label>Fasilitas<span style="color:crimson">*</span></label>
+                <textarea class="form-control" name="fasilitas" placeholder="Masukkan Fasilitas" ></textarea>
               </div>
               <div class="col-md-6 d-none input_menu">
-                <label>Menu</label>
-                <textarea class="form-control" name="menu" ></textarea>
+                <label>Menu<span style="color:crimson">*</span></label>
+                <textarea class="form-control" name="menu" placeholder="Masukkan Gambaran Menu" ></textarea>
               </div>
               <div class="col-md-6 d-none input_tipe_kamar">
-                <label>Tipe Kamar</label>
-                <input type="text" class="form-control" name="tipe_kamar" >
+                <label>Tipe Kamar<span style="color:crimson">*</span></label>
+                <input type="text" class="form-control" name="tipe_kamar" placeholder="Masukkan Tipe Kamar" >
               </div>
 
               <div class="text-center mt-5">

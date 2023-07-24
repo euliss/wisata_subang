@@ -33,15 +33,15 @@ Edit Komentar
 
                 <div class="form-group">
                   <label for="name">Nama *</label>
-                  <input required type="text" class="form-control" value="{{ $comment->name }}" name="name">
+                  <input required type="text" class="form-control" value="{{ $comment->name }}" name="name" placeholder="Masukkan Nama">
                 </div>
                 <div class="form-group">
                   <label for="email">Email *</label>
-                  <input required type="email" class="form-control" value="{{ $comment->email }}" name="email">
+                  <input required type="email" class="form-control" value="{{ $comment->email }}" name="email" placeholder="Masukkan Email">
                 </div>
                 <div class="form-group">
                   <label for="message">Komentar</label>
-                  <textarea required name="content" cols="10" rows="2" class="form-control">{{ $comment->content }}</textarea>
+                  <textarea required name="content" cols="10" rows="2" class="form-control" placeholder="Masukkan Komentar">{{ $comment->content }}</textarea>
                 </div>
                 <div class="form-group">
                   <label for="message">Rating</label>

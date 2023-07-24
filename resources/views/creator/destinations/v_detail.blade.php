@@ -29,8 +29,10 @@ Detail Destinasi
                         <a href="{{ url('destinations') }}" class="btn btn-secondary" ><i class="bi bi-arrow-left-circle"></i> Kembali</a>
             </h3>
             <div class="text-center">
-              <a href="{{ url('comments-destination/'.$destinations->id) }}" class="btn btn-primary"><i class="bi bi-chat-dots"></i> Komentar</a>
-              <a href="{{ url('reports-destination/'.$destinations->id) }}" class="btn btn-primary"><i class="bi bi-newspaper"></i> Laporan</a>
+              @if(Auth::user()->level == 1)
+                <a href="{{ url('comments-destination/'.$destinations->id) }}" class="btn btn-primary"><i class="bi bi-chat-dots"></i> Komentar</a>
+                <a href="{{ url('reports-destination/'.$destinations->id) }}" class="btn btn-primary"><i class="bi bi-newspaper"></i> Laporan</a>
+              @endif
             </div>
           </div>
           <div class="card-body">
@@ -63,6 +65,10 @@ Detail Destinasi
               <div class="col-md-6">
                 <label class="form-label">Location</label>
                 <textarea rows="10" disabled class="form-control" name="location">{{$destinations->location}}</textarea>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Address</label>
+                <textarea disabled class="form-control" name="alamat">{{$destinations->alamat}}</textarea>
               </div>
               <div class="col-md-6">
                 <label class="form-label">Contact</label>

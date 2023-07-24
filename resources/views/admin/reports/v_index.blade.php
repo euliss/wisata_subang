@@ -31,6 +31,11 @@ Laporan
                         <div class="card-body">
                             <br>
                             <h5>Filter Laporan</h5>
+                            <div class="d-flex flex-row-reverse">
+                                <a href="/report/export_excel" class="btn btn-success"><i class="bi bi-folder-symlink"></i>
+                                    Export</a>
+                                    &nbsp;
+                            </div>
                             <form action="" class="row mt-4 mb-5">
                                 @csrf
                                 <div class="col-sm-4">
@@ -62,12 +67,6 @@ Laporan
                                 </div>
                             </form>
                         </div>
-                        <div class="d-flex flex-row-reverse">
-                            <a href="/report/export_excel" class="btn btn-success"><i class="bi bi-folder-symlink"></i>
-                                Export</a>
-                                &nbsp;
-                        </div>
-                        <br>
                         <div class="card-body">
 
                             {{-- <table id="example2" class="table table-bordered table-hover"> --}}

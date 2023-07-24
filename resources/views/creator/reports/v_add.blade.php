@@ -32,15 +32,15 @@ Tambah Laporan Pengunjung
               @csrf
 
                 <div class="form-group">
-                  <label for="email">Jumlah </label>
-                  <input required type="number" class="form-control" name="count">
+                  <label for="email">Jumlah<span style="color:crimson">*</span></label>
+                  <input required type="number" class="form-control" name="count" placeholder="Masukkan Jumlah">
                 </div>
                 <div class="form-group">
-                  <label for="message">Keterangan</label>
-                  <textarea required name="content" cols="10" rows="2" class="form-control"></textarea>
+                  <label for="message">Keterangan<span style="color:crimson">*</span></label>
+                  <textarea required name="content" cols="10" rows="2" class="form-control" placeholder="Masukkan Keterangan"></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="email">Tanggal</label>
+                  <label for="email">Tanggal<span style="color:crimson">*</span></label>
                   <input required type="date" class="form-control" name="date">
                 </div>
 

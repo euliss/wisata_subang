@@ -33,11 +33,11 @@ Edit Laporan Pengunjung
 
                 <div class="form-group">
                   <label for="name">Jumlah</label>
-                  <input required type="number" class="form-control" value="{{ $report->count }}" name="count">
+                  <input required type="number" class="form-control" value="{{ $report->count }}" name="count" placeholder="Masukkan Jumlah">
                 </div>
                 <div class="form-group">
                   <label for="message">Keterangan</label>
-                  <textarea required name="content" cols="10" rows="2" class="form-control">{{ $report->content }}</textarea>
+                  <textarea required name="content" cols="10" rows="2" class="form-control" placeholder="Masukkan Keterangan">{{ $report->content }}</textarea>
                 </div>
                 <div class="form-group">
                   <label for="name">Tanggal</label>

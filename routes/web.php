@@ -57,6 +57,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/change-status/{status}/{id}', [App\Http\Controllers\HomeController::class, 'changeStatus']);
+    Route::get('/kirim-notifikasi', [App\Http\Controllers\HomeController::class, 'kirimNotifikasi'])->name('kirim-notifikasi');
+    Route::post('/kirim-notifikasi', [App\Http\Controllers\HomeController::class, 'prosesKirimNotifikasi']);
 
     // categories
     Route::get('/categories', [C_Categories::class, 'index'])->name('categories');
@@ -75,6 +77,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/update-destinations/{id}', [C_Destinations::class, 'update']);
     Route::get('/delete-destinations/{id}', [C_Destinations::class, 'delete']);
     Route::get('/change-status-destinations/{id}/{status}', [C_Destinations::class, 'change_status']);
+    Route::post('/modal-laporan-destinasi', [C_Destinations::class, 'modalLaporanDestinasi'])->name('modal-laporan-destinasi');
+    Route::post('/modal-komentar-destinasi', [C_Destinations::class, 'modalKomentarDestinasi'])->name('modal-komentar-destinasi');
 
     Route::get('/comments-destination/{id}', [C_Destinations::class, 'comments']);
     Route::get('/add-comments/{id_destination}', [C_Destinations::class, 'comments_add']);

@@ -75,10 +75,9 @@ Dashboard
         <div class="row d-flex">
 
           @foreach($articles as $val)
-          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+          <div class="col-lg-4 col-md-6 col-sm-5 d-flex ftco-animate">
             <div class="blog-entry">
-              <a href="{{  url('about/'.$val->id) }}" class="block-20" style="background-image: url('<?= asset('images/articles/'.$val->image) ?>'); border-radius:15px;">
-              </a>
+              <img src="{{ asset('images/articles/' . $val->image) }}" alt="img" width="350px" height="300px"  style="border-radius: 15px;">
               <div class="text float-right d-block">
                 <p class="text heading"><a href="{{  url('about/'.$val->id) }}">{{ $val->title }}</a></p>
                 {{--  <p style="max-height:150px;overflow: hidden;">{{ $val->description }}</p> --}}
@@ -107,13 +106,13 @@ Dashboard
         <div class="row">
 
           @foreach($destinations as $value)
-          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+          <div class="col-lg-4 col-md-6 col-sm-5 d-flex ftco-animate">
             <div class="blog-entry">
               <div class="img">
                 <?php  
                   $image = explode("|", $value->image)[1];
                 ?>
-                <a class="text-center" href="{{  url('destination/'.$value->id) }}"><img src="{{ asset('images/destinations/'.$image) }}" width="100%" style="min-height:300px;max-height: 300px; border-radius:15px;"></a>
+                <a class="text-center" href="{{  url('destination/'.$value->id) }}"><img src="{{ asset('images/destinations/'.$image) }}" width="350px" height="300px"  style="border-radius: 15px;"></a>
               </div>
               {{-- <span class="kategori">
                 {{ $category->categories_name }}

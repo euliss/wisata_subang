@@ -31,7 +31,7 @@ Add User
             <form class="row g-3" action="/insert-user" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="col-md-12">
-                <label for="inputName5" class="form-label">Full Name</label>
+                <label for="inputName5" class="form-label">Full Name<span style="color:crimson">*</span></label>
                 <input type="text" class="form-control" id="inputName5" name="name" value="{{ old('name')}}" placeholder="Enter Full Name...">
                 <div class="text-danger">
                 @error('name')
@@ -40,7 +40,7 @@ Add User
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="inputEmail5" class="form-label">Email</label>
+                <label for="inputEmail5" class="form-label">Email<span style="color:crimson">*</span></label>
                 <input type="email" class="form-control" id="inputEmail5" name="email" value="{{ old('email')}}" placeholder="Enter Email Adress...">
                 <div class="text-danger">
                   @error('email')
@@ -49,7 +49,7 @@ Add User
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="inputPassword5" class="form-label">Password</label>
+                <label for="inputPassword5" class="form-label">Password<span style="color:crimson">*</span></label>
                 <input type="password" class="form-control" id="inputPassword5" name="password" value="{{ old('password')}}" placeholder="Enter Password...">
                 <div class="text-danger">
                   @error('password')
@@ -68,7 +68,7 @@ Add User
               </div>
               
               <div class="col-md-6">
-                <label for="inputState" class="form-label">Role</label>
+                <label for="inputState" class="form-label">Role<span style="color:crimson">*</span></label>
                 <select id="inputState" class="form-select" name="level" placeholder="Enter Role...">
                   <option value="">Pilih Role</option>
                   <option value="1">Admin</option>
@@ -81,7 +81,7 @@ Add User
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="inputState" class="form-label">Status</label>
+                <label for="inputState" class="form-label">Status<span style="color:crimson">*</span></label>
                 <select id="inputState" class="form-select" name="status" placeholder="Enter Status...">
                   <option value="">Pilih Status</option>
                   <option value="active">Aktif</option>

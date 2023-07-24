@@ -34,6 +34,7 @@ Edit Report
                 <div class="form-group">
                   <label for="email">Destinasi </label>
                   <select required class="form-control" name="id_destination">
+                    <option value="">--Pilih Destinasi--</option>
                     @foreach($destinations as $val)
                     <option value="{{ $val->id }}" <?= $report->id_destination == $val->id ? 'selected' : '' ?> >{{ $val->name }}</option>
                     @endforeach
@@ -41,11 +42,11 @@ Edit Report
                 </div>
                 <div class="form-group">
                   <label for="name">Jumlah</label>
-                  <input required type="number" class="form-control" value="{{ $report->count }}" name="count">
+                  <input required type="number" class="form-control" value="{{ $report->count }}" placeholder="Masukkan Jumlah" name="count">
                 </div>
                 <div class="form-group">
                   <label for="message">Content</label>
-                  <textarea required name="content" cols="10" rows="2" class="form-control">{{ $report->content }}</textarea>
+                  <textarea required name="content" cols="10" rows="2" class="form-control" placeholder="Masukkan Content">{{ $report->content }}</textarea>
                 </div>
                 <div class="form-group">
                   <label for="name">Tanggal</label>
