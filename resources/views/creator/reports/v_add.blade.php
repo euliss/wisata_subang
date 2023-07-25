@@ -39,11 +39,10 @@ Tambah Laporan Pengunjung
                   <label for="message">Keterangan<span style="color:crimson">*</span></label>
                   <textarea required name="content" cols="10" rows="2" class="form-control" placeholder="Masukkan Keterangan"></textarea>
                 </div>
-                <div class="form-group">
-                  <label for="email">Tanggal<span style="color:crimson">*</span></label>
-                  <input required type="date" class="form-control" name="date">
-                </div>
-
+               <div class="form-group">
+                  <label for="bulan">Bulan<span style="color:crimson">*</span></label>
+                  <input required type="month" class="form-control" name="date">
+              </div>
               <div class="text-center mt-5">
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button type="reset" class="btn btn-secondary">Reset</button>

@@ -32,54 +32,54 @@
                         <div class="container">
                             {{-- <div class="row tour py-5"> --}}
 
-                                <div
-                                    class="col-md d-flex justify-content-center align-items-center align-self-stretch ftco-animate">
-                                    <div class="text">
-                                        <h1 class="mb-4 mt-3">{{ $destination->name }}</h1>
-                                        <table class="table" style="min-width:auto !important">
-                                            @if (in_array($destination->id_category, [1, 2, 4]))
-                                                <tr>
-                                                    <td class="bg-white p-3 rounded">
-                                                        {{ GoogleTranslate::trans('Jam Operasional', app()->getLocale()) }}
-                                                    </td>
-                                                    <td class="bg-white p-3 rounded"><?= $destination->jam_operasional ?>
-                                                    </td>
-                                                </tr>
-                                            @endif
-                                            @if (in_array($destination->id_category, [1, 2, 3, 4]))
-                                                <tr>
-                                                    <td class="bg-white p-3 rounded">
-                                                        {{ GoogleTranslate::trans('Harga', app()->getLocale()) }}</td>
-                                                    <td class="bg-white p-3 rounded"><?= $destination->harga ?></td>
-                                                </tr>
-                                            @endif
-                                            @if (in_array($destination->id_category, [1, 3, 4]))
-                                                <tr>
-                                                    <td class="bg-white p-3 rounded">
-                                                        {{ GoogleTranslate::trans('Fasilitas', app()->getLocale()) }}</td>
-                                                    <td class="bg-white p-3 rounded"><?= $destination->fasilitas ?></td>
-                                                </tr>
-                                            @endif
-                                            @if (in_array($destination->id_category, [2]))
-                                                <tr>
-                                                    <td class="bg-white p-3 rounded">
-                                                        {{ GoogleTranslate::trans('Menu', app()->getLocale()) }}</td>
-                                                    <td class="bg-white p-3 rounded"><?= $destination->menu ?></td>
-                                                </tr>
-                                            @endif
-                                            @if (in_array($destination->id_category, [3]))
-                                                <tr>
-                                                    <td class="bg-white p-3 rounded">
-                                                        {{ GoogleTranslate::trans('Tipe Kamar', app()->getLocale()) }}</td>
-                                                    <td class="bg-white p-3 rounded"><?= $destination->tipe_kamar ?></td>
-                                                </tr>
-                                            @endif
-                                        </table>
-                                        <br>
-                                        <h5>{{ GoogleTranslate::trans('Deskripsi', app()->getLocale()) }}</h5>
-                                        <p><?= $destination->description ?></p>
-                                    </div>
+                            <div
+                                class="col-md d-flex justify-content-center align-items-center align-self-stretch ftco-animate">
+                                <div class="text">
+                                    <h1 class="mb-4 mt-3">{{ $destination->name }}</h1>
+                                    <table class="table" style="min-width:auto !important">
+                                        @if (in_array($destination->id_category, [1, 2, 4]))
+                                            <tr>
+                                                <td class="bg-white p-3 rounded">
+                                                    {{ GoogleTranslate::trans('Jam Operasional', app()->getLocale()) }}
+                                                </td>
+                                                <td class="bg-white p-3 rounded"><?= $destination->jam_operasional ?>
+                                                </td>
+                                            </tr>
+                                        @endif
+                                        @if (in_array($destination->id_category, [1, 2, 3, 4]))
+                                            <tr>
+                                                <td class="bg-white p-3 rounded">
+                                                    {{ GoogleTranslate::trans('Harga', app()->getLocale()) }}</td>
+                                                <td class="bg-white p-3 rounded"><?= $destination->harga ?></td>
+                                            </tr>
+                                        @endif
+                                        @if (in_array($destination->id_category, [1, 3, 4]))
+                                            <tr>
+                                                <td class="bg-white p-3 rounded">
+                                                    {{ GoogleTranslate::trans('Fasilitas', app()->getLocale()) }}</td>
+                                                <td class="bg-white p-3 rounded"><?= $destination->fasilitas ?></td>
+                                            </tr>
+                                        @endif
+                                        @if (in_array($destination->id_category, [2]))
+                                            <tr>
+                                                <td class="bg-white p-3 rounded">
+                                                    {{ GoogleTranslate::trans('Menu', app()->getLocale()) }}</td>
+                                                <td class="bg-white p-3 rounded"><?= $destination->menu ?></td>
+                                            </tr>
+                                        @endif
+                                        @if (in_array($destination->id_category, [3]))
+                                            <tr>
+                                                <td class="bg-white p-3 rounded">
+                                                    {{ GoogleTranslate::trans('Tipe Kamar', app()->getLocale()) }}</td>
+                                                <td class="bg-white p-3 rounded"><?= $destination->tipe_kamar ?></td>
+                                            </tr>
+                                        @endif
+                                    </table>
+                                    <br>
+                                    <h5>{{ GoogleTranslate::trans('Deskripsi', app()->getLocale()) }}</h5>
+                                    <p class="text"><?= $destination->description ?></p>
                                 </div>
+                            </div>
 
                             {{-- </div> --}}
                         </div>
@@ -100,30 +100,30 @@
                                     <h3 class="mb-5">{{ count($comments) }}
                                         {{ GoogleTranslate::trans('Komentar', app()->getLocale()) }}</h3>
 
-                                        <label for="filterSelect">Filter By Rating</label>
-                                        <select id="filterSelect" class="form-control" style="width: 100px;">
-                                            <option value="all">All</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
+                                    <label for="filterSelect">Filter By Rating</label>
+                                    <select id="filterSelect" class="form-control" style="width: 100px;">
+                                        <option value="all">All</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
 
                                     <ul class="comment-list" id="ratingList">
 
                                         @foreach ($comments as $val)
-                                            <li class="comment" data-jurusan="{{$val->rating}}">
+                                            <li class="comment" data-jurusan="{{ $val->rating }}">
                                                 <hr>
                                                 <div class="comment-body" style="float:left;">
                                                     <h2>{{ $val->name }}</h2>
                                                     <div>{{ date('d M Y H:i:s', strtotime($val->created_at)) }}</div>
-                                                    <div>Rating : 
+                                                    <div>Rating :
                                                         <?php for ($i=0; $i < $val->rating; $i++) { ?>
-                                                            <i class="bi bi-star-fill text-warning"></i>
+                                                        <i class="bi bi-star-fill text-warning"></i>
                                                         <?php } ?>
                                                         <?php for ($i=0; $i < 5-$val->rating; $i++) { ?>
-                                                            <i class="bi bi-star text-warning"></i>
+                                                        <i class="bi bi-star text-warning"></i>
                                                         <?php } ?>
                                                     </div>
                                                     <p>{{ $val->content }}</p>
@@ -132,6 +132,7 @@
                                         @endforeach
 
                                     </ul>
+                                    <button class="btn-utama" id="showMoreButton">Show more</button>
                                     <!-- END comment-list -->
 
                                     <div class="comment-form-wrap pt-5">
@@ -191,7 +192,7 @@
                 </form>
                 {{-- <div class="row">
                     <h5 class="ml-3 mt-4">{{ GoogleTranslate::trans('Rekomendasi Destinasi', app()->getLocale()) }} : </h5> --}}
-                    {{-- @foreach ($recomend as $val)
+                {{-- @foreach ($recomend as $val)
           <div class="col-sm-12 mb-3">
             <a href="{{ url('destination/'.$val->id) }}" class="card">
               <div class="card-body">
@@ -201,7 +202,7 @@
             </a>
           </div>
           @endforeach --}}
-                    {{-- @foreach ($recomend as $val)
+                {{-- @foreach ($recomend as $val)
                         <div class="col-sm-12 mb-3  d-flex ftco-animate">
                             <div class="blog-entry">
                                 <div class="img">
@@ -212,12 +213,12 @@
                                             src="{{ asset('images/destinations/' . $image) }}" width="100%"
                                             style="min-height:300px;max-height: 300px; border-radius:15px;"></a>
                                 </div> --}}
-                                {{-- <span class="kategori">
+                {{-- <span class="kategori">
                 {{ $category->categories_name }}
               </span> --}}
-                                {{-- <div class="text float-right d-block"> --}}
-                                    {{-- <span>{{ $value->created_at }}</span> --}}
-                                    {{-- <p class="text heading"><a
+                {{-- <div class="text float-right d-block"> --}}
+                {{-- <span>{{ $value->created_at }}</span> --}}
+                {{-- <p class="text heading"><a
                                             href="{{ url('destination/' . $val->id) }}">{{ $val->name }}</a></p>
                                 </div>
                                 <a href="images/destination-1.jpg"
@@ -227,9 +228,9 @@
                         </div>
                     @endforeach --}}
 
-                </div>
             </div>
         </div>
+    </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -247,5 +248,35 @@
                 }
             }
         });
+    </script>
+    <script>
+        // JavaScript to handle "Show more" functionality
+        const commentContainer = document.getElementById("commentContainer");
+        const comments = document.querySelectorAll(".comment");
+        const showMoreButton = document.getElementById("showMoreButton");
+        const itemsPerLoad = 3; // Number of comments to show on each "Show more" click
+
+        let visibleCount = 0; // Keeps track of the currently visible comments
+
+        function showMoreComments() {
+            for (let i = visibleCount; i < visibleCount + itemsPerLoad; i++) {
+                if (comments[i]) {
+                    comments[i].classList.add("visible");
+                }
+            }
+
+            visibleCount += itemsPerLoad;
+
+            // Hide the "Show more" button if all comments are visible
+            if (visibleCount >= comments.length) {
+                showMoreButton.style.display = "none";
+            }
+        }
+
+        // Initial load
+        showMoreComments();
+
+        // Add click event to the "Show more" button
+        showMoreButton.addEventListener("click", showMoreComments);
     </script>
 @endsection

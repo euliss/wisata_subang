@@ -41,7 +41,7 @@ Edit Laporan Pengunjung
                 </div>
                 <div class="form-group">
                   <label for="name">Tanggal</label>
-                  <input required type="date" class="form-control" value="{{ $report->date }}" name="date">
+                  <input required type="month" class="form-control" value="{{ $report->date }}" name="date">
                 </div>
 
               <div class="text-center mt-4">

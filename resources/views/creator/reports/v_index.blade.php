@@ -39,11 +39,11 @@
                                 @csrf
                                 <div class="col-sm-6">
                                     <h6>Dari Tanggal<span style="color:crimson">*</span></h6>
-                                    <input type="date" required name="dari_tanggal" class="form-control">
+                                    <input type="month" required name="dari_tanggal" class="form-control">
                                 </div>
                                 <div class="col-sm-6">
                                     <h6>Sampai Tanggal<span style="color:crimson">*</span></h6>
-                                    <input type="date" required name="sampai_tanggal" class="form-control">
+                                    <input type="month" required name="sampai_tanggal" class="form-control">
                                 </div>
                                 <div class="col-sm-12 mt-3">
                                     <button class="btn btn-primary" type="submit">Filter</button>
