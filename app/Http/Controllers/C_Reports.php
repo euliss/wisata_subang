@@ -66,7 +66,7 @@ class C_Reports extends Controller
         DB::table('reports')->insert([
             'id_destination' => $request->id_destination,
             'count' => $request->count,
-            'content' => $request->content,
+            // 'content' => $request->content,
             'date' => $request->date,
         ]);
         return redirect('report/')->with('pesan', 'Data Saved Successfully !');
@@ -88,7 +88,7 @@ class C_Reports extends Controller
         DB::table('reports')->where('id', $id)->update([
             'id_destination' => $request->id_destination,
             'count' => $request->count,
-            'content' => $request->content,
+            // 'content' => $request->content,
             'date' => $request->date,
         ]);
         return redirect('report/')->with('pesan', 'Data Updated Successfully !');

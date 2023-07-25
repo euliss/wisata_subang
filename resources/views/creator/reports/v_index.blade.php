@@ -68,7 +68,7 @@
                                             <th>No</th>
                                             <th>Jumlah Pengunjung</th>
                                             <th>Tanggal</th>
-                                            <th>Keterangan</th>
+                                            {{-- <th>Keterangan</th> --}}
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -79,7 +79,7 @@
                                                 <td>{{ $no++ }}</td>
                                                 <td>{{ $item->count }}</td>
                                                 <td>{{ $item->date }}</td>
-                                                <td>{{ $item->content }}</td>
+                                                {{-- <td>{{ $item->content }}</td> --}}
                                                 <td>
                                                     <a href="/edit-reports/{{ $item->id }}" class="btn btn-success"><i
                                                             class="bi bi-pencil"></i></a>

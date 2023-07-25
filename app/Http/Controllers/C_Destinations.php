@@ -80,9 +80,9 @@ class C_Destinations extends Controller
     public function insert(Request $request)
     {
         Request()->validate([
-            'image'             => 'mimes:jpg,jpeg,png,bmp|max:5024',
+            'image[]'             => 'mimes:jpg,jpeg,png,bmp|max:5024',
         ], [
-            'image.mimes'       => 'Image is jpg, jpeg, png !',
+            'image[].mimes'       => 'Image is jpg, jpeg, png !',
         ]);
 
         $files = $request->file('image');
@@ -137,22 +137,29 @@ class C_Destinations extends Controller
     public function update($id, Request $request)
     {
         Request()->validate([
-            'image'             => 'mimes:jpg,jpeg,png,bmp|max:5024',
+            'image[]'             => 'mimes:jpg,jpeg,png,bmp|max:5024',
         ], [
-            'image.mimes'       => 'Image is jpg, jpeg, png !',
+            'image[].mimes'       => 'Image is jpg, jpeg, png !',
         ]);
 
-        $data = [];
+        // $data = [];
+        // $files = $request->file('image');
+        // $filename = "";
+
+        // if ($files != null) {
+        //     foreach ($files as $file) {
+        //         $file->move('images/destinations', $file->getClientOriginalName());
+        //         $filename .= "|" . $file->getClientOriginalName();
+        //     }
+        //     $data['image'] = $filename;
+        // }
         $files = $request->file('image');
         $filename = "";
-
-        if ($files != null) {
-            foreach ($files as $file) {
-                $file->move('images/destinations', $file->getClientOriginalName());
-                $filename .= "|" . $file->getClientOriginalName();
-            }
-            $data['image'] = $filename;
+        foreach ($files as $file) {
+            $file->move('images/destinations', $file->getClientOriginalName());
+            $filename .= "|" . $file->getClientOriginalName();
         }
+
         $data = [
             'id_category' => $request->id_category,
             'name' => $request->name,
@@ -166,6 +173,7 @@ class C_Destinations extends Controller
             'menu' => $request->menu,
             'tipe_kamar' => $request->tipe_kamar,
             'status' => '0',
+            'image' => $filename,
         ];
 
         DB::table('destinations')->where('id', $id)->update($data);

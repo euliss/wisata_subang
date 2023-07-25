@@ -61,7 +61,7 @@ Tambah Destinasi
                 <input required type="number" class="form-control" name="contact" placeholder="Masukkan Nomor WhatsApp Contoh:628**********" >
               </div>
               <div class="col-md-6">
-                <label>Image<span style="color:crimson">*</span></label>
+                <label>Image <span style="color:crimson">* PNG, JPG, JPEG</span></label>
                 <input type="file" class="form-control mt-1" name="image[]" multiple required accept=".png, .jpg, .jpeg" placeholder="Masukan Gambar format png or jpg">
                 <div class="text-danger">
                   @error('image')

@@ -60,12 +60,8 @@ Edit Destination
                 <input type="number" class="form-control" name="contact" value="{{$destinations->contact}}" placeholder="Masukkan Contact">
               </div>
               <div class="col-md-6">
-                <label>Image</label>
-                <input type="file" class="form-control mt-1" name="image[]" accept=".png, .jpg, .jpeg" placeholder="Masukan Gambar format png or jpg" >
-                <input type="file" class="form-control mt-1" name="image[]" accept=".png, .jpg, .jpeg" placeholder="Masukan Gambar format png or jpg" >
-                <input type="file" class="form-control mt-1" name="image[]" accept=".png, .jpg, .jpeg" placeholder="Masukan Gambar format png or jpg" >
-                <input type="file" class="form-control mt-1" name="image[]" accept=".png, .jpg, .jpeg" placeholder="Masukan Gambar format png or jpg" >
-                <input type="file" class="form-control mt-1" name="image[]" accept=".png, .jpg, .jpeg" placeholder="Masukan Gambar format png or jpg" >
+                <label>Image <span style="color:crimson">* PNG, JPG, JPEG</span></label>
+                <input type="file" class="form-control mt-1" name="image[]" multiple accept=".png, .jpg, .jpeg" placeholder="Masukan Gambar format png or jpg" >
                 <div class="text-danger">
                   @error('image')
                   {{ $message}}
