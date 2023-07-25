@@ -63,6 +63,11 @@ Tambah Destinasi
               <div class="col-md-6">
                 <label>Image<span style="color:crimson">*</span></label>
                 <input type="file" class="form-control mt-1" name="image[]" multiple required accept=".png, .jpg, .jpeg" placeholder="Masukan Gambar format png or jpg">
+                <div class="text-danger">
+                  @error('image')
+                  {{ $message}}
+                  @enderror
+                </div>
               </div>
               <div class="col-md-6 d-none input_jam_operasional">
                 <label>Jam Operasional<span style="color:crimson">*</span></label>

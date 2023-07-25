@@ -79,6 +79,12 @@ class C_Destinations extends Controller
 
     public function insert(Request $request)
     {
+        Request()->validate([
+            'image'             => 'mimes:jpg,jpeg,png,bmp|max:5024',
+        ], [
+            'image.mimes'       => 'Image is jpg, jpeg, png !',
+        ]);
+
         $files = $request->file('image');
         $filename = "";
         foreach ($files as $file) {
@@ -130,6 +136,12 @@ class C_Destinations extends Controller
 
     public function update($id, Request $request)
     {
+        Request()->validate([
+            'image'             => 'mimes:jpg,jpeg,png,bmp|max:5024',
+        ], [
+            'image.mimes'       => 'Image is jpg, jpeg, png !',
+        ]);
+
         $data = [];
         $files = $request->file('image');
         $filename = "";

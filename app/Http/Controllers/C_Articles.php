@@ -32,8 +32,14 @@ class C_Articles extends Controller
 
     public function insert(Request $request)
     {
+        Request()->validate([
+            'image'             => 'mimes:jpg,jpeg,png,bmp|max:5024',
+        ], [
+            'image.mimes'       => 'Image is jpg, jpeg, png !',
+        ]);
+
         $files = $request->file('image');
-        $files->move('images/articles',$files->getClientOriginalName());
+        $files->move('images/articles', $files->getClientOriginalName());
         $filename = $files->getClientOriginalName();
         DB::table('articles')->insert([
             'title'   => $request->title,
@@ -47,7 +53,7 @@ class C_Articles extends Controller
     {
         $data = [
             'sidebarTitle' => 'Articles',
-            'article' => DB::table('articles')->where('id',$id)->first()
+            'article' => DB::table('articles')->where('id', $id)->first()
         ];
 
         return view('admin/articles/v_edit', $data);
@@ -57,8 +63,8 @@ class C_Articles extends Controller
     {
         $data = [
             'sidebarTitle' => 'Articles',
-            'article' => DB::table('articles')->where('id',$id)->first()
-    
+            'article' => DB::table('articles')->where('id', $id)->first()
+
         ];
 
         return view('admin/articles/v_detail', $data);
@@ -66,10 +72,16 @@ class C_Articles extends Controller
 
     public function update($id, Request $request)
     {
+        Request()->validate([
+            'image'             => 'mimes:jpg,jpeg,png,bmp|max:5024',
+        ], [
+            'image.mimes'       => 'Image is jpg, jpeg, png !',
+        ]);
+
         $files = $request->file('image');
-        $files->move('images/articles',$files->getClientOriginalName());
+        $files->move('images/articles', $files->getClientOriginalName());
         $filename = $files->getClientOriginalName();
-        DB::table('articles')->where('id',$id)->update([
+        DB::table('articles')->where('id', $id)->update([
             'title'   => $request->title,
             'description'   => $request->description,
             'image'   => $filename,
@@ -79,7 +91,7 @@ class C_Articles extends Controller
 
     public function delete($id)
     {
-        DB::table('articles')->where('id',$id)->delete();
+        DB::table('articles')->where('id', $id)->delete();
         return redirect()->route('articles')->with('pesan', 'Data Deleted Successfully !');
     }
 }

@@ -25,7 +25,14 @@ Laporan
                 <div class="col-lg-12">
                     <div class="card p-3">
                         <div class="card-header">
-                            <h3 class="card-title">Data Laporan Pengunjung</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3 class="card-title">Data Laporan Pengunjung</h3>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="card-title" style="text-align: right">Total Pengunjung: {{$totalPengunjung}} Pengunjung</h3>
+                                </div>
+                            </div>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -86,7 +93,8 @@ Laporan
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Destinasi</th>
-                                        <th>Tanggal</th>
+                                        <th>Bulan</th>
+                                        <th>Tahun</th>
                                         <th>Jumlah</th>
                                     </tr>
                                 </thead>
@@ -96,7 +104,8 @@ Laporan
                                     <tr>
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $item->name }}</td>
-                                        <td>{{ $item->date }}</td>
+                                        <td>{{ date('F', strtotime($item->date)) }}</td>
+                                        <td>{{ date('Y', strtotime($item->date)) }}</td>
                                         <td>{{ $item->count }}</td>
                                     </tr>
                                     @endforeach

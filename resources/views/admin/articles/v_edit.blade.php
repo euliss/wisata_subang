@@ -41,6 +41,11 @@ Edit Artikel
               <div class="col-md-12">
                 <label for="inputName5" class="form-label">Image</label>
                 <input type="file" class="form-control" id="inputName5" name="image" value="{{ $article->title }}">
+                <div class="text-danger">
+                  @error('image')
+                  {{ $message}}
+                  @enderror
+                </div>
               </div>
               <div class="text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>

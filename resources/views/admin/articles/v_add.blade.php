@@ -47,6 +47,11 @@
                                             style="color:crimson">*</span></label>
                                     <input required type="file" class="form-control" id="inputName5" name="image"
                                         value="{{ old('title') }}">
+                                    <div class="text-danger">
+                                        @error('image')
+                                        {{ $message}}
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">Submit</button>

@@ -61,11 +61,16 @@ Edit Destination
               </div>
               <div class="col-md-6">
                 <label>Image</label>
-                <input type="file" class="form-control mt-1" name="image[]" >
-                <input type="file" class="form-control mt-1" name="image[]" >
-                <input type="file" class="form-control mt-1" name="image[]" >
-                <input type="file" class="form-control mt-1" name="image[]" >
-                <input type="file" class="form-control mt-1" name="image[]" >
+                <input type="file" class="form-control mt-1" name="image[]" accept=".png, .jpg, .jpeg" placeholder="Masukan Gambar format png or jpg" >
+                <input type="file" class="form-control mt-1" name="image[]" accept=".png, .jpg, .jpeg" placeholder="Masukan Gambar format png or jpg" >
+                <input type="file" class="form-control mt-1" name="image[]" accept=".png, .jpg, .jpeg" placeholder="Masukan Gambar format png or jpg" >
+                <input type="file" class="form-control mt-1" name="image[]" accept=".png, .jpg, .jpeg" placeholder="Masukan Gambar format png or jpg" >
+                <input type="file" class="form-control mt-1" name="image[]" accept=".png, .jpg, .jpeg" placeholder="Masukan Gambar format png or jpg" >
+                <div class="text-danger">
+                  @error('image')
+                  {{ $message}}
+                  @enderror
+                </div>
               </div>
               <div class="col-md-6 d-none input_jam_operasional">
                 <label>Jam Operasional</label>
