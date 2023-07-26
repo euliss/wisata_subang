@@ -31,9 +31,21 @@ class HomeController extends Controller
                 'reports.*',
                 DB::raw('sum(reports.count) as `report_count`'),
                 DB::raw("DATE_FORMAT(reports.date, '%m-%Y') month_year"),
-                DB::raw('YEAR(reports.date) year, MONTH(reports.date) month')
+                DB::raw('MONTH(reports.date) month')
             )
-            ->leftJoin('destinations', 'destinations.id', '=', 'reports.id_destination')->groupby('year', 'month')->get();
+            ->leftJoin('destinations', 'destinations.id', '=', 'reports.id_destination')
+            ->groupBy('month')
+            ->get();
+
+        $data_bulan = DB::table('reports')
+            ->select('date')
+            ->distinct('date')
+            ->orderBy('date', 'ASC')
+            ->get();
+
+        foreach ($data_bulan as $item) {
+            $pengunjung[] = DB::table('reports')->where('date', $item->date)->orderBy('date', 'ASC')->sum('count');
+        }
 
         // $report = DB::table('reports')
         //     ->select('id_destination', 'name')
@@ -78,6 +90,8 @@ class HomeController extends Controller
             'categories' => $this->M_Categories->numberOfCategories(),
             'destinations' => $this->M_Destinations->numberOfDestinations(),
             'graphic' => $data_graphic,
+            'data_bulan' => $data_bulan,
+            'pengunjung' => $pengunjung,
             'destinasi' => $destinasi,
             'category' => $category,
             'jumlahPengunjung' => $jumlahPengunjung,

@@ -214,15 +214,15 @@
                 type: 'bar',
                 data: {
                     labels: [
-                        <?php foreach($graphic as $val): ?> "<?= date('F', strtotime(date('Y-' . $val->month . '-d'))) ?>",
+                        <?php foreach($data_bulan as $val): ?> "<?= date('F', strtotime(date($val->date))) ?>",
                         <?php endforeach ?>
                     ],
                     datasets: [{
                         label: "Chart",
                         backgroundColor: ['#4942E4', '#8696FE', '#C4B0FF','#4942E4', '#8696FE', '#C4B0FF','#4942E4', '#8696FE', '#C4B0FF','#4942E4', '#8696FE', '#C4B0FF'],
                         data: [
-                            <?php foreach($graphic as $val): ?>
-                            <?= $val->report_count ?>,
+                            <?php foreach($pengunjung as $val): ?>
+                            <?= $val ?>,
                             <?php endforeach ?>
                         ],
 
