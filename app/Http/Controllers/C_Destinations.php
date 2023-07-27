@@ -330,12 +330,11 @@ class C_Destinations extends Controller
         DB::table('destinations')->where('id', $id_destination)->update([
             'jumlah_pengunjung' => $destinations->jumlah_pengunjung + $request->count,
         ]);
-
         DB::table('reports')->insert([
             'id_destination' => $id_destination,
             'count' => $request->count,
             'content' => $request->content,
-            'date' => $request->date,
+            'date' => $request->date.'-01',
         ]);
         return redirect('reports-destination/' . $id_destination)->with('pesan', 'Data Saved Successfully !');
     }
@@ -373,7 +372,7 @@ class C_Destinations extends Controller
         DB::table('reports')->where('id', $id)->update([
             'count' => $request->count,
             'content' => $request->content,
-            'date' => $request->date,
+            'date' => $request->date.'-01',
         ]);
 
         $destinations = DB::table('destinations')->where('id', $id_destination)->first();
