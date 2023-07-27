@@ -38,11 +38,11 @@
                             <form action="" class="row mt-4 mb-5">
                                 @csrf
                                 <div class="col-sm-6">
-                                    <h6>Dari Tanggal<span style="color:crimson">*</span></h6>
+                                    <h6>Dari Bulan<span style="color:crimson">*</span></h6>
                                     <input type="month" required name="dari_tanggal" class="form-control">
                                 </div>
                                 <div class="col-sm-6">
-                                    <h6>Sampai Tanggal<span style="color:crimson">*</span></h6>
+                                    <h6>Sampai Bulan<span style="color:crimson">*</span></h6>
                                     <input type="month" required name="sampai_tanggal" class="form-control">
                                 </div>
                                 <div class="col-sm-12 mt-3">

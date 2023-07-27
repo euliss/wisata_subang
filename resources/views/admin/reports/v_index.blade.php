@@ -57,14 +57,14 @@ Laporan
                                     </select>
                                 </div>
                                 <div class="col-sm-4">
-                                    <h6>Dari Tanggal</h6>
-                                    <input type="date" name="dari_tanggal"
+                                    <h6>Dari Bulan</h6>
+                                    <input type="month" name="dari_tanggal"
                                         value="<?= isset($_GET['dari_tanggal']) ? $_GET['dari_tanggal'] : '' ?>"
                                         class="form-control">
                                 </div>
                                 <div class="col-sm-4">
-                                    <h6>Sampai Tanggal</h6>
-                                    <input type="date" name="sampai_tanggal"
+                                    <h6>Sampai Bulan</h6>
+                                    <input type="month" name="sampai_tanggal"
                                         value="<?= isset($_GET['sampai_tanggal']) ? $_GET['sampai_tanggal'] : '' ?>"
                                         class="form-control">
                                 </div>
